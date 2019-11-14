@@ -40,6 +40,11 @@ Numbers are likely the first thing that comes into one's mind when one thinks of
 
 Although this may seem unnecessarily complicated, it is vital that one keeps note of which set one may choose numbers from when looking for solutions to equations or when using functions.
 
+\subsection{Functions}
+Intuitively, you can see a function as a magical black box that takes stuff in and gives other stuff out. A function is just a rule. More specifically, it takes a value from one set and corresponds it with a value in another set. These sets don't necessarily have to be the same, so a distinction must be made. The set that the function takes a value from is called the "domain" and the set that it corresponds a value to is called the "codomain". In the following case:
+$$f:A \rightarrow B$$
+means that the function $f$ takes values from $A$ and corresponds them with values in $B$. In other words, $f$ has the domain $A$ and codomain $B$. The statement is read as "f is a function from $A$ to $B$".
+
 \subsection{Expressions}
 Whereas numbers represent fixed values, expressions represent a more abstract relationship between some unknown quantities. In the past, Mathematicians would write expressions out in words. This led to rather clumsy notation. Our modern notation was developed over several centuries. Consider the following statement: "Take a value and multiply it by itself and then take that result and multiply it by 3. Use that answer and add to it the value of the original value multiplied by 7. Finally consider the value that is 2 less than what has been calculated." \footnote{Just an example, not historically accurate, nor significant.}. This would be written much more succinctly as "$3x^{2} + 7x - 2$" today. \\
 
@@ -74,11 +79,6 @@ It is worth mentioning a few important facts that may seem trivial, but are esse
 \item Given some expression $A$, it is always true that $A = A$.
 \item Given some expressions $A$, $B$ and $C$ with the property that $A = B$, then $A + C = B + C$.
 \end{itemize}
-
-\subsection{Functions}
-A function is just a rule. More specifically, it takes a value from one set and corresponds it with a value in another set. These sets don't necessarily have to be the same, so a distinction must be made. The set that the function takes a value from is called the "domain" and the set that it corresponds a value to is called the "codomain". In the following case:
-$$f:A \rightarrow B$$
-means that the function $f$ takes values from $A$ and corresponds them with values in $B$. In other words, $f$ has the domain $A$ and codomain $B$. The statement is read as "f is a function from $A$ to $B$".
 
 \subsection{Factorisation}
 When it comes to expressions in 2 variables ($x$ and $y$ in this case), the following list represents the most important factorisations in Olympiads.
@@ -201,7 +201,64 @@ Integer solutions can be found by the same technique by forcing $t = 1$. If this
 
 \section{Inequalities}
 
-\section{Functional Equations}
+\subsection{The only inequality you ever need to know}
+Almost all inequalities are derived from a single, powerful inequality. Here it is in all its glory:
+$$x^2 \geq 0, \forall x \in \mathbb{R}$$
+with equality only when $x = 0$. Using this inequality, you can prove most Olympiad inequalities if you are resourceful enough.
+Doing this is known as "proving by first-principles". However, this does require very strong Algebraic skill, which can be built through practice.\\
 
+An important property to know about inequalities is that if $a \geq b$ and $c \geq d$, then $a + c \geq b + d$. Using this, we can combine $x^2 \geq 0$ and $y \geq 0$ to get $x^2 + y^2 \geq 0$. One can be more subtle as well. Consider $x^2 + y^2 \geq 2xy$. This appears daunting at first, but notice the following:
+$$a^2 + b^2 \geq 2ab$$
+$$\iff a^2 - 2ab + b^2 \geq 0$$
+$$\iff (a - b)^2 \geq 0$$
+and this is of the same from as $x^2 \geq 0$, so it is true for all $a, b \in \mathbb{R}$. \\
+
+
+Although proving by first-principles is extremely powerful, it can be quite cumbersome. Some inequalities (that can be proved by first principles) appear so often that they are worth remembering.
+
+\subsection{AM-GM}
+The Arithmetic Mean-Geometric Mean inequality is very popular. It states that:
+$$\frac{a_1 + a_2 + a_3 + ... + a_n}{n} \geq \sqrt[n]{a_1a_2a_3...a_n}, \forall n \in \mathbb{N}, a_i \in \mathbb{R}_{\geq 0}$$
+with equality occurring if and only if $a_1 = a_2 = a_3 = ... = a_n$.\\
+
+The left part is known as the Arithmetic Mean, another name for the average. The right part is known as the Geometric Mean, which is less frequently used. Proving AM-GM uses a combination of First Principles and Induction.
+Revisiting the previous example:
+$$a^2 + b^2 \geq 2ab$$
+$$\iff \frac{a^2 + b^2}{2} \geq ab$$
+$$\iff \frac{a^2 + b^2}{2} \geq \sqrt[2]{a^2b^2}$$
+which is AM-GM with $a_1 = a^2$ and $a_2 = b^2$. \\
+
+\subsection{Power-Mean inequality}
+The Power-Mean inequality is a generalisation of the AM-GM inequality. To start, define:
+$$P_r = (\frac{a_1^r + a_2^r + a_3^r + ... + a_n^r}{n})^{\frac{1}{r}}, \forall r \in \mathbb{R}$$
+The Power-Mean inequality says that $P_i \leq P_j \iff i \leq j$, with equality if and only if $a_1 = a_2 = a_3 = ... = a_n$.
+
+A few important power-means are listed in the table. \\
+
+\begin{table}[]
+    \centering
+\begin{tabular}{|c|c|}
+\hline
+r                         & $P_r$            \\
+\hline
+$-\infty$                 & Minimum         \\
+\hline
+$-1$                      & Harmonic mean   \\
+\hline
+$0$                       & Geometric mean  \\
+\hline
+$1$                       & Arithmetic mean \\
+\hline
+$2$                       & Quadratic mean  \\
+\hline
+$\infty$                  & Maximum \\
+\hline       
+\end{tabular}
+\end{table}
+
+Thus, the AM-GM inequality is directly equivalent to $P_1 \geq P_0$, which is true by the Power-Mean inequality.
+
+\section{Functional Equations}
+These are pretty cool.
 
 \end{document}
