@@ -1,0 +1,16 @@
+TEMPLATE:
+
+\item % Estimated difficulty (E/EM/M/MH/H for Easy, Medium, Hard), Problem Source
+Problem Statement
+
+--------------------------------
+
+\item % M, Liam
+Let $M$ be a positive integer, and let $S$ denote the set of finite sequences of positive integers, including the empty sequence of length zero, which we denote as $\mathbf{0}$. Also, for a sequence $\mathbf{x} = (x_1, x_2, \dotsc, x_{n-1}, x_n)$ let $\overline{\mathbf{x}}$ denote the reverse sequence $\overline{\mathbf{x}} = (x_n, x_{n-1}, \dotsc, x_2, x_1)$.
+
+Define a function $d$ from finite sequences of positive integers to the integers as follows:
+\begin{itemize}
+\item $d(\mathbf{0}) = 0$.
+\item If $\mathbf{x} = (x_1, x_2, \dotsc, x_n)$ is a sequence of positive length, let $m$ be the largest integer such that $x_1 +x_2 +\dotsb +x_m \leq M$, and let $\mathbf{x}'$ denote the rest of the sequence: $\mathbf{x}' = (x_{m+1}, \dotsc, x_n)$. Then $d(\mathbf{x}) = 1 +d(\mathbf{x}')$.
+\end{itemize}
+Show that $d(\mathbf{x}) = d(\overline{\mathbf{x}})$.
