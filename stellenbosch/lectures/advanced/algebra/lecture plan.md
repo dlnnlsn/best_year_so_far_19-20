@@ -7,12 +7,12 @@
 	- codomain & repercussions
 	- range
 
-- real-valued functional equations:
+- functional equations over the real numbers:
 	- small values
 	- algebraic substitutions
 	- equalising patterns
 
-- integer-valued functional equations:
+- functional equations over the integers/naturals:
 	- small values
 	- Cauchy equation
 	- induction
