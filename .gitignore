@@ -243,3 +243,6 @@ TSWLatexianTemp*
 
 # Visual Studio Code config folder
 .vscode
+
+# PDF files
+*.pdf
