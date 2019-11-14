@@ -6,13 +6,14 @@
 	- domain & repercussions
 	- codomain & repercussions
 	- range
+	- image & preimage
 
 - functional equations over the real numbers:
 	- small values
 	- algebraic substitutions
 	- equalising patterns
 
-- functional equations over the integers/naturals:
+- functional equations over the integers/natural numbers:
 	- small values
 	- Cauchy equation
 	- induction
@@ -46,6 +47,3 @@ Lots of examples throughout!
 - Fundamental Theorem of Algebra
 - Viète's Formulas
 - a-b | P(a)-P(b) for P an integer polynomial
-<!-- - Factorisation of polynomials
-	- Fundamental Theorem of Algebra
-	-  -->
