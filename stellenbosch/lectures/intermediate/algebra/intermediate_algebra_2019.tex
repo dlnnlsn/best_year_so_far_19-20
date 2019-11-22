@@ -1,5 +1,9 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{amssymb}
+\usepackage{amsthm}
+
+\newtheorem{example}{Example Question}
+\newtheorem{exercise}{Exercise}
 
 \begin{document}
 
@@ -245,7 +249,7 @@ $-\infty$                 & Minimum         \\
 \hline
 $-1$                      & Harmonic mean   \\
 \hline
-$0$                       & Geometric mean  \\
+$0$                       & Geometric mean\footnote{This is not immediately obvious}  \\
 \hline
 $1$                       & Arithmetic mean \\
 \hline
@@ -259,10 +263,85 @@ $\infty$                  & Maximum \\
 Thus, the AM-GM inequality is directly equivalent to $P_1 \geq P_0$, which is true by the Power-Mean inequality.
 
 \section{Functional Equations}
-\subsection{Fundamentals}
-Functional Equations combine functions and equations together. The goal in a functional equation question is normally to find all functions that satisfy some given condition. These may seem highly intimidating at first, but the ideas behind the solutions are generally very similar.
-Functional Equation questions always start by giving the name, the domain and the codomain of the function. The remainder of the question is the condition that needs to be met.
+\subsection{The basic process}
+\begin{example}
+    Find all functions $f: \mathbb{R} \rightarrow \mathbb{R}$ such that $$f(x - y) = f(x) + (y) - 2xy\; \forall x, y \in \mathbb{R}$$
+\end{example}
 
-$$ f: \mathbb{R} \rightarrow \mathbb{R} $$
+Functional Equations may seem highly intimidating at first, but the ideas behind the solutions are generally always the same.
+Functional Equation questions always start by giving the name, the domain and the codomain of the function. The remainder of the question is the condition that needs to be met.
+In the example question, there is a function, $f$, that takes values from the real numbers as inputs and gives real numbers as outputs. The condition that must be satisfied is $f(x - y) = f(x) + f(y) - 2xy$, no matter which values of $x$ and $y$ are chosen from the domain. \\
+
+The first step is to try and guess solutions. This may seem counter-intuitive since we're trying to rigourously find all possible functions satisfying the condition, but guessing solutions puts a post in the ground. It is normally possible to spot a "simple" solution fairly quickly and with a bit more thought, a "weird" solution normally pops out too.
+Don't stress too much about guessing \emph{all} of the solutions, but the more you find, the better. These solutions help you to plan your approach to solving the function. If you know that $f(x) = 1\; \forall x$ is a solution, then there is no point trying to find an $k$ such that $f(k) = 0$.
+You can try to spot properties of the solutions that you have guessed and from there prove that all other solutions must have those properties too, but more on that later.\\
+
+Some useful functions to try as solutions are:
+\begin{itemize}
+    \item $f(x) = 0$
+    \item $f(x) = c$
+    \item $f(x) = x$
+    \item $f(x) = cx$
+    \item $f(x) = x + c$
+    \item $f(x) = x^2$
+\end{itemize}
+Sometimes one can spot a solution by looking at the form of the constraint condition, but that is up to your Algebraic intuition. \\
+In the example questions, the only "simple" function that works is $f(x) = x^2$. Note that it is not enough to just guess one solution, one must prove rigourously that no other "weird" function exists. Some simple-looking functional equations have what are known as "pathological solutions" that cannot be written down simply.\\
+
+The next step in solving a functional equation is to poke and prod it to see what it does. This is done by substituting in values for the inputs. Always be sure to write down clearly what substitution you have made. If the marker is unsure of what you have done, they will likely assume that you did something wrong or skipped a step and then start taking marks off.\\
+In the example, look at what happens when $x = 0$ and $y = 0$. The condition becomes:
+$$\Rightarrow f(0 - 0) = f(0) + f(0) - 2 \times 0 \times 0$$
+$$\Rightarrow f(0) = 2f(0) - 0$$
+$$\Rightarrow f(0) = 0$$
+
+This is very useful to know since now, any function $f$ that is a solution to the equation \emph{must} satisfy $f(0) = 0$. \\
+
+The values that you substitute do not need to be explicit numbers. Consider letting $x = k$ and $y = 0$, where $k$ is some fixed real number.
+$$\Rightarrow f(k - 0) = f(k) + f(0) - 2 \times k \times 0$$
+$$\Rightarrow f(k) = f(k) + f(0) = f(k) + 0$$
+This result is not helpful. You will encounter this very often when you practice functional equations. This tells us that the substitution we made did not provide any new information. Let us consider instead: $x = k, y = k$.
+$$\Rightarrow f(k - k) = f(k) + f(k) - 2 \times k \times k$$
+$$\Rightarrow f(0) = 2f(k) - 2k^2$$
+$$\Rightarrow f(k) = k^2$$
+This is incredibly useful. Since $k$ was not given any explicit value, we must have that no matter which $k$ you choose, $f(k) = k^2$. This is exactly the solution we guessed, and since we followed a progression of true statements, this must be the \emph{only} solution. \\
+
+We are not done with the question, however. There is a subtlety in the process we have followed. We have said that \emph{if} a solution exists, it must be $f(x) = x^2$. However, this does not mean that that is actually a solution.
+The only way to check if something is a solution is to check that it satisfies the condition. This is done by considering the left-hand-side (LHS) and right-hand-side (RHS) of the constraint and checking that they are the same.\\
+
+If $f(x) = x^2 \; \forall x \in \mathbb{R}$:
+$$LHS = f(x - y) = (x - y)^2 = x^2 - 2xy + y^2$$
+$$RHS = f(x) + f(y) - 2xy = x^2 + y^2 - 2xy$$
+$$\Rightarrow LHS = RHS $$
+Therefore, $f(x) = x^2$ checks successfully, so it is the only solution.\\
+If you do not include this check at the end, you will lose at least $1$ point out of $7$. People have missed out on IMO medals because they didn't check the function at the end.\\
+
+\subsection{Cauchy equation}
+Although every functional equation question is different, occasionally, they can be reduced to a few well-known functions. These don't appear very often, but it is worth knowing about them.\\
+
+$f(x + y) = f(x) + f(y)$ is called the Cauchy Equation. If the domain is $\mathbb{Q}$, then $f(x) = cx$ is the only solution. Over the reals, it is not so easy to solve. However, if one of the following conditions holds, then $f(x) = cx$ is the only solution.
+\begin{itemize}
+    \item $f$ is monotonic on some interval
+    \item $f$ is continuous
+    \item $f$ is bounded on some interval
+    \item $f(x) > 0 \; \forall x \ge 0$
+\end{itemize}
+
+Don't worry too much about what "continuous" and "bounded" mean. They will not appear in any Maths Olympiad questions at school level.
+
+\begin{exercise}
+    Find all continuous functions $f: \mathbb{R} \rightarrow (0, +\infty)$ satisfying
+    $$f(x + y) = f(x)f(y)$$
+\end{exercise}
+\begin{exercise}
+    Find all continuous functions $f: (0, +\infty) \rightarrow \mathbb{R}$ satisfying
+    $$f(xy) = f(x) + f(y)$$
+\end{exercise}
+\begin{exercise}
+    Find all continuous functions $f: (0, +\infty) \rightarrow (0, +\infty)$ satisfying
+    $$f(xy) = f(x)f(y)$$
+\end{exercise}
+
+\section{Conclusion}
+These are all of the basic tools required to get started with Algebra in Olympiads. This is by no means the extent of the Algebra required, but it does cover most of the essentials. From here, the best way to improve is to practice as much as you can.\\ Good luck!
 
 \end{document}
