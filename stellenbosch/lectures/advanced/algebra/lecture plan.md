@@ -3,20 +3,20 @@
 ## Lecture 1: Functional Equations
 
 - What is a function?
-	- domain & repercussions
-	- codomain & repercussions
-	- range
-	- image & preimage
+  - domain & repercussions
+  - codomain & repercussions
+  - range
+  - image & preimage
 
 - functional equations over the real numbers:
-	- small values
-	- algebraic substitutions
-	- equalising patterns
+  - small values
+  - algebraic substitutions
+  - equalising patterns
 
 - functional equations over the integers/natural numbers:
-	- small values
-	- Cauchy equation
-	- induction
+  - small values
+  - Cauchy equation
+  - induction
 
 
 ## Lecture 2: Analysis
@@ -28,21 +28,22 @@
 ## Lecture 3: Inequalities
 
 Lots of examples throughout!
+
 - AM-GM Inequality
 - Cauchy's Inequality
-	- Titu's Lemma/Engel form
+  - Titu's Lemma/Engel form
 - Rearrangement Inequality
 
 
 ## Lecture 4: Polynomials
 
 - What is a polynomial?
-	- Field/ring of coefficients? At least set thereof
-	- Degree
-	- Leading coefficient
-	- Constant coefficient
-	- Roots
-		- finitely many!
+  - Field/ring of coefficients? At least set thereof
+  - Degree
+  - Leading coefficient
+  - Constant coefficient
+  - Roots
+    - finitely many!
 - Euclidean Division Algorithm
 - Fundamental Theorem of Algebra
 - Viète's Formulas
