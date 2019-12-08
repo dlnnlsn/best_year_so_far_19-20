@@ -27,7 +27,7 @@ The split in question topics makes it seem that Algebra is only used in a quarte
 This section will cover essentials that must be mastered before any work in Algebra can be performed. This may seem simple, but it cannot be stressed enough how important it is to have a solid foundation before continuing.
 
 \subsection{Sets}
-A set is a mathematical object representing a collection of ``things''. Sets can contain numbers, but also cats, dogs, or even other sets. A set is represented by a pair of opening and closing curly brackets (\{\}) with the contents of the set separated by commas inside the curly brackets. An example of an set would be $\{2, 3, 5\}$. It is sometimes important to know that sets do not contain duplicates of items. The statement ``$a \in S$'' is read as ``$a$ is an element of $S$'' and means that $a$ is in the set $S$. The statement $A \subseteq B$ is read as ``$A$ is a subset of $B$'' and means that all elements of $A$ are also elements of $B$. This terminology is not specific to Algebra, but it is important to know.\\
+A set is a mathematical object representing a collection of ``things''. Sets can contain numbers, but also cats, dogs, or even other sets. A set is represented by a pair of opening and closing curly brackets (\{\}) with the contents of the set separated by commas inside the curly brackets. An example of a set would be $\{2, 3, 5\}$. A further property of sets is that they do not contain duplicates of items. The statement ``$a \in S$'' is read as ``$a$ is an element of $S$'' and means that $a$ is in the set $S$. The statement $A \subseteq B$ is read as ``$A$ is a subset of $B$'' and means that all elements of $A$ are also elements of $B$. This terminology is not specific to Algebra, but it is important to know.\\
 
 You can construct sets of all numbers that follow a certain rule. This is indicated by putting the rule inside of the curly brackets when you define it.
 \begin{example}
@@ -63,6 +63,8 @@ Although this may seem unnecessarily complicated, it is vital that one keeps not
 If you don't care too much about formality, you can see a function as a magical black box that takes stuff in and gives other stuff out. A function is just a rule. More specifically, it takes a value from one set and corresponds it with a unique value in another set. These sets don't necessarily have to be the same, so a distinction must be made. The set that the function takes a value from is called the ``domain'' and the set that it corresponds a value to is called the ``codomain''. In the following case:
 $$f:A \rightarrow B$$
 means that the function $f$ takes values from $A$ and corresponds them with values in $B$. In other words, $f$ has the domain $A$ and codomain $B$. The statement is read as ``f is a function from $A$ to $B$''.
+
+When using functions, the notation that is used is $f(a) = b$ where $a \in A$ and $b \in B$. This means that $f$ matches the value $a$ with the value $b$. $a$ can only map to one value in the codomain, but multiple values in the domain can map to the same value in the codomain. (Consider the example $f(x) = x^2$ and notice that $f(1) = f(-1)$).
 
 \subsection{Expressions}
 Whereas numbers represent fixed values, expressions represent a more abstract relationship between some unknown quantities. In the past, Mathematicians would write expressions out in words. This led to rather clumsy notation. Our modern notation was developed over several centuries. Consider the following statement: ``Take a value and multiply it by itself and then take that result and multiply it by 3. Use that answer and add to it the value of the original value multiplied by 7. Finally consider the value that is 2 less than what has been calculated.'' \footnote{Just an example, not historically accurate, nor significant.}. This would be written much more succinctly as ``$3x^{2} + 7x - 2$'' today. \\
@@ -110,7 +112,7 @@ Although not as frequently used, the following ones are good to memorise if you 
 
 \begin{itemize}
 
-\item $a^2 + b^2 + c^2 + 2(ab + bc + ca) = (a + b + c)^2$
+\item $a^2 + b^2 + c^2 + 2ab + 2bc + 2ca = (a + b + c)^2$
 \item $a^3 + b^3 + c^3 - 3abc = (a + b + c)(a^2 + b^2 + c^2 - ab - bc - ca)$
 \item $x^5 + x^4 + 1 = (x^3 - x + 1)(x^2 + x + 1)$
 \item $2x^2y^2 + 2y^2z^2 + 2z^2x^2 - x^4 - y^4 - z^4 = (x + y + z)(x + y - z)(x - y + z)(-x + y + z)$
@@ -130,6 +132,18 @@ Completing the square:\\
     $= (x + 3 - 1)(x + 3 + 1)$ \\ 
     $= (x + 2)(x + 4)$ \\
 \end{example}
+
+
+\begin{exercise}
+    Find all integers $a$ and $b$ satisfying: $ab + 5a - 3b = 19$
+\end{exercise}
+
+\begin{exercise}
+    Find the value of $x^2 + \frac{1}{x^2}$ if $x + \frac{1}{x} = 17$. What about $x^3 + \frac{1}{x^3}$?
+\end{exercise}
+
+\begin{exercise}
+    Show that $9$ is a factor of $2^2019 + 1$ and that $7$ is a factor of $2^2019 - 1$.
 
 \clearpage
 \section{Polynomials}
