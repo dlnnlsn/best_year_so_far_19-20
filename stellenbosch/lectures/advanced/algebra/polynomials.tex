@@ -1,0 +1,69 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools,amsfonts}
+\usepackage{parskip}
+
+\newcommand*{\NN}{\mathbb{N}}
+\newcommand*{\ZZ}{\mathbb{Z}}
+\newcommand*{\QQ}{\mathbb{Q}}
+\newcommand*{\RR}{\mathbb{R}}
+\newcommand*{\CC}{\mathbb{C}}
+\newcommand*{\eg}{e.g.\ }
+\newcommand*{\ie}{i.e.\ }
+
+\title{Polynomials}
+\author{Liam Baker}
+\date{Stellenbosch Camp 2019 Advanced Algebra}
+
+
+\begin{document} \maketitle
+
+\section{What is a polynomial?}
+
+A field is a set with well-behaved enough notions of addition, subtraction, multiplication and division, \eg $\QQ$, $\RR$, $\CC$. $\ZZ$ is not a field since dividing two nonzero integers does not always yield an integer.
+
+\textbf{Problem}: Show that $\ZZ_p$ (\ie the integers modulo a prime number $p$) is a field.
+
+A ring is a set with well-behaved enough notions of addition, subtraction, and multiplication (not necessarily division), \eg $\ZZ$, $\QQ$, $\RR$, $\CC$. $\NN$ is not a ring since we cannot always subtract two natural numbers and expect a positive result.
+
+\textbf{Problem}: Show that $\ZZ_n$ (\ie the integers modulo a fixed integer $n$) is a ring.
+
+Every field is a ring.
+
+A polynomial is an algebraic expression $p(x) = a_n x^n +a_{n-1} x^{n-1} +\dotsb a_1 x +a_0$, where the \emph{coefficients} $a_0, a_1, \dotsc$ are in some ring $R$. The set of all polynomials with coefficients in $R$ and variable $x$ is denoted $R[x]$; this is itself a ring! But never a field\dots
+
+The largest $n$ such that the coefficient of $x^n$ is nonzero (\ie $a_n \neq 0$) is called the \emph{degree} of $p$, sometimes denoted $\deg{p}$. $a_0$ is called the \emph{constant term}, $a_{\deg{p}}$ is called the \emph{leading term}, and the polynomial with all coefficients equal to zero is called the \emph{zero polynomial}.
+
+A number $r$ such that $p(r) = 0$ is called a \emph{root} or \emph{zero} of $p$.
+
+
+\section{Fundamental Results}
+
+
+
+
+\section{Euclidean Division Algorithm}
+
+
+
+
+\section{Fundamental Theorem of Algebra}
+
+
+
+
+\section{Viète's Formulas}
+
+
+
+
+\section{Problems}
+
+\begin{enumerate}
+
+\item 
+
+\end{enumerate}
+
+\end{document}
