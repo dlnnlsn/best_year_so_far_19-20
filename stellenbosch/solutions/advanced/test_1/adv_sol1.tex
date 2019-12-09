@@ -20,7 +20,15 @@ A set $T$ of integers is called \emph{broken} if there are integers $a < b < c$ 
 
 Find the number of broken subsets of $\{1, 2, \dotsc, 2019\}$.}
 
-\textit{Solution}: Problem solution
+\textit{Solution}:
+The number of subsets of $\{1, 2, \dots, 2019\}$ is $2^{2019}$. Let us see how many of these subsets do not have the required property, that is, are not broken.
+Clearly, neither the empty subset, nor any subset with just one element are broken. So at least
+$$\binom{2019}{0} + \binom{2019}{1} = 1 + 2019 = 2020$$
+subsets are not broken.\\
+Suppose now that $T$ is a non-broken subset with two or more elements, and let $m$, $M$ be the smallest and largest elements in $T$, respectively. If some positive integer $k$ with $m \le k \le M$ is not in $T$, then $a = m$, $b = k$ and $c = M$ satisfy the broken condition, and $T$ would be broken, a contradiction; then all numbers $m, m + 1, m + 2, \dots, M$ must be in $T$, and any non-broken subset with more than two elements must be formed by consecutive numbers of $\{1, 2, \dots, 2019\}$.
+The number of such subsets is $\binom{2019}{2}$, since all of them are determined by pairs of the form ($m$, $M$).\\
+Then, the number of broken subsets $T$ of $\{1, 2, \dots, 2019\}$ is
+$$2^{2019} - 2020 - \binom{2019}{2}$$
 
 
 \item % Venezuela K11 Q4, G
