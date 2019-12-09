@@ -35,7 +35,9 @@ Lines $PM$ and $AN$ meet at $I$.
 Prove that $CI$ is the angle bisector of $\angle ACM$.}
 
 \textit{Solution:}
-Since $\triangle BAN \equiv \triangle CAN$ we have $\angle IAB = \angle NAB = \angle CAN = \angle CAI $, and thus $AI$ is an angle bisector of $\angle CAM$. Note that $\triangle AMC \equiv \triangle BMC$ we have $\angle AMC = \angle BMC$ and $\angle AMC + \angle BMC =180^\circ$, thus $\angle AMC = \angle BMC = 90^\circ$. Since $\angle AMC + \angle CPA = 90^\circ +90^\circ =180^\circ$ we have that $AMCP$ is a cyclic quadrilateral. So $\angle AMI = \angle AMP = \angle ACP = \angle CAP = \angle CMP = \angle CMI$. Therefore $MI$ is a bisector of $\angle AMC$. This implies that $I$ is the incentre of $\triangle AMC$ and so $CI$ is the angle bisector of $\angle ACM$ by necessity.
+Since $\triangle BAN \equiv \triangle CAN$ we have $\angle IAB = \angle NAB = \angle CAN = \angle CAI $, and thus $AI$ is an angle bisector of $\angle CAM$. Note that $\triangle AMC \equiv \triangle BMC$ we have $\angle AMC = \angle BMC$ and $\angle AMC + \angle BMC =180^\circ$, thus $\angle AMC = \angle BMC = 90^\circ$. Since $\angle AMC + \angle CPA = 90^\circ +90^\circ =180^\circ$ we have that $AMCP$ is a cyclic quadrilateral. So
+\[ \angle AMI = \angle AMP = \angle ACP = \angle CAP = \angle CMP = \angle CMI. \]
+Therefore $MI$ is a bisector of $\angle AMC$. This implies that $I$ is the incentre of $\triangle AMC$ and so $CI$ is the angle bisector of $\angle ACM$ by necessity.
 
 
 \item % British MO 2013-2014, N
@@ -83,6 +85,13 @@ For each integer $n \geq 2$, determine, with proof, which of the two positive re
 is larger.}
 
 \textit{Solution:}
+$a^n = a+1 > 1 \implies a > 1$, and $b^{2n} = b+3a > b \iff b^{2n-1} > 1 \implies b > 1$.
+Moreover,
+\begin{align*}
+  a^{2n} -b^{2n} &= (a+1)^2 -(b+3a) = (a-1)^2 +a -b > a-b \\
+  \iff 0 &< a^{2n} -b^{2n} -a +b = (a-b)(a^{2n-1} +a^{2n-2}b +\dotsb +a b^{2n-2} +b^{2n-1} -1).
+\end{align*}
+Now $a^{2n-1} +a^{2n-2}b +\dotsb +a b^{2n-2} +b^{2n-1} -1 > a^{2n-1} -1 > 0$, so $a-b > 0$; thus $a$ is larger than $b$.
 
 
 \end{enumerate}
