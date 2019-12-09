@@ -30,6 +30,7 @@ The number of such subsets is $\binom{2019}{2}$, since all of them are determine
 Then, the number of broken subsets $T$ of $\{1, 2, \dots, 2019\}$ is
 $$2^{2019} - 2020 - \binom{2019}{2}$$
 
+\vspace{6.81mm}
 
 \item % Venezuela K11 Q4, G
 {\itshape
@@ -42,6 +43,7 @@ Prove that $CI$ is the angle bisector of $\angle ACM$.}
 \textit{Solution:}
 Since $\triangle BAN \equiv \triangle CAN$ we have $\angle IAB = \angle NAB = \angle CAN = \angle CAI $, and thus $AI$ is an angle bisector of $\angle CAM$. Note that $\triangle AMC \equiv \triangle BMC$ we have $\angle AMC = \angle BMC$ and $\angle AMC + \angle BMC =180^\circ$, thus $\angle AMC = \angle BMC = 90^\circ$. Since $\angle AMC + \angle CPA = 90^\circ +90^\circ =180^\circ$ we have that $AMCP$ is a cyclic quadrilateral. So $\angle AMI = \angle AMP = \angle ACP = \angle CAP = \angle CMP = \angle CMI$. Therefore $MI$ is a bisector of $\angle AMC$. This implies that $I$ is the incentre of $\triangle AMC$ and so $CI$ is the angle bisector of $\angle ACM$ by necessity.
 
+\vspace{6.81mm}
 
 \item % British MO 2013-2014, N
 {\itshape
@@ -51,6 +53,7 @@ Find the highest power of $3$ which divides this number.}
 
 \textit{Solution:}
 
+\vspace{6.81mm}
 
 \item % Irish 2018 Q7, C
 {\itshape
@@ -65,7 +68,16 @@ After some time a situation is reached in which no animal can eat another animal
 What is the maximal possible number of animals alive in this situation?}
 
 \textit{Solution:}
+It is obvious that only one species can exist in this ending scenario. At the same time, we note that the combined number of any two species either decreases by two or remains unchanged after any transfiguration. This means that the parity of these combined numbers (snakes+eagles, eagles+mice, mice+snakes) remains invariant.
+As two species need to disappear for the equilibrium state to be reached, their parity has to be even from the beginning. The only such pair is snakes+mice=72, implying that the remaining species will be eagles.
+It also implies that all mice must perish, meaning that at most $6+17=23$ animals can survive. We can reach the state with $23$ eagles with the following procedure:
+\begin{itemize}
+  \item every snake eats a mouse: 23 eagles, 0 snakes, 38 mice
+  \item $38/2=19$ eagles eat $19$ mice: $4$ eagles, $19$ snakes, $19$ mice
+  \item every snake eats a mouse: $23$ eagles, $0$) snakes, $0$ mice.
+\end{itemize}
 
+\vspace{6.81mm}
 
 \item % USAMO 1993 Q1, A
 {\itshape
@@ -74,6 +86,16 @@ For each integer $n \geq 2$, determine, with proof, which of the two positive re
 is larger.}
 
 \textit{Solution:}
+Square and rearrange the first equation and also rearrange the second.
+$$a^{2n} - a = a^2 + a + 1$$
+$$b^{2n} - b = 3a$$
+
+It is trivial that $a > 1, b > 1$, thus
+$$a^2 + a + 1 > 3a$$
+$$a^{2n} - a > b^{2n} - b$$
+where we substituted to achieve the result. This writes
+$$(a - b)(a^{2n - 1} + a^{2n - 2}b + \dots + ab^{2n - 2} + b^{2n - 1} - 1) > 0$$ 
+and as the second factor is positive, it follows that $a > b$.
 
 
 \end{enumerate}
