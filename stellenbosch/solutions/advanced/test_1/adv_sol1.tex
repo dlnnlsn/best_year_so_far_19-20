@@ -3,6 +3,7 @@
 \usepackage{mathtools,amsfonts}
 \usepackage{enumerate}
 \usepackage{fullpage}
+\usepackage{parskip}
 
 
 \begin{document}
@@ -23,7 +24,17 @@ A set $T$ of integers is called \emph{broken} if there are integers $a < b < c$ 
 Find the number of broken subsets of $\{1, 2, \dotsc, 2019\}$.}
 
 \textit{Solution}:
-Problem solution
+The number of subsets of $\{1, 2, \dots, 2019\}$ is $2^{2019}$. Let us see how many of these subsets do not have the required property, that is, are not broken.
+Clearly, neither the empty subset, nor any subset with just one element are broken. So at least
+$$\binom{2019}{0} + \binom{2019}{1} = 1 + 2019 = 2020$$
+subsets are not broken.
+
+Suppose now that $T$ is a non-broken subset with two or more elements, and let $m$, $M$ be the smallest and largest elements in $T$, respectively.
+If some positive integer $k$ with $m \le k \le M$ is not in $T$, then $a = m$, $b = k$ and $c = M$ satisfy the broken condition, and $T$ would be broken, a contradiction; then all numbers $m, m + 1, m + 2, \dots, M$ must be in $T$, and any non-broken subset with more than two elements must be formed by consecutive numbers of $\{1, 2, \dots, 2019\}$.
+The number of such subsets is $\binom{2019}{2}$, since all of them are determined by pairs of the form ($m$, $M$).
+
+Then, the number of broken subsets $T$ of $\{1, 2, \dots, 2019\}$ is
+\[ 2^{2019} - 2020 - \binom{2019}{2}. \]
 
 
 \item % Venezuela K11 Q4, G
@@ -47,6 +58,18 @@ No other digit appears.
 Find the highest power of $3$ which divides this number.}
 
 \textit{Solution:}
+Let the number in question be $A$.
+Notice that $\frac{1}{3}A$ is a string of $3^{2019}$ $1$s. Consider more generally the number $B_n$ which consists of a string of $3^n$ digit $1$s.
+
+Let $M_n$ be the number formed of a digit $1$, ($3^n - 1$) consecutive digits $0$, another digit $1$, another ($3^n - 1$) consecutive digits $0$ and then another $1$.
+Notice that $B_n \times M_n = B_{n + 1}$.
+
+Since the digital sum of $M_n$ is $3$, it is divisible by $3$.
+However, since this is not divisible by $9$, $M_n$ is not divisible by $9$. So $B_{n + 1}$ is divisible by exactly one higher power of $3$ than $B_n$.
+
+Now $B_1 = 111$ is divisible by $3^1$ but not by $3^2$, and so $B_n$ is divisible by $3^n$ but not by $3^{n + 1}$.
+In particular, this means that $\frac{1}{3}A$ is divisible by $3^{2019}$, but by no higher power of $3$.
+Hence, $A$ is divisible by $3^{2020}$, but by no higher power of $3$.
 
 
 \item % Irish 2018 Q7, C
@@ -62,19 +85,13 @@ After some time a situation is reached in which no animal can eat another animal
 What is the maximal possible number of animals alive in this situation?}
 
 \textit{Solution:}
-Note that the parity of the number of mice and number of snakes is always the same, whereas the parity of the number of eagles is always different; this is because the parity of each of these changes every time one animal eats another.
-Also, the only possible situations wherein no animal can eat another is if there are only one kind of animal left, i.e. only mice, only eagles or only snakes.
-Thus at the end we cannot have only mice left, since then the numbers of eagles and snakes would both be zero and the parities thus the same.
-Similarly, we cannot have only snakes left, and so we must have only eagles left; we want to maximise the number of eagles left at the end.
-
-Now after each step the number of mice decreases by at most one, so at least $55$ steps must take place before we reach the end.
-Also, the total number of animals decreases by exactly one at each step, so the number of animals left at the end is at most $6 +17 +55 -55 = 23$.
-
-Moreover, it is possible to have $23$ eagles left at the end, if the following eatings occur:
+It is obvious that only one species can exist in this ending scenario. At the same time, we note that the combined number of any two species either decreases by two or remains unchanged after any transfiguration. This means that the parity of these combined numbers (snakes+eagles, eagles+mice, mice+snakes) remains invariant.
+As two species need to disappear for the equilibrium state to be reached, their parity has to be even from the beginning. The only such pair is snakes+mice=72, implying that the remaining species will be eagles.
+It also implies that all mice must perish, meaning that at most $6+17=23$ animals can survive. We can reach the state with $23$ eagles with the following procedure:
 \begin{itemize}
-  \item snake eats mouse $17$ times, leaving $23$ eagles, $0$ snakes, and $38$ mice;
-  \item eagle eats mouse $19$ times, leaving $4$ eagles, $19$ snakes, and $19$ mice;
-  \item snake eats mouse $19$ times, leaving $23$ eagles, $0$ snakes, and $0$ mice.
+  \item every snake eats a mouse: 23 eagles, 0 snakes, 38 mice
+  \item $38/2=19$ eagles eat $19$ mice: $4$ eagles, $19$ snakes, $19$ mice
+  \item every snake eats a mouse: $23$ eagles, $0$) snakes, $0$ mice.
 \end{itemize}
 
 
