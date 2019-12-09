@@ -2,6 +2,7 @@
 
 \usepackage{mathtools,amsfonts}
 \usepackage{enumerate}
+\usepackage{amsmath}
 
 \begin{document}
 
@@ -65,9 +66,15 @@ Therefore, the product of factors of $n$ is $n^3$ if and only if $n = 1$, $n = p
 \textit{A set $T$ of integers is called \textit{broken} if there are integers $a < b < c$ such that $a$ and $c$ are in $T$, but $b$ is not in $T$.\\
 Find the number of broken subsets of $\{1, 2, \dots, 2019\}$.}
 
-\textit{Solution}: The opposite of a broken set is a contiguous set or the empty set. To count the number of broken subsets, we will find the total number of subsets and subtract the number of contiguous subsets.
-The total number of subsets of $\{1, 2, \dots, 2019\}$ is $2^{2019}$ since each element is either in a subset or not in it. There is one subset of size $0$ and the number of contiguous subsets of size $s$ is $2019 - s + 1$.\\
-Therefore, the number of broken sets is $2^{2019} - 1 - \sum_{s=1}^{2019}(2019 - s + 1) = 2^{2019} - 1 - \sum_{s=1}^{2019}s = 2^{2019} - 1 - \frac{2019 \times 2020}{2}$.
+\textit{Solution}: The number of subsets of $\{1, 2, \dots, 2019\}$ is $2^{2019}$. Let us see how many of these subsets do not have the required property, that is, are not broken.
+Clearly, neither the empty subset, nor any subset with just one element are broken. So at least
+$$\binom{2019}{0} + \binom{2019}{1} = 1 + 2019 = 2020$$
+subsets are not broken.\\
+Suppose now that $T$ is a non-broken subset with two or more elements, and let $m$, $M$ be the smallest and largest elements in $T$, respectively. If some positive integer $k$ with $m \le k \le M$ is not in $T$, then $a = m$, $b = k$ and $c = M$ satisfy the broken condition, and $T$ would be broken, a contradiction; then all numbers $m, m + 1, m + 2, \dots, M$ must be in $T$, and any non-broken subset with more than two elements must be formed by consecutive numbers of $\{1, 2, \dots, 2019\}$.
+The number of such subsets is $\binom{2019}{2}$, since all of them are determined by pairs of the form ($m$, $M$).\\
+Then, the number of broken subsets $T$ of $\{1, 2, \dots, 2019\}$ is
+$$2^{2019} - 2020 - \binom{2019}{2}$$
+
 
 \vspace{6.81mm}
 
