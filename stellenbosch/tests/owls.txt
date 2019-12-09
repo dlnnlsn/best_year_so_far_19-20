@@ -22,6 +22,7 @@
        d$$$$$$$$$$:
 
 
+The one below was used in Intermediate Test 2
   _________
  /_  ___   \
 /@ \/@  \   \
