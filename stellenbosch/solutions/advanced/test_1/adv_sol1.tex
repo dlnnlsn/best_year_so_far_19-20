@@ -52,6 +52,11 @@ No other digit appears.
 Find the highest power of $3$ which divides this number.}
 
 \textit{Solution:}
+Let the number in question be $A$. Notice that $\frac{1}{3}A$ is a string of $3^{2019}$ $1$s. Consider more generally the number $B_n$ which consists of a string of $3^n$ digit $1$s.\\
+Let $M_n$ be the number formed of a digit $1$, ($3^n - 1$) consecutive digits $0$, another digit $1$, another ($3^n - 1$) consecutive digits $0$ and then another $1$.
+Notice that $B_n \times M_n = B_{n + 1}$.\\
+Since the digital sum of $M_n$ is $3$, it is divisible by $3$. However, since this is not divisible by $9$, $M_n$ is not divisible by $9$. So $B_{n + 1}$ is divisible by exactly one higher power of $3$ than $B_n$.\\
+Now $B_1 = 111$ is divisible by $3^1$ but not by $3^2$, and so $B_n$ is divisible by $3^n$ but not by $3^{n + 1}$. In particular, this means that $\frac{1}{3}A$ is divisible by $3^{2019}$, but by no higher power of $3$. Hence, $A$ is divisible by $3^{2020}$, but by no higher power of $3$.
 
 \vspace{6.81mm}
 
