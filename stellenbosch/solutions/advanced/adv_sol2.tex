@@ -1,7 +1,7 @@
 \documentclass{article}
 
 \usepackage{mathtools,amsfonts}
-\usepackage{enumerate}
+\usepackage[inline]{enumitem}
 \usepackage{amsmath}
 \usepackage{fullpage}
 
@@ -15,7 +15,7 @@
 \end{center}
 
 
-\begin{enumerate}[1.]
+\begin{enumerate}
 
 \item[1.] % Irish 2018 Q6, G
 \textit{The points $E$ and $F$ lie on sides $AB$ and $AD$, respectively, of a parallelogram $ABCD$ such that $|AB| = 4|AE|$ and $|AD| = 4|AF|$.
@@ -60,6 +60,35 @@ Is he right?}
 for all $x,y \in \mathbb{R}$.}
 
 \textit{Solution}:
+Substituting $y \leftarrow 0$, we get that
+\begin{equation} \label{eq:y0}
+  f(0) +f(f(x)) = f(0)x +f(x) \implies f(x) -f(f(x)) = f(0) -f(0)x.
+\end{equation}
+Now substituting $y \leftarrow \frac{1}{2}$ in the original equation we get that
+\begin{align*}
+  f(x) +f\left(f\left(x+\frac{1}{2}\right)\right) &= x f\left(\frac{1}{2}\right) +\frac{1}{2} f(x) +f\left(x+\frac{1}{2}\right) \\
+  \implies \frac{1}{2} f(x) -f\left(\frac{1}{2}\right) x &= f\left(x+\frac{1}{2}\right) -f\left(f\left(x+\frac{1}{2}\right)\right) \\
+  &= f(0) -f(0) \left(x+\frac{1}{2}\right) & \text{by \eqref{eq:y0}} \\
+  \implies f(x) &= 2\left(\frac{1}{2}-f(0)\right) x +f(0),
+\end{align*}
+so $f(x) = ax+b$ is a linear function.
+
+Substituting $f(x) = ax+b$ into the original equation, we get that
+\begin{align*}
+  2a x y +b +a(a(x+y)+b) +b &= x(a y + b) +y(a x + b) +a(x+y) +b \\
+  \iff a^2(x+y) + a b + b &= (a+b)(x+y).
+\end{align*}
+Since this is true for all $x, y \in \mathbb{R}$, we have that $a^2 = a+b$ and $0 = ab+b = (a+1)b$.
+From the latter we have that $b = 0$ (in which case $a^2 = a$, so that $a = 0$ or $a = 1$), or that $a = -1$, so that $b = 2$.
+Thus the possible solutions for $f$ are
+
+\begin{itemize*}[itemjoin={,\hfill}, itemjoin*= {, and \hfill}]
+  \item $f(x) = x$
+  \item $f(x) = 0$
+  \item $f(x) = 2-x$,
+\end{itemize*}
+
+all of which satisfy the original equation by the above derivation of the coefficients $a$ and $b$.
 
 
 \item[5.] % Italian MO 2018 Q5, G
