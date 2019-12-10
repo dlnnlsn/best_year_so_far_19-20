@@ -48,7 +48,7 @@ Thus we cannot have all the squares of the chessboard be black.
 
 \item[3.] % Ukraine MO 2018 First Tour Grade 9 Q3, N
 \textit{Three numbers $2^{100}$, $3^{100}$, and $5^{100}$ are written on a long paper strip without any space in between, creating one big number $N$.
-Ralpf claims that he can change the last digit of $N$ so that the new number is a power of $13$
+Ralpf claims that he can change the last digit of $N$ so that the new number is a power of $13$.
 Is he right?}
 
 \textit{Solution}:
@@ -62,12 +62,29 @@ for all $x,y \in \mathbb{R}$.}
 \textit{Solution}:
 
 
-\item[5.] % Italian MO 2018, G
+\item[5.] % Italian MO 2018 Q5, G
 \textit{Let $\triangle ABC$ be acute and let $D$ be the foot of the perpendicular from $A$ onto $BC$.
 The circle centred at $A$ passing through $D$ intersects the circumcircle of $\triangle ABC$ at $X$ and $Y$ (with $X$ on the same side as $B$ with respect to to the line $AD$).
 Prove that $\angle BXD = \angle CYD$.}
 
-\textit{Solution}: 
+\textit{Solution}:
+Let the interior angles of $\triangle ABC$ be $\alpha$, $\beta$, and $\gamma$ respectively.
+We are given that $\angle MXA = \angle DAC = \angle MAB$; thus $\triangle MXA$ and $\triangle MAB$ are similar, so that
+\[ \frac{XM}{AM} = \frac{AM}{BM}. \]
+Let $H$ be the foot of the altitude from $A$ onto $BC$.
+We will assume that $H$ lies between $B$ and $D$; the other case is similar.
+Since $M$ is the midpoint of the hypotenuse of the right triangle $AHD$, we have that $AM = HM$.
+Therefore the previous equation becomes
+\[ \frac{XM}{HM} = \frac{HM}{BM}, \]
+from which it follows that $\triangle XMH$ and $\triangle HMB$ are similar.
+From this we find that $\angle HXM = \angle BHM$, but
+\[ \angle BHM = 180^\circ -\angle MHD = 180^\circ -\angle MDH = \beta +\frac{\alpha}{2}, \]
+where in the second equation we use the fact that $\triangle MHD$ is isosceles, since $\triangle AHD$ is a right angle and $M$ is the midpoint of the hypotenuse, and in the third we use the fact that the sum of the angles of $\triangle ABD$ is $180^\circ$.
+
+Therefore
+\[ \angle AXH = \angle MXH +\angle AXM = \left(\beta+\frac{\alpha}{2}\right) +\frac{\alpha}{2} = \beta +\alpha \]
+since we are given that $\angle AXM = \angle DAC = \frac{\alpha}{2}$.
+Therefore $\angle AXH +\angle ACH = \beta +\alpha +\gamma = 180^\circ$, and so $AXHC$ is cyclic, from which it follows that $\angle AXH +\angle AHC = 90^\circ$.
 
 
 \end{enumerate}
