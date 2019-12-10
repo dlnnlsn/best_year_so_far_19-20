@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{fullpage}
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Large Advanced Test 2 Solutions}
+  \\ \vspace{1em}
+  \textbf{\large Stellenbosch Camp 2019}
+\end{center}
+
+
+\begin{enumerate}[1.]
+
+\item[1.] % Irish 2018 Q6, G
+\textit{The points $E$ and $F$ lie on sides $AB$ and $AD$, respectively, of a parallelogram $ABCD$ such that $|AB| = 4|AE|$ and $|AD| = 4|AF|$.
+Prove that $BF$, $DE$, and $AC$ are concurrent.}
+
+\textit{Solution}:
+Let $DE$ AND $FB$ intersect at $G$.
+Join $BD$ and $AG$ and let $AG$ extended intersect $BD$ at $O$.
+By Ceva's Theorem in triangle $ABD$ we have
+\[ 1 = \frac{DO}{OB} \cdot \frac{BE}{EA} \cdot \frac{AF}{FD} = \frac{DO}{OB} \cdot \frac{3}{1} \cdot \frac{1}{3}, \]
+hence $DO = OB$.
+Since the diagonals of a parallelogram bisect each other, $O$ lies on the diagonal $AC$; hence $BF$, $DE$, and $AC$ are concurrent.
+
+
+\item[2.] % Swiss MO Q1, C
+\textit{The cells of an $8 \times 8$ chessboard are all coloured in white.
+A move consists in inverting the colours of a $1 \times 3$ rectangle, either vertical or horizontal (the white cells become black and the black cells become white).
+Is it possible to colour all cells of the chessboard in black in a finite number of moves?}
+
+\textit{Solution}:
+Let us label the square in the $r$th row and $c$th column as $(r,c)$ where $1 \leq r,c \leq 8$.
+Now let us colour the chessboard in three repeating diagonal colours red, green, and blue, where a square $(r,c)$ is red if $3 \mid r+c$, green if $3 \mid r+c-1$, and blue if $3 \mid r+c-2$.
+The total number of red squares, which we denote as $R$, is $22$, and analogously $G = 21$ and $B = 21$.
+We also keep track of the number of the number of white squares of each colour, which we denote by $R_o$, $G_o$, and $B_o$; initially these are also $22$, $21$, and $21$ respectively.
+
+Note that after each move, the parities of each of $R_o$, $G_o$, and $B_o$ changes since one of each category is toggled by each $1 \times 3$ rectangle.
+Thus $R_o$ and $G_o$ always have different parities, and in particular cannot both be zero.
+Thus we cannot have all the squares of the chessboard be black.
+
+
+\item[3.] % Ukraine MO 2018 First Tour Grade 9 Q3, N
+\textit{Three numbers $2^{100}$, $3^{100}$, and $5^{100}$ are written on a long paper strip without any space in between, creating one big number $N$.
+Ralpf claims that he can change the last digit of $N$ so that the new number is a power of $13$.
+Is he right?}
+
+\textit{Solution}:
+
+
+\item[4.] % Source
+\textit{Find all functions $f: \mathbb{R} \to \mathbb{R}$ satisfying
+\[ f(2xy) +f(f(x+y)) = xf(y) + yf(x) +f(x+y) \]
+for all $x,y \in \mathbb{R}$.}
+
+\textit{Solution}:
+
+
+\item[5.] % Italian MO 2018 Q5, G
+\textit{Let $\triangle ABC$ be acute and let $D$ be the foot of the perpendicular from $A$ onto $BC$.
+The circle centred at $A$ passing through $D$ intersects the circumcircle of $\triangle ABC$ at $X$ and $Y$ (with $X$ on the same side as $B$ with respect to to the line $AD$).
+Prove that $\angle BXD = \angle CYD$.}
+
+\textit{Solution}:
+Let the interior angles of $\triangle ABC$ be $\alpha$, $\beta$, and $\gamma$ respectively.
+We are given that $\angle MXA = \angle DAC = \angle MAB$; thus $\triangle MXA$ and $\triangle MAB$ are similar, so that
+\[ \frac{XM}{AM} = \frac{AM}{BM}. \]
+Let $H$ be the foot of the altitude from $A$ onto $BC$.
+We will assume that $H$ lies between $B$ and $D$; the other case is similar.
+Since $M$ is the midpoint of the hypotenuse of the right triangle $AHD$, we have that $AM = HM$.
+Therefore the previous equation becomes
+\[ \frac{XM}{HM} = \frac{HM}{BM}, \]
+from which it follows that $\triangle XMH$ and $\triangle HMB$ are similar.
+From this we find that $\angle HXM = \angle BHM$, but
+\[ \angle BHM = 180^\circ -\angle MHD = 180^\circ -\angle MDH = \beta +\frac{\alpha}{2}, \]
+where in the second equation we use the fact that $\triangle MHD$ is isosceles, since $\triangle AHD$ is a right angle and $M$ is the midpoint of the hypotenuse, and in the third we use the fact that the sum of the angles of $\triangle ABD$ is $180^\circ$.
+
+Therefore
+\[ \angle AXH = \angle MXH +\angle AXM = \left(\beta+\frac{\alpha}{2}\right) +\frac{\alpha}{2} = \beta +\alpha \]
+since we are given that $\angle AXM = \angle DAC = \frac{\alpha}{2}$.
+Therefore $\angle AXH +\angle ACH = \beta +\alpha +\gamma = 180^\circ$, and so $AXHC$ is cyclic, from which it follows that $\angle AXH +\angle AHC = 90^\circ$.
+
+
+\end{enumerate}
+
+\end{document}
