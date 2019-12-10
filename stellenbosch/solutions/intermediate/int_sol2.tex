@@ -17,26 +17,14 @@
 
 \begin{enumerate}[1.]
 
-<<<<<<< HEAD
 \item[1.] % 2009 Stellenbosch Camp (Junior Section, Test 3)
-\textit{In triangle $\triangle ABC$, the angle bisector of $\angle BAC$, the perpendicular bisector of $AC$ and the altitude from $C$ to $AB$ are concurrent. Find the value of $\angle BAC$.}
-
-\textit{Solution}:
-Let the three lines intersect at $P$, the midpoint of $AC$ be $M$ and the foot of the altitude from $C$ onto $AB$ be $D$. Notice that $\triangle PAM \equiv \triangle PBM$, so $\angle PAM = \angle PBM$. Since $AP$ is the angle bisector of $\angle BAC$, $\angle PAM = \angle PAD$. Summing up the angles in $\triangle ABD$ gives:
-$$\angle ABD + \angle BDA + \angle DAB = 180^o$$ 
-$$\Rightarrow \angle PBA + 90^o + 2 \times \angle PBA = 180^o$$
-$$\Rightarrow \angle PBA = 30^o$$
-$$\Rightarrow \angle BAC = 30^o \times 2 = 60^o$$
-\vspace{6.81mm}
-=======
-\item[1.] % Source
 \textit{In triangle $\triangle ABC$, the angle bisector of $\angle BAC$, the perpendicular bisector of $AC$ and the altitude from $C$ to $AB$ are concurrent. Find the value of $\angle BAC$.}
 
 \textit{Solution}:
 \\
 Let the given altitude, angle bisector and perpendicular bisector intersect in $D$, let the foot of the perpendicular from $C$ to $AB$ be $E$ and let the midpoint of $AC$ be $F$. Since $AF$ = $FC$, $\angle AFE$ = $\angle CFE$ = $90^{\circ}$
 and $FE$ is a common side, $\triangle EFC$ is congruent to $\triangle EFA$. Therefore $\angle ECF$ = $\angle EAF $ = $\angle EAD$. Furthermore, since $\angle CDA$ is a right angle, we have that $90^{\circ}$ =  $\angle DCA$ + $\angle DAC$ = 3$\angle DAE$, which gives $\angle DAE$ = $30^{\circ}$. Thus $\angle BAC$ = 2$\angle DAE$ = $60^{\circ}$.
->>>>>>> c83fd8d4ee56badfe973fc04965a245e8de03521
+\vspace{6.81mm}
 
 \item[2.] % Standard
 \textit{Find all positive integers $n$ such that $\frac{n^2 + 8n + 51}{n + 4}$ is also a positive integer.}
@@ -63,11 +51,11 @@ Therefore, the only positive integers, $n$, such that $\frac{n^2 + 8n + 51}{n + 
 $$x^2 + 5y^2 + z^2 \ge 2y(2x + z)$$}
 
 \textit{Solution}:
-$$\implies x^2 + 5y^2 + z^2 \ge 2y(2x + z)$$
-$$\implies x^2 + 5y^2 + z^2 \ge 4xy + 2yz$$
-$$\implies x^2 + 5y^2 + z^2 - 4xy - 2yz \ge 0$$
-$$\implies x^2 - 4xy + 4y^2 + y^2 - 2yz + z^2 \ge 0$$
-$$\implies (x - 2y)^2 + (y - z)^2 \ge 0$$
+$$x^2 + 5y^2 + z^2 \ge 2y(2x + z)$$
+$$\iff x^2 + 5y^2 + z^2 \ge 4xy + 2yz$$
+$$\iff x^2 + 5y^2 + z^2 - 4xy - 2yz \ge 0$$
+$$\iff x^2 - 4xy + 4y^2 + y^2 - 2yz + z^2 \ge 0$$
+$$\iff (x - 2y)^2 + (y - z)^2 \ge 0$$
 
 Squares of real numbers are never negative, so the sum of two squares of real numbers is greater than or equal to 0.
 
@@ -78,22 +66,28 @@ Squares of real numbers are never negative, so the sum of two squares of real nu
 Prove that $BF$, $DE$, and $AC$ are concurrent.}
 
 \textit{Solution}:
-<<<<<<< HEAD
-Let $DE$ and $FB$ intersect at $G$. Join $BD$ and $AG$ and let $AG$ extended intersect $BD$ at $O$.
-
-By Ceva's Theorem in $\triangle ABD$ we have
-$$1 = \frac{DO}{OB} \cdot \frac{BE}{EA} \cdot \frac{AF}{FD} = \frac{DO}{OB} \cdot \frac{3}{1} \cdot \frac{1}{3}$$
-hence $DO = OB$. Since the diagonals of a parallelogram bisect each other, $O$ lies on the diagonal $AC$, hence $BF$, $DE$ and $AC$ concurrent.
+Let $DE$ AND $FB$ intersect at $G$.
+Join $BD$ and $AG$ and let $AG$ extended intersect $BD$ at $O$.
+By Ceva's Theorem in triangle $ABD$ we have
+\[ 1 = \frac{DO}{OB} \cdot \frac{BE}{EA} \cdot \frac{AF}{FD} = \frac{DO}{OB} \cdot \frac{3}{1} \cdot \frac{1}{3}, \]
+hence $DO = OB$.
+Since the diagonals of a parallelogram bisect each other, $O$ lies on the diagonal $AC$; hence $BF$, $DE$, and $AC$ are concurrent.
 \vspace{6.81mm}
-=======
 
->>>>>>> c83fd8d4ee56badfe973fc04965a245e8de03521
 
 \item[5.] % Swiss Maths Olympiad Final round 2017
 \textit{The cells of an $8 \times 8$ chessboard are all coloured in white. A move consists in inverting the colours of a $1 \times 3$ rectangle, either vertical or horizontal (the white cells become black and the black cells become white).
 Is it possible to colour all cells of the chessboard in black in a finite number of moves?}
 
 \textit{Solution}: 
+Let us label the square in the $r$th row and $c$th column as $(r,c)$ where $1 \leq r,c \leq 8$.
+Now let us colour the chessboard in three repeating diagonal colours red, green, and blue, where a square $(r,c)$ is red if $3 \mid r+c$, green if $3 \mid r+c-1$, and blue if $3 \mid r+c-2$.
+The total number of red squares, which we denote as $R$, is $22$, and analogously $G = 21$ and $B = 21$.
+We also keep track of the number of the number of white squares of each colour, which we denote by $R_o$, $G_o$, and $B_o$; initially these are also $22$, $21$, and $21$ respectively.
+
+Note that after each move, the parities of each of $R_o$, $G_o$, and $B_o$ changes since one of each category is toggled by each $1 \times 3$ rectangle.
+Thus $R_o$ and $G_o$ always have different parities, and in particular cannot both be zero.
+Thus we cannot have all the squares of the chessboard be black.
 
 
 \end{enumerate}
