@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage{mathtools,amsfonts}
+\usepackage{mathtools,amssymb}
 \usepackage[inline]{enumitem}
 \usepackage{amsmath}
 \usepackage{fullpage}
@@ -13,6 +13,8 @@
   \\ \vspace{1em}
   \textbf{\large Stellenbosch Camp 2019}
 \end{center}
+
+\vspace{12pt}
 
 
 \begin{enumerate}
@@ -52,6 +54,21 @@ Ralpf claims that he can change the last digit of $N$ so that the new number is 
 Is he right?}
 
 \textit{Solution}:
+Suppose that the last digit of $N$ is changed from $5$ to the digit $d$, and that the resulting number is $13^k$.
+The last digit of $N$ is the last digit of $5^{100}$, which is $5$.
+Also, since $10 \equiv_3 1$, the remainder of $N$ on division by $3$ is
+\[ N \equiv_3 2^{100} +3^{100} +5^{100} \equiv_3 1 + 0 + 1 = 2. \]
+Then since $13^k$ is odd, $d$ is odd, and so equal to either $1$, $3$, $5$, $7$, or $9$.
+Also,
+\[ 13^k = N -5 +d \equiv_3 2-5+d \equiv_3 d; \]
+since $3 \nmid 13^k$, we have that $d \neq 3$ and $d \neq 9$.
+Also, $5 \nmid 13^k$, so $d \neq 5$. Thus $d = 1$ or $d = 7$.
+
+Since $5^{100}$ has more than 3 digits, the remainder of $N$ on division by $8$ is $N \equiv_8 5^{100} \equiv_8 1$.
+So if $d = 1$, then $13^k \equiv_8 1-5+1 \equiv_8 3$.
+But looking at the last digit of $13^\ell$ in general, we see that it is $1$ if and only if $4 \mid \ell$; thus $k$ is even, and so $13^k \equiv_8 1$, a contradiction.
+If on the other hand $d = 7$, looking at the last digit of $13^k$ we see that $k \equiv_4 3$, so that $13^k \equiv_8 13 \equiv_8 5$.
+But also $13^k \equiv_8 5^{100} -5 +7 \equiv_8 3$, a contradiction.
 
 
 \item[4.] % Source
