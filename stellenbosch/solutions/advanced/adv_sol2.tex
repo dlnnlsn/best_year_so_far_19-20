@@ -36,6 +36,14 @@ A move consists in inverting the colours of a $1 \times 3$ rectangle, either ver
 Is it possible to colour all cells of the chessboard in black in a finite number of moves?}
 
 \textit{Solution}:
+Let us label the square in the $r$th row and $c$th column as $(r,c)$ where $1 \leq r,c \leq 8$.
+Now let us colour the chessboard in three repeating diagonal colours red, green, and blue, where a square $(r,c)$ is red if $3 \mid r+c$, green if $3 \mid r+c-1$, and blue if $3 \mid r+c-2$.
+The total number of red squares, which we denote as $R$, is $22$, and analogously $G = 21$ and $B = 21$.
+We also keep track of the number of the number of white squares of each colour, which we denote by $R_o$, $G_o$, and $B_o$; initially these are also $22$, $21$, and $21$ respectively.
+
+Note that after each move, the parities of each of $R_o$, $G_o$, and $B_o$ changes since one of each category is toggled by each $1 \times 3$ rectangle.
+Thus $R_o$ and $G_o$ always have different parities, and in particular cannot both be zero.
+Thus we cannot have all the squares of the chessboard be black.
 
 
 \item[3.] % Ukraine MO 2018 First Tour Grade 9 Q3, N
