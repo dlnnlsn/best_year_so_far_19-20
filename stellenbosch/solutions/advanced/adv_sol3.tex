@@ -1,9 +1,15 @@
 \documentclass{article}
 
 \usepackage{mathtools,amssymb}
-\usepackage[inline]{enumitem}
+% \usepackage[inline]{enumitem}
 \usepackage{amsmath}
-\usepackage{fullpage}
+% \usepackage{fullpage}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
 
 
 \begin{document}
@@ -54,6 +60,49 @@ Show that the angle bisector of $\angle BEC$ intersects $AT$ on a circle which i
 
 \textit{Solution}:
 
+\begin{figure}[H]
+	\centering
+	\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.7]
+	\clip(-11.56,-5.69) rectangle (11.56,6.65);
+	\draw [line width=0.8pt,color=wrwrwr] (-2.76,2.87) circle (2.218197466412763cm);
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(--7.5152--1.98*\x)/-1});
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(-3.586548119251667-1.910905304381227*\x)/-1.1264283899510394});
+	\draw [line width=0.8pt,color=wrwrwr] (-0.793080069007905,3.8954881691497247)-- (-2.9102156899481506,-1.7529729339026632);
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:-1.9517023789068386] plot(\x,{(--3.3814767190772614--2.0656851056574763*\x)/-0.8082976210931612});
+	\draw [line width=0.8pt,color=wrwrwr] (-4.74,1.87)-- (-3.5682976210931603,4.935685105657476);
+	\draw [line width=0.8pt,color=wrwrwr] (-3.5682976210931603,4.935685105657476)-- (-0.8490946956187728,1.7435716100489607);
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(-2.6804618713834873-0.9855424415676998*\x)/0.16942873389356664});
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(-1.243642191026554--0.07203855694741357*\x)/-2.2170273896172183});
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr] (-2.857377860588731,-0.12685881027765222) circle (0.7802429909703115cm);
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-2.8320385569474134:11.56] plot(\x,{(--6.325746253782598--2.2170273896172183*\x)/0.07203855694741357});
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr] (-2.6879614430525858,5.0870273896172185)-- (-1.9517023789068386,0.8043148943425238);
+	\begin{scriptsize}
+	\draw [fill=black] (-2.76,2.87) circle (0.5pt);
+	\draw[color=black] (-2.6,3.14) node {$O$};
+	\draw [fill=black] (-4.74,1.87) circle (0.5pt);
+	\draw[color=black] (-5.38,1.58) node {$B$};
+	\draw [fill=black] (-0.793080069007905,3.8954881691497247) circle (0.5pt);
+	\draw[color=black] (-0.64,4.16) node {$A$};
+	\draw [fill=black] (-0.8490946956187728,1.7435716100489607) circle (0.5pt);
+	\draw[color=black] (-0.5,1.4) node {$C$};
+	\draw [fill=wrwrwr] (-2.9102156899481506,-1.7529729339026632) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.98,-2.36) node {$T$};
+	\draw [fill=wrwrwr] (-1.9517023789068386,0.8043148943425238) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.32,1.02) node {$D$};
+	\draw [fill=wrwrwr] (-3.5682976210931603,4.935685105657476) circle (0.5pt);
+	\draw[color=wrwrwr] (-3.4,5.2) node {$E$};
+	\draw [fill=wrwrwr] (-2.8320385569474134,0.6529726103827818) circle (0.5pt);
+	\draw[color=wrwrwr] (-3.2,1.06) node {$S$};
+	\draw [fill=wrwrwr] (-2.6879614430525858,5.0870273896172185) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.52,5.36) node {$N$};
+	\draw [fill=wrwrwr] (-2.5730620758016256,-0.8534561261818531) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.74,-0.52) node {$I$};
+	\end{scriptsize}
+	\end{tikzpicture}
+\end{figure}
+
+Let the angle bisector of  $\angle BEC$ intersect $AT$ at $I$, and let $EI$ intersect $\Gamma$ at $S$. It is well known that $S$ is the midpoint of the minor arc $BC$, and thus $BT$, $CT$, and the tangent at $S$ to $\Gamma$, produces an isosceles triangle. The incircle of this triangle, $\omega$, is therefore tangent to $BT$ and $CT$, as well as to $\Gamma$ at $S$. Construct the point $N$ on $\Gamma$ such that $N$, $O$, and $S$ are collinear. Notice that $N,S,T$ are collinear and $OE=ON=OD=OS \ \Rightarrow \ ND || EN$. Finally, consider the homothety, $\mathcal{H}$, centred at $T$ with ratio $\frac{ST}{NT}$. This maps $N$ to $S$, and since both $\Gamma$ and $\omega$ are tangent to both $BT$ and $CT$ we see that $\Gamma$ maps to $\omega$. Considering the point $D$, we see that the image of $D$ under $\mathcal{H}$, $D'$, is a point on $\omega$ that lies on $AT$ with the property that $SD' || ND \ \Rightarrow SD' || ES \ \Rightarrow \ E,S,D'$ collinear. Thus $D'$ is the intersection of $ES$ and $AT$ and we have that $D'$ lies on $\omega$ as required. 
 
 \item[5.] % PEN M1, N
 {\itshape
