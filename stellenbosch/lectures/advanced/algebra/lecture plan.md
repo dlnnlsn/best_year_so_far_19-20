@@ -25,17 +25,7 @@
 - structure of the real numbers as Cauchy sequences
 
 
-## Lecture 3: Inequalities
-
-Lots of examples throughout!
-
-- AM-GM Inequality
-- Cauchy's Inequality
-  - Titu's Lemma/Engel form
-- Rearrangement Inequality
-
-
-## Lecture 4: Polynomials
+## Lecture 3: Polynomials
 
 - What is a polynomial?
   - Field/ring of coefficients? At least set thereof
@@ -48,3 +38,13 @@ Lots of examples throughout!
 - Fundamental Theorem of Algebra
 - Viète's Formulas
 - a-b | P(a)-P(b) for P an integer polynomial
+
+
+## Lecture 4: Inequalities
+
+Lots of examples throughout!
+
+- AM-GM Inequality
+- Cauchy's Inequality
+  - Titu's Lemma/Engel form
+- Rearrangement Inequality
