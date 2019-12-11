@@ -27,13 +27,16 @@
 \item[2.] % PAMO 2016 Q1, G
 \textit{Two intersecting circles, $C_1$ and $C_2$, have a common tangent which touches $C_1$ at $P$ and $C_2$ at $Q$. The two circles intersect at $M$ and $N$, where $N$ is nearer to $PQ$ than $M$ is. The line $PN$ meets the circle $C_2$ again at $R$. Prove that $MQ$ bisects $\angle PMR$.}
 
-\textit{Solution}: Draw lines $PN$, $QN$ and $MN$. By the tan-chord theorem, we have that $\angle QPN=\angle PMN$ and $\angle PQN=$\angle QMN$ and so $\angle PMQ=\angle PMN+\angle QMN=\angle QPN+\angle PQN$. Also $\angle RMQ=\angle RNQ$ since $RQNM$ is cyclic. From triangle $PNQ$, we obtain that $\angle QPN+\angle PQN= \angle RNQ$ hence $\angle PMQ=\angle RMQ$ and so $MQ$ bisects $\angle PMR$ 
+\textit{Solution}: Draw lines $PN$, $QN$ and $MN$. By the tan-chord theorem, we have that $\angle QPN=\angle PMN$ and $\angle PQN=\angle QMN$ and so $\angle PMQ=\angle PMN+\angle QMN=\angle QPN+\angle PQN$. Also $\angle RMQ=\angle RNQ$ since $RQNM$ is cyclic. From triangle $PNQ$, we obtain that $\angle QPN+\angle PQN= \angle RNQ$ hence $\angle PMQ=\angle RMQ$ and so $MQ$ bisects $\angle PMR$ 
 \vspace{6.81mm}
 
 \item[3.] % Emile, C
 \textit{Emma and Emile play a game on a $2019 \times 2019$ board made up of unit grid squares. Emma plays first by placing a knight on one of the squares and thereafter they take turns to place a knight on a square that does not already contain a knight and is not attacked by one of the already placed knights. The first player who cannot do this loses. Can one of the players always guarantee that they will win? If so, which one? }
 
 \textit{Solution}:
+Emma can guarantee that she always wins.
+
+Let us assume that the board is coloured like a chessboard. Emma moves first, so she can always place a knight on the block in the middle of the board. Now, whatever move Emile plays, Emma plays the same 
 \vspace{6.81mm}
 
 \item[4.] % Moldova 2018 8.6, A
@@ -48,9 +51,16 @@ Show that $a$, $b$, and $c$ are the lengths of the sides of a triangle.}
 \textit{Find the least positive integer $k$ such that $2050^{2051}$ can be written as a sum of $k$ $5$th powers.}
 
 \textit{Solution}: 
-Notice that $2050^{2051} = 2050^{2050} \times 2050^{1} = (410)^{5} \times 2050^{1}$. From here, notice that it is sufficient to write $2050$ as the sum of some number of fifth powers, since all of the terms in the sum can be multiplied by $2050^{410}$.
-
-
+By Fermat's Little Theorem: 
+$$a^{10} \equiv _{11} 1 \; \forall a \in \mathbb{Z}, gcd(a, 11) = 1$$ 
+$$\implies (a^5)^2 \equiv _{11} 1$$
+$$\implies 11 \mid (a^5)^2 - 1$$
+$$\implies 11 \mid (a^5 - 1)(a^5 + 1)$$
+Since $11$ is prime, we must have $11 \mid a^5 - 1 \implies a^5 \equiv _{11} 1$ or $11 \mid a^5 + 1 \implies a^5 \equiv _{11} -1$. When $11 \mid a$, $a^5 \equiv _{11} 0$.
+This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. Notice that $2050^{2051} = (2050^{205})^{10} \times 2050 \equiv _{11} 4$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
+This shows that $2050^{2051}$ cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is a lower bound.
+$$(2050^{410} \times 2)^5 + (2050^{410} \times 2)^5 + (2050^{410} \times 1)^5 + (2050^{410} \times 1)^5 = (2050^{410 \times 5}) \times (2^5 + 2^5 + 1^5 + 1^5) = 2050^{2051}$$
+This shows that $k = 4$ is possible, so $k = 4$ is the minimum.
 
 \end{enumerate}
 
