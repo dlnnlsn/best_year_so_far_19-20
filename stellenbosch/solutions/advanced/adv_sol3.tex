@@ -78,6 +78,20 @@ Show that for nonnegative integers $m$ and $n$,
 }
 
 \textit{Solution}:
+Let $P^k$ denote the polynomial obtained by iterating $P$ $k$ times: $P^k(x) = \underbrace{P(P(P( \dots P(x))))}_{k \text{ times}}$. Using this notation, $a_n = P^n (0)$.
+Suppose that $n \geq m$. We know that $a_m \equiv 0 \pmod{a_m}$, and so
+\[
+	a_n = P^{(n - m)} (a_m) \equiv P^{(n - m)} (0) \equiv a_{n - m} \pmod{a_m}.
+\]
+We thus have that
+\[
+	\gcd(a_n, a_m) = \gcd(a_{n - m}, a_m).
+\]
+
+We start with the pair $(a_n, a_m)$ and use this relationship repeatedly, always repalcing $(a_s, a_t)$ with either $(a_s, a_{t - s})$ or $(a_{s - t}, a_t)$ depending on whether $s$ or $t$ is larger. We see that the pairs of indices that appear when using this procedure are exactly the pairs of numbers that would appear if we were to use Euclid's Algorithm to calculate the GCD of $m$ and $n$. When Euclid's algorithm (for $m$ and $n$) terminates, we are left with a pair $(a_{\gcd(m, n)}, a_0)$, and so we have that
+\[
+	\gcd(a_m, a_n) = \gcd(a_{\gcd(m, n)}, a_0) = \gcd(a_{\gcd(m, n)}, 0) = a_{\gcd(m, n)}.
+\]
 
 
 \end{enumerate}
