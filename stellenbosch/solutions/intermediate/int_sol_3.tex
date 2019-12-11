@@ -22,6 +22,13 @@
 \textit{Find the number of paths from $A$ to $B$, where the only allowed moves are moving down along a diagonal line or moving left or right along a horizontal line, but never crossing the same line twice.}
 
 \textit{Solution}:
+Let us define the diagram in terms of layers, with $A$ being layer $1$, the two nodes below $A$ are layer $2$, etc. with $B$ as layer $7$.
+
+Note that if you step down a layer, you can go to any of the other nodes on that layer in exactly $1$ way using lefts \& rights.
+This implies that the number of paths to nodes in the same layer are the same, and are equal to the number of connecting branches between the previous and current layer mutliplied by the number of paths to a node on the previous layer.
+
+$\implies$ The number of paths from $A$ to $B$ is:
+$$1 \times 2 \times 4 \times 4 \times 4 \times 4 \times 2 = 2^{10}$$.
 \vspace{6.81mm}
 
 \item[2.] % PAMO 2016 Q1, G
@@ -36,7 +43,11 @@
 \textit{Solution}:
 Emma can guarantee that she always wins.
 
-Let us assume that the board is coloured like a chessboard. Emma moves first, so she can always place a knight on the block in the middle of the board. Now, whatever move Emile plays, Emma plays the same 
+Let us assume that the board is coloured like a chessboard. Emma moves first, so she can start by placing a knight on the block in the center of the board on her first move. 
+Now, whatever move Emile plays, Emma plays the same move, but rotates it $180^o$ around the center of the board. 
+If Emile makes a legal move, it will not invalidate the square rotated $180^o$ from it, since knights attack squares of opposite colour and the squares that are $180^o$ rotations of each other are the same colour.
+This guarantees that Emma will always be able to play if Emile can play.
+Therefore, the first person who will not be able to make a move is Emile, so Emma must win.
 \vspace{6.81mm}
 
 \item[4.] % Moldova 2018 8.6, A
@@ -45,6 +56,11 @@ Let us assume that the board is coloured like a chessboard. Emma moves first, so
 Show that $a$, $b$, and $c$ are the lengths of the sides of a triangle.}
 
 \textit{Solution}:
+By multiplying out and simplifying the given equation, we get that $a = bc$.
+Thus $a + b > a = bc \geq c$, and similarly $a+c > b$.
+Finally,
+\[ b+c > a = bc \iff 1 > 1 -b -c +bc = (1-b)(1-c), \]
+which is true since $0 \leq b-1, c-1 < 1$.
 \vspace{6.81mm}
 
 \item[5.] % The Phil, N
