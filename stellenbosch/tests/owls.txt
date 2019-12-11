@@ -81,6 +81,8 @@ The one below was used in Advanced Test 2
 
 
 
+The one below was used in Advanced Test 3
+
    ...    *    .   _  .
 *  .  *     .   * (_)   *
   .      |*  ..   *   ..
