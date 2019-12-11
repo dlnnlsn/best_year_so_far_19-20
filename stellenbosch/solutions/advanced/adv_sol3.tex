@@ -127,7 +127,11 @@ Show that for nonnegative integers $m$ and $n$,
 }
 
 \textit{Solution}:
-Let $P^k$ denote the polynomial obtained by iterating $P$ $k$ times: $P^k(x) = \underbrace{P(P(P( \dots P(x))))}_{k \text{ times}}$. Using this notation, $a_n = P^n (0)$.
+Let $P^k$ denote the polynomial obtained by iterating $P$ $k$ times: 
+\[
+	P^k(x) = \underbrace{P(P(P( \dots P(x))))}_{k \text{ times}}.
+\]
+Using this notation, $a_n = P^n (0)$.
 Suppose that $n \geq m$. We know that $a_m \equiv 0 \pmod{a_m}$, and so
 \[
 	a_n = P^{(n - m)} (a_m) \equiv P^{(n - m)} (0) \equiv a_{n - m} \pmod{a_m}.
