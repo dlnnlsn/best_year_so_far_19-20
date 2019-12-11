@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{mathtools,amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{fullpage}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Large Intermediate Test 1 Solutions}
+  \\ \vspace{1em}
+  \textbf{\large Stellenbosch Camp 2019}
+\end{center}
+
+
+\begin{enumerate}[1.]
+
+\item[1.] % Emile, C
+\textit{Find the number of paths from $A$ to $B$, where the only allowed moves are moving down along a diagonal line or moving left or right along a horizontal line, but never crossing the same line twice.}
+
+\textit{Solution}:
+
+
+\item[2.] % PAMO 2016 Q1, G
+\textit{Two intersecting circles, $C_1$ and $C_2$, have a common tangent which touches $C_1$ at $P$ and $C_2$ at $Q$. The two circles intersect at $M$ and $N$, where $N$ is nearer to $PQ$ than $M$ is. The line $PM$ meets the circle $C_2$ again at $R$. Prove that $MQ$ bisects $\angle PMR$.}
+
+\textit{Solution}:
+
+
+\item[3.] % Emile, C
+\textit{Emma and Emile play a game on a $2019 \times 2019$ board made up of unit grid squares. Emma plays first by placing a knight on one of the squares and thereafter they take turns to place a knight on a square that does not already contain a knight and is not attacked by one of the already placed knights. The first player who cannot do this loses. Can one of the players always guarantee that they will win? If so, which one? }
+
+\textit{Solution}:
+
+
+\item[4.] % Moldova 2018 8.6, A
+\textit{Let $a$, $b$, and $c$ be positive real numbers such that $b, c \in [1,2)$ and
+\[ \frac{a+b}{b(1+c)} +\frac{a+c}{c(1+b)} = 2. \]
+Show that $a$, $b$, and $c$ are the lengths of the sides of a triangle.}
+
+\textit{Solution}:
+
+
+\item[5.] % The Phil, N
+\textit{Find the least positive integer $k$ such that $2050^{2051}$ can be written as a sum of $k$ $5$th powers.}
+
+\textit{Solution}: 
+Notice that $2050^{2051} = 2050^{2050} \times 2050^{1} = (2050^{410})^{5} \times 2050^{1}$. From here, notice that it is sufficient to write $2050$ as the sum of some number of fifth powers, since all of the terms in the sum can be multiplied by $2050^{410}$.
+
+Notice that $2050 = 1024 + 1024 + 1 + 1 = 4^5 + 4^5 + 1^5 + 1^5$. This shows that $k = 4$ is possible. All that remains is to show that it is not possible to construct it with $k < 4$.
+
+By Fermat's Little Theorem: 
+$$a^{10} \equiv _{11} 1 \; \forall a \in \mathbb{Z}, gcd(a, 11) = 1$$ 
+$$\implies (a^5)^2 \equiv _{11} 1$$
+$$\implies 11 \; | \; (a^5)^2 - 1$$
+$$\implies 11 \; | \; (a^5 - 1)(a^5 + 1)$$
+Since $11$ is prime, we must have $11 \; | \; a^5 - 1 \implies a^5 \equiv _{11} 1$ or $11 \; | \; a^5 + 1 \implies a^5 \equiv _{11} -1$. When $11 \; | \; a$, $a^5 \equiv _{11} 0$.
+This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. Notice that $2050 \equiv _{11} 4$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
+This shows that 2050 cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is minimal.
+
+Construction: $2050^{2051} = (2050^{410} \times 2)^5 + (2050^{410} \times 2)^5 + (2050^{410} \times 1)^5 + (2050^{410} \times 1)^5$
+
+\end{enumerate}
+
+\end{document}

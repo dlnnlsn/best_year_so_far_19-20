@@ -82,6 +82,8 @@ The one below was used in Advanced Test 2
 
 
 
+The one below was used in Advanced Test 3
+
    ...    *    .   _  .
 *  .  *     .   * (_)   *
   .      |*  ..   *   ..
@@ -97,6 +99,7 @@ _-----`  |(,__,__/__/_ .
   , -=-~' .-^- _
 
 
+The one below was used in Intermediate Test 3
 
 
                   /^----^\
