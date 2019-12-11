@@ -70,13 +70,17 @@ Find the least positive integer $k$ such that $2050^{2051}$ can be written as a 
 }
 
 \textit{Solution}:
-By Fermat's Little Theorem: 
-$$a^{10} \equiv _{11} 1 \; \forall a \in \mathbb{Z} \ \text{such that}\ \gcd(a, 11) = 1$$ 
-$$\implies (a^5)^2 \equiv _{11} 1$$
-$$\implies 11 \mid (a^5)^2 - 1$$
-$$\implies 11 \mid (a^5 - 1)(a^5 + 1)$$
-Since $11$ is prime, we must have $11 \mid a^5 - 1 \implies a^5 \equiv _{11} 1$ or $11 \mid a^5 + 1 \implies a^5 \equiv _{11} -1$. When $11 \mid a$, $a^5 \equiv _{11} 0$.
-This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. Notice that $2050^{2051} = (2050^{205})^{10} \times 2050 \equiv _{11} 4$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
+Suppose that $\gcd(a, 11) = 1$. Then by Fermat's Little Theorem
+\begin{align*}
+  & a^{10} \equiv 1 \pmod{11} \\
+  & \implies (a^5)^2 \equiv 1 \pmod{11} \\
+  & \implies 11 \mid (a^5)^2 - 1 \\
+  & \implies 11 \mid (a^5 - 1)(a^5 + 1).
+\end{align*}
+Since $11$ is prime, we must have $11 \mid a^5 - 1 \implies a^5 \equiv 1 \pmod{11}$ or $11 \mid a^5 + 1 \implies a^5 \equiv -1 \pmod{11}$. When $11 \mid a$, $a^5 \equiv 0 \pmod{11}$.
+This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. 
+
+Notice that $2050^{2051} = (2050^{205})^{10} \times 2050 \equiv 4 \pmod{11}$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
 This shows that $2050^{2051}$ cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is a lower bound.
 \begin{align*}
 	{2050}^{2051} & = {2050}^{2050} \times 2050 = (2050^{410 \times 5}) \times (2^5 + 2^5 + 1^5 + 1^5) \\
