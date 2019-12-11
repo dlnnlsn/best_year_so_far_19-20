@@ -22,6 +22,7 @@
        d$$$$$$$$$$:
 
 
+The one below was used in Intermediate Test 2
   _________
  /_  ___   \
 /@ \/@  \   \
@@ -67,6 +68,8 @@
 
 
 
+The one below was used in Advanced Test 2
+
         (\___/)   (\___/)   (\___/)   (\___/)   (\___/)   (\___/)
         /0\ /0\   /o\ /o\   /0\ /0\   /O\ /O\   /o\ /o\   /0\ /0\
         \__V__/   \__V__/   \__V__/   \__V__/   \__V__/   \__V__/
@@ -78,6 +81,8 @@
 
 
 
+
+The one below was used in Advanced Test 3
 
    ...    *    .   _  .
 *  .  *     .   * (_)   *
@@ -94,6 +99,7 @@ _-----`  |(,__,__/__/_ .
   , -=-~' .-^- _
 
 
+The one below was used in Intermediate Test 3
 
 
                   /^----^\
