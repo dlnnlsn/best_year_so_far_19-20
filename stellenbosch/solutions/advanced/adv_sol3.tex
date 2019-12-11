@@ -78,7 +78,10 @@ $$\implies 11 \mid (a^5 - 1)(a^5 + 1)$$
 Since $11$ is prime, we must have $11 \mid a^5 - 1 \implies a^5 \equiv _{11} 1$ or $11 \mid a^5 + 1 \implies a^5 \equiv _{11} -1$. When $11 \mid a$, $a^5 \equiv _{11} 0$.
 This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. Notice that $2050^{2051} = (2050^{205})^{10} \times 2050 \equiv _{11} 4$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
 This shows that $2050^{2051}$ cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is a lower bound.
-$$(2050^{410} \times 2)^5 + (2050^{410} \times 2)^5 + (2050^{410} \times 1)^5 + (2050^{410} \times 1)^5 = (2050^{410 \times 5}) \times (2^5 + 2^5 + 1^5 + 1^5) = 2050^{2051}$$
+\begin{align*}
+	{2050}^{2051} & = {2050}^{2050} \times 2050 = (2050^{410 \times 5}) \times (2^5 + 2^5 + 1^5 + 1^5) \\
+				  & = (2050^{410} \times 2)^5 + (2050^{410} \times 2)^5 + (2050^{410} \times 1)^5 + (2050^{410} \times 1)^5.
+\end{align*}
 This shows that $k = 4$ is possible, so $k = 4$ is the minimum.
 
 
@@ -94,7 +97,7 @@ Show that the angle bisector of $\angle BEC$ intersects $AT$ on a circle which i
 \begin{figure}[H]
 	\centering
 	\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
-	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.7]
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.654]
 	\clip(-11.56,-5.69) rectangle (11.56,6.65);
 	\draw [line width=0.8pt,color=wrwrwr] (-2.76,2.87) circle (2.218197466412763cm);
 	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(--7.5152--1.98*\x)/-1});
