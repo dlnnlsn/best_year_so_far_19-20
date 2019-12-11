@@ -54,11 +54,9 @@ $$\implies (a^5)^2 \equiv _{11} 1$$
 $$\implies 11 \; | \; (a^5)^2 - 1$$
 $$\implies 11 \; | \; (a^5 - 1)(a^5 + 1)$$
 Since $11$ is prime, we must have $11 \; | \; a^5 - 1 \implies a^5 \equiv _{11} 1$ or $11 \; | \; a^5 + 1 \implies a^5 \equiv _{11} -1$. When $11 \; | \; a$, $a^5 \equiv _{11} 0$.
-This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. Notice that $2050 \equiv _{11} 4$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
-This shows that 2050 cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is a lower bound.
-
+This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. Notice that $2050^{2051} = (2050^{205})^{10} \times 2050 \equiv _{11} 4$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
+This shows that $2050^{2051}$ cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is a lower bound.
 $$(2050^{410} \times 2)^5 + (2050^{410} \times 2)^5 + (2050^{410} \times 1)^5 + (2050^{410} \times 1)^5 = (2050^{410 \times 5}) \times (2^5 + 2^5 + 1^5 + 1^5) = 2050^{2051}$$
-
 This shows that $k = 4$ is possible, so $k = 4$ is the minimum.
 
 \end{enumerate}
