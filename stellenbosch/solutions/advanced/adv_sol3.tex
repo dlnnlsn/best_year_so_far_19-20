@@ -1,0 +1,186 @@
+\documentclass{article}
+
+\usepackage{mathtools,amssymb}
+% \usepackage[inline]{enumitem}
+\usepackage{amsmath}
+% \usepackage{fullpage}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Large Advanced Test 3 Solutions}
+  \\ \vspace{1em}
+  \textbf{\large Stellenbosch Camp 2019}
+\end{center}
+
+\vspace{12pt}
+
+
+\begin{enumerate}
+
+\item[1.] % Moldova 2018 8.6, A
+{\itshape
+Let $a$, $b$, and $c$ be positive real numbers such that $b, c \in [1,2)$ and
+\[ \frac{a+b}{b(1+c)} +\frac{a+c}{c(1+b)} = 2. \]
+Show that $a$, $b$, and $c$ are the lengths of the sides of a triangle. 
+}
+
+\textit{Solution}:
+By multiplying out and simplifying the given equation, we get that $a = bc$.
+Thus $a + b > a = bc \geq c$, and similarly $a+c > b$.
+Finally,
+\[ b+c > a = bc \iff 1 > 1 -b -c +bc = (1-b)(1-c), \]
+which is true since $0 \leq b-1, c-1 < 1$.
+
+
+\item[2.] % The Emile, C
+{\itshape
+You have $22$ points on a plane such that the perimeter of the triangle formed by any three of these points is at most $2$. Is it possible to cover all of the points in the plane with a strip of width $2\sqrt{2} - 2$?
+}
+
+\textit{Solution}:
+Pick two points which are the greatest distance apart. Let these points be $A$ and $B$, and let the distance be $2d$.
+
+Note that the remaining points will be within the ellipse with focal points $A$ and $B$, and such that the perimeter of any triangle formed by $AB$ and a point on the ellipse is $2$.
+
+Additionally, the remaining points must be within the overlap of the circles with radius $2d$ and centres $A$ and $B$.
+
+If $2d \leq 2\sqrt{2} - 2$ then a strip can cover all of the points with the two sides of the strip passing through $A$ and $B$ and being perpendicular to $AB$.
+
+If $2d > 2\sqrt{2} - 2$, we have that the ``height'' of the ellipse, the maximal chord perpendicular to $AB$, is
+\begin{align*}
+	2 \sqrt{{(1 - d)}^2 - d^2} & = 2 \sqrt{1 - 2d} < 2 \sqrt{1 - (2\sqrt{2} - 2)} \\
+	& = 2 \sqrt{3 - 2\sqrt{2}} = 2 \sqrt{{(\sqrt{2} - 1)}^2} \\
+	& = 2 \sqrt{2} - 2.
+\end{align*}
+
+Thus the strip can be placed horizontally tangent to the ellipse and parallel to $AB$.
+
+
+\item[3.] % The Phil, N
+{\itshape
+Find the least positive integer $k$ such that $2050^{2051}$ can be written as a sum of $k$ $5$th powers.
+}
+
+\textit{Solution}:
+Suppose that $\gcd(a, 11) = 1$. Then by Fermat's Little Theorem
+\begin{align*}
+  & a^{10} \equiv 1 \pmod{11} \\
+  & \implies (a^5)^2 \equiv 1 \pmod{11} \\
+  & \implies 11 \mid (a^5)^2 - 1 \\
+  & \implies 11 \mid (a^5 - 1)(a^5 + 1).
+\end{align*}
+Since $11$ is prime, we must have $11 \mid a^5 - 1 \implies a^5 \equiv 1 \pmod{11}$ or $11 \mid a^5 + 1 \implies a^5 \equiv -1 \pmod{11}$. When $11 \mid a$, $a^5 \equiv 0 \pmod{11}$.
+This shows that the only values of powers of $5$ mod $11$ are $-1$, $0$ and $1$. 
+
+Notice that $2050^{2051} = (2050^{205})^{10} \times 2050 \equiv 4 \pmod{11}$ and the smallest way to express $4$ as the sum of some values from $\{-1, 0, 1\}$ is $4 = 1 + 1 + 1 + 1$.
+This shows that $2050^{2051}$ cannot be expressed as the sum of less than $4$ fifth powers, so $k = 4$ is a lower bound.
+\begin{align*}
+	{2050}^{2051} & = {2050}^{2050} \times 2050 = (2050^{410 \times 5}) \times (2^5 + 2^5 + 1^5 + 1^5) \\
+				  & = (2050^{410} \times 2)^5 + (2050^{410} \times 2)^5 + (2050^{410} \times 1)^5 + (2050^{410} \times 1)^5.
+\end{align*}
+This shows that $k = 4$ is possible, so $k = 4$ is the minimum.
+
+
+\item[4.] % The Andrew, G
+{\itshape
+Consider an acute triangle $ABC$ with circumcircle $\Gamma$.
+Let the tangents to $\Gamma$ at $B$ and $C$ intersect at a point $T$, the line $TA$ intersect $\Gamma$ again at $D$, and the point diametrically opposite $D$ with respect to $\Gamma$ be $E$.
+Show that the angle bisector of $\angle BEC$ intersects $AT$ on a circle which is tangent to $BT$, $CT$, and $\Gamma$.
+}
+
+\textit{Solution}:
+
+\begin{figure}[H]
+	\centering
+	\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm,scale=0.654]
+	\clip(-11.56,-5.69) rectangle (11.56,6.65);
+	\draw [line width=0.8pt,color=wrwrwr] (-2.76,2.87) circle (2.218197466412763cm);
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(--7.5152--1.98*\x)/-1});
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(-3.586548119251667-1.910905304381227*\x)/-1.1264283899510394});
+	\draw [line width=0.8pt,color=wrwrwr] (-0.793080069007905,3.8954881691497247)-- (-2.9102156899481506,-1.7529729339026632);
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:-1.9517023789068386] plot(\x,{(--3.3814767190772614--2.0656851056574763*\x)/-0.8082976210931612});
+	\draw [line width=0.8pt,color=wrwrwr] (-4.74,1.87)-- (-3.5682976210931603,4.935685105657476);
+	\draw [line width=0.8pt,color=wrwrwr] (-3.5682976210931603,4.935685105657476)-- (-0.8490946956187728,1.7435716100489607);
+	\draw [line width=0.8pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(-2.6804618713834873-0.9855424415676998*\x)/0.16942873389356664});
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-11.56:11.56] plot(\x,{(-1.243642191026554--0.07203855694741357*\x)/-2.2170273896172183});
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr] (-2.857377860588731,-0.12685881027765222) circle (0.7802429909703115cm);
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-2.8320385569474134:11.56] plot(\x,{(--6.325746253782598--2.2170273896172183*\x)/0.07203855694741357});
+	\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=wrwrwr] (-2.6879614430525858,5.0870273896172185)-- (-1.9517023789068386,0.8043148943425238);
+	\begin{scriptsize}
+	\draw [fill=black] (-2.76,2.87) circle (0.5pt);
+	\draw[color=black] (-2.6,3.14) node {$O$};
+	\draw [fill=black] (-4.74,1.87) circle (0.5pt);
+	\draw[color=black] (-5.38,1.58) node {$B$};
+	\draw [fill=black] (-0.793080069007905,3.8954881691497247) circle (0.5pt);
+	\draw[color=black] (-0.64,4.16) node {$A$};
+	\draw [fill=black] (-0.8490946956187728,1.7435716100489607) circle (0.5pt);
+	\draw[color=black] (-0.5,1.4) node {$C$};
+	\draw [fill=wrwrwr] (-2.9102156899481506,-1.7529729339026632) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.98,-2.36) node {$T$};
+	\draw [fill=wrwrwr] (-1.9517023789068386,0.8043148943425238) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.32,1.02) node {$D$};
+	\draw [fill=wrwrwr] (-3.5682976210931603,4.935685105657476) circle (0.5pt);
+	\draw[color=wrwrwr] (-3.4,5.2) node {$E$};
+	\draw [fill=wrwrwr] (-2.8320385569474134,0.6529726103827818) circle (0.5pt);
+	\draw[color=wrwrwr] (-3.2,1.06) node {$S$};
+	\draw [fill=wrwrwr] (-2.6879614430525858,5.0870273896172185) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.52,5.36) node {$N$};
+	\draw [fill=wrwrwr] (-2.5730620758016256,-0.8534561261818531) circle (0.5pt);
+	\draw[color=wrwrwr] (-2.74,-0.52) node {$I$};
+	\end{scriptsize}
+	\end{tikzpicture}
+\end{figure}
+
+Let the angle bisector of  $\angle BEC$ intersect $AT$ at $I$, and let $EI$ intersect $\Gamma$ at $S$.
+It is well known that $S$ is the midpoint of the minor arc $BC$, and thus $BT$, $CT$, and the tangent at $S$ to $\Gamma$, produces an isosceles triangle.
+The incircle of this triangle, $\omega$, is therefore tangent to $BT$ and $CT$, as well as to $\Gamma$ at $S$.
+Construct the point $N$ on $\Gamma$ such that $N$, $O$, and $S$ are collinear.
+Notice that $N,S,T$ are collinear and $OE=ON=OD=OS \ \implies \ ND \parallel EN$.
+Finally, consider the homothety, $\mathcal{H}$, centred at $T$ with ratio $\frac{ST}{NT}$.
+This maps $N$ to $S$, and since both $\Gamma$ and $\omega$ are tangent to both $BT$ and $CT$ we see that $\Gamma$ maps to $\omega$.
+Considering the point $D$, we see that the image of $D$ under $\mathcal{H}$, $D'$, is a point on $\omega$ that lies on $AT$ with the property that $SD' \parallel ND \ \implies SD' \parallel ES \ \implies \ E,S,D'$ collinear.
+Thus $D'$ is the intersection of $ES$ and $AT$ and we have that $D'$ lies on $\omega$ as required. 
+
+
+\item[5.] % PEN M1, N
+{\itshape
+Let $P$ be a polynomial with integer coefficients, and define a sequence $(a_n)$ by $a_0 = 0$ and $a_{n+1} = P(a_n)$ for $n \geq 0$.
+Show that for non-negative integers $m$ and $n$,
+\[ \gcd(a_m,a_n) = a_{\gcd(m,n)}. \]
+}
+
+\textit{Solution}:
+Let $P^k$ denote the polynomial obtained by iterating $P$ $k$ times: 
+\[
+	P^k(x) = \underbrace{P(P(P( \dots P(x))))}_{k \text{ times}}.
+\]
+Using this notation, $a_n = P^n (0)$.
+Suppose that $n \geq m$. We know that $a_m \equiv 0 \pmod{a_m}$, and so
+\[
+	a_n = P^{(n-m)} (a_m) \equiv P^{(n-m)} (0) \equiv a_{n-m} \pmod{a_m}.
+\]
+We thus have that
+\[
+	\gcd(a_n, a_m) = \gcd(a_{n-m}, a_m).
+\]
+
+We start with the pair $(a_n, a_m)$ and use this relationship repeatedly, always replacing $(a_s, a_t)$ with either $(a_s, a_{t - s})$ or $(a_{s - t}, a_t)$ depending on whether $s$ or $t$ is larger.
+We see that the pairs of indices that appear when using this procedure are exactly the pairs of numbers that would appear if we were to use Euclid's Algorithm to calculate the greatest common divisor of $m$ and $n$.
+When Euclid's algorithm (for $m$ and $n$) terminates, we are left with a pair $(a_{\gcd(m, n)}, a_0)$, and so we have that
+\[
+	\gcd(a_m, a_n) = \gcd(a_{\gcd(m, n)}, a_0) = \gcd(a_{\gcd(m, n)}, 0) = a_{\gcd(m, n)}.
+\]
+
+
+\end{enumerate}
+
+\end{document}
