@@ -361,6 +361,24 @@ $\infty$                  & Maximum \\
 
 Notice that $P_0$ is not really properly defined since there is division by $0$. However, as $r$ becomes closer and closer to $0$, $P_r$ becomes the Geometric Mean. For this reason, $P_0$ is defined to be the Geometric Mean. Thus, the AM-GM inequality is directly equivalent to $P_1 \geq P_0$, which is true by the Power-Mean inequality.
 
+\subsection{Cauchy-Schwartz}
+\begin{theorem}[Cauchy-Schwartz Inequality]
+    For any real numbers $a_1$, $a_2$, $\dots$, $a_n$ and $b_1$, $b_2$, $\dots$, $b_n$
+    $$(\sum_{i=1}^{n}a_ib_i)^2 \le (\sum_{i=1}^{n}a_i^2)(\sum_{i=1}^{n}b_i^2)$$
+    with equality when there exists some nonzero constant $k$ such that $ka_i = b_i$ for all $i$.
+\end{theorem}
+\begin{theorem}[Cauchy-Schwartz Inequality in Engel Form / Titu's Lemma]
+    For positive reals $a_i$ and $b_i$
+    $$\frac{a_1^2}{b_1} + \frac{a_2^2}{b_2} + \dots + \frac{a_n^2}{b_n} \ge \frac{a_1^2 + a_2^2 + a_3^2 + \dots + a_n^2}{b_1 + b_2 + b_3 + \dots + b_n}$$
+\end{theorem}
+
+Engel form is derived by substituting $a_i = \frac{x_i}{\sqrt{y_i}}$ and $b_i = \sqrt{y_i}$.
+
+
+\begin{exercise}[PAMO 2015 Q1]
+    Show that for all $x$ where the expression is well-defined:
+    $$\sqrt{x - 1} + \sqrt{2x + 9} + \sqrt{19 - 3x} < 9$$
+\end{exercise}
 
 \begin{exercise}[PAMO 2016 Q4]
     Let $x, y, z$ be positive real numbers such that $xyz = 1$. Prove that
