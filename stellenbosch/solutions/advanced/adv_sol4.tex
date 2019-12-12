@@ -29,7 +29,7 @@ Find the positive integer solutions to the equation
 Notice that for $n > 1$, $\floorsqrt{8n + 1}$ and $\floorsqrt{8n + 7}$ differ by at most $1$.
 This means that all values $\floorsqrt{8n + 1}$, $\floorsqrt{8n + 2}$, $\dots$, $\floorsqrt{8n + 7}$ are either the same or differ by 1.
 Suppose that there are $a$ values that differ by $1$ and let $\floorsqrt{8n + 1} = k$; then
-\[ 7k + a = 2027 \]
+\[ 7k + a = 2027. \]
 Notice that $2027 \equiv _7 4 \implies a = 4 \implies k = 289$.
 From this, we see that $\floorsqrt{8n + 1} = 289$ and specifically $\sqrt{8n + 4} = 290 \implies 8n + 4 = 290^2$.
 Therefore, the only value that works is $n = \frac{290^2 - 4}{8} = \frac{145^2 - 1}{2}$ which is an integer.
@@ -47,17 +47,15 @@ and determine when equality holds.
 \textit{Solution}: 
 Substitute the definition of all $y_i$ into the inequality:
 \begin{align*}
-  &&\sum_{i=0}^{n}y_i^2 &\leq 4\sum_{i=0}^{n}x_i^2 &\\
-  &\iff& \sum_{i=0}^{n}(x_i - x_{n-i})^2 &\leq 4\sum_{i=0}^{n}x_i^2 &\\
-  &\iff& 2\sum_{i=0}^{n}x_i^2 - 2\sum_{i=0}^{n}x_ix_{n-i} &\leq 4\sum_{i=0}^{n}x_i^2& \\
-  &\iff& 0 &\leq 2\sum_{i=0}^{n}x_i^2 + 2\sum_{i=0}^{n}x_ix_{n-i} \\
-  &\iff& 0 &\leq \sum_{i=0}^{n}(x_i + x_{n-i})^2 &
+  &&\sum_{i=0}^{n}y_i^2 &\leq 4\sum_{i=0}^{n}x_i^2 \\
+  &\iff& \sum_{i=0}^{n}(x_i - x_{n-i})^2 &\leq 4\sum_{i=0}^{n}x_i^2 \\
+  &\iff& 2\sum_{i=0}^{n}x_i^2 - 2\sum_{i=0}^{n}x_ix_{n-i} &\leq 4\sum_{i=0}^{n}x_i^2 \\
+  &\iff& 0 &\leq 2\sum_{i=0}^{n}x_i^2 + 2\sum_{i=0}^{n}x_ix_{n-i} = \sum_{i=0}^{n}(x_i + x_{n-i})^2
 \end{align*}
 
 Since the square of a real number is always non-negative, the sum on the right must also be non-negative.
 Equality only holds when
-$$x_i + x_{n-i} = 0$$
-for all choices of $i$ with $0 \leq i \leq n$.
+\[ x_i + x_{n-i} = 0 \quad \text{for all choices of } i \text{ with } 0 \leq i \leq n. \]
 
 
 \item[3.] % The Malwande, G
@@ -97,9 +95,7 @@ This shows that only possible value in the set that can divide $M$ is $3$.
 However, since $n$ was constructed to have $n \equiv _3 1$:
 \begin{align*}
   &&M &\equiv _3 (km(2km + 1))^2 - 9 \\
-  &\implies& M &\equiv _3 (2 \times (1 + 1))^2 - 9 \\
-  &\implies& M &\equiv _3 (4)^2 - 9 \\
-  &\implies& M &\equiv _3 1 \\
+  &\implies& M &\equiv _3 (2 \times (1 + 1))^2 - 9 \equiv_3 1\\
   &\implies& 3 &\nmid M &
 \end{align*}
 
