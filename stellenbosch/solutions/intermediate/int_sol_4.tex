@@ -59,11 +59,23 @@ Find the positive integer solutions to the equation
 Let $x_0, x_1,..., x_n$ be real numbers and define
 \[y_k=x_k-x_{n-k}, \quad k=0,1,...,n.\]
 Prove that 
-\[y_0^2+ y_1^2+...+ y_n^2 \leq 4(x_0^2 + x_1^2 + ... + x_n^2) \]
+\[y_0^2 + y_1^2+...+ y_n^2 \leq 4(x_0^2 + x_1^2 + ... + x_n^2) \]
 and determine when equality holds.
 }
 
 \textit{Solution}: 
+Substitute the definition of all $y_i$ into the inequality:
+\begin{align*}
+  &&\sum_{i = 0}^{n}y_i^2 &\leq 4\sum_{i = 0}^{n}x_i^2 &\\
+  &\iff& \sum_{i = 0}^{n}(x_i - x_{n - i})^2 &\leq 4\sum_{i = 0}^{n}x_i^2 &\\
+  &\iff& 2\sum_{i = 0}^{n}x_i^2 - 2\sum_{i = 0}^{n}x_ix_{n - i} &\leq 4\sum_{i = 0}^{n}x_i^2& \\
+  &\iff& 0 &\leq 2\sum_{i = 0}^{n}x_i^2 + 2\sum_{i = 0}^{n}x_ix_{n - i} \\
+  &\iff& 0 &\leq \sum_{i = 0}^{n}(x_i + x_{n - i})^2 &
+\end{align*}
+
+Since the square of a real number is always non-negative, the sum on the right must also be non-negative. Equality only holds when
+$$x_i + x_{n - i} = 0$$
+for all choices of $i$ with $0 \le i \le n$.
 
 \end{enumerate}
 
