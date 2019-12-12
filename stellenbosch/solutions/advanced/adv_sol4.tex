@@ -67,7 +67,27 @@ Show that $TN$ is equal to the radius of the circumcircle of $\triangle ABC$.}
 \textit{Is there a finite set $S$ of positive integers, each of which is greater than $1$, such that for every positive integer $n$ greater than $3$ we have that $3^3 +4^3 +\dotsb +n^3$ is divisible by one of the values in $S$?}
 
 \textit{Solution}:
+Let $M = 3^3 + 4^3 + \dots + n^3 = (\frac{n(n + 1)}{2})^2 - 9$. Assume there exists some set $S$ such that the condition holds.
+Note that if a composite number in $S$ divides $M$, its prime factors also divide $M$. This means that we can consider $S$ to be a set of prime numbers.
 
+Let the primes in $S$ be $p_1$, $p_2$, $\dots$, $p_s$ and let $m = \prod_{p_i \neq 3}p_i$. There exists some value $k$ such that $km \equiv _3 2$. Consider what happens when $n = 2km$.
+
+For every value of $p_i$:
+\begin{align*}
+  &&M &\equiv _{p_i} (km(2km + 1))^2 - 9 \\
+  &\implies& M &\equiv _{p_i} 0 - 9 \\
+  &\implies& M &\equiv _{p_i} -9 \\
+  &\implies& p_i &\nmid M &
+\end{align*}
+This shows that only possible value in the set that can divide $M$ is $3$. However, since $n$ was constructed to have $n \equiv _3 1$:
+\begin{align*}
+  &&M &\equiv _3 (km(2km + 1))^2 - 9 \\
+  &\implies& M &\equiv _3 1 - 9 \\
+  &\implies& M &\equiv _3 1 \\
+  &\implies& 3 &\nmid M &
+\end{align*}
+
+This shows that for any finite set $S$, a value of $n$ can be constructed such that $3^3 + 4^3 + \dots + n^3$ is not divisible by any value in the set. Therefore, no such set exists.
 
 \item[5.] % The Jon, C
 \textit{\newcommand{\CC}{\mathcal{C}}
