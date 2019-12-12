@@ -110,9 +110,15 @@ What is the maximal number of sets in $\CC$?}
 
 \textit{Solution}:
 
-The unique solution is to use the ${2n}\choose n$ subsets fo size $n$.
+The unique solution is to use the $\binom{2n}{n}$ subsets of size $n$.
 
-To see that you can't do better begin by considering the $(2n)!$ permutations of $\{1, 2, \dotsc, 2n\}$. Associate a subset of $\{1, 2, \dotsc, 2n\}$ to a permuation of $\{1, 2, \dotsc, 2n\}$ if the subset is exactly the first $k$ elements of the permutations. Notice that no permutation can be associated to more than one choosen set (or else one would be a subset of the other, violating our condition). Notice further that a size $k$ subset is associated to $k!(2n-k)!$ permutations. This is minimized at $n=k$. Thus each set is associated to at least $(n!)^2$ permutations, and so there are at most $(2n)! / (n!)^2 = \binom{2n}{n}$ subsets. Further as we can choose all $n$ element subsets of $\{1, 2, \dotsc, 2n\}$ we are done. 
+To see that you can't do better begin by considering the $(2n)!$ permutations of $\{1, 2, \dotsc, 2n\}$.
+Associate a subset of $\{1, 2, \dotsc, 2n\}$ to a permutation of $\{1, 2, \dotsc, 2n\}$ if the subset is exactly the first $k$ elements of the permutations.
+Notice that no permutation can be associated to more than one chosen set (or else one would be a subset of the other, violating our condition).
+Notice further that a size $k$ subset is associated to $k!(2n-k)!$ permutations.
+This is minimized at $n=k$.
+Thus each set is associated to at least $(n!)^2$ permutations, and so there are at most $(2n)! / (n!)^2 = \binom{2n}{n}$ subsets.
+Further as we can choose all $n$ element subsets of $\{1, 2, \dotsc, 2n\}$ we are done. 
 \end{enumerate}
 
 \end{document}
