@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage{mathtools,amsfonts}
+\usepackage{mathtools,amsfonts, amssymb}
 \usepackage{enumerate}
 \usepackage{amsmath}
 \usepackage{fullpage}
@@ -132,6 +132,22 @@ So the total number of arrangements is $720 + 144 = 864$.
 Determine all $n$ such that it is possible to find a pair of diagonals of a regular $n$-gon which intersect at $90^\circ$.}
 
 \textit{Solution}:
+Let circle $\Gamma$, with center $O$, circumscribe the $n$-gon, and let $A$, $B$, $C$, and $D$ be some of its vertices.
+
+Note that $\angle COB = \frac{360^o}{n} \times n_{BC}$, where $n_{BC}$ is the number of sides between $B$ and $C$.
+$$\implies \angle CAB = \frac{180^o}{n} \times n_{BC}$$
+
+For any two diagonals of the $n$-gon, $AB$ and $CD$ to intersect at $90^o$, we must have that:
+\begin{align*}
+  90^o = \angle APC &= \angle DAB + \angle ADC \\
+  &= n_{BD} \times \frac{180^o}{n} + n_{AC} \times \frac{180^o}{n} \\
+  &= \frac{180^o}{n} (n_{BD} + n_{AC}) \\
+  \implies n &= \frac{180^o}{90^o} (n_{BD} + n_{AC}) \\
+  &= 2 (n_{BD} + n_{AC}) \\
+  \implies 2 &\; |\; n
+\end{align*}
+
+A construction for all even $n$ is to choose $AC$ such that $A$ and $C$ are directly opposite on the polygon and to choose $B$ and $D$ such that $D$ is the reflection of $B$ over $AC$. This shows that all even $n$ can be constructed and no odd $n$ can be constructed.
 
 
 \item[4.] % Source Romania Junior 2018 Q1
