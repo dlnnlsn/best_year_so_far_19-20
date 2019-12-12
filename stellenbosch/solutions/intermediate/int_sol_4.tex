@@ -5,11 +5,12 @@
 \usepackage{amsmath}
 \usepackage{fullpage}
 
+
 \begin{document}
 
 \begin{center}
   \textbf{\Large Intermediate Test 4 Solutions}
-  \\ \vspace{1em}
+ \\ \vspace{1em}
   \textbf{\large Stellenbosch Camp 2019}
 \end{center}
 
@@ -22,13 +23,15 @@
 
 \textit{Solution}:
 \begin{align*}
-  n^5 - 5n^3 + 4n &= n(n^4 - 5n^2 + 4) \\
-  &= n(n^2 - 1)(n^2 - 4) \\
-  &= n(n - 1)(n + 1)(n - 2)(n + 2) \\
-  &= (n - 2)(n - 1)n(n + 1)(n + 2)
+  n^5 - 5n^3 + 4n & = n(n^4 - 5n^2 + 4) \\
+  & = n(n^2 - 1)(n^2 - 4) \\
+  & = n(n - 1)(n + 1)(n - 2)(n + 2) \\
+  & = (n - 2)(n - 1)n(n + 1)(n + 2)
 \end{align*}
-Therefore, the original expression can be written as the product of $5$ consecutive integers. Notice that amongst any $5$ consecutive integers, one of them must be a multiple of $5$, at least one must be a multiple of $4$, at least one must be a multiple of $3$ and there must be at least one that is divisible by $2$, but not $4$.
+Therefore, the original expression can be written as the product of $5$ consecutive integers.
+Notice that amongst any $5$ consecutive integers, one of them must be a multiple of $5$, at least one must be a multiple of $4$, at least one must be a multiple of $3$ and there must be at least one that is divisible by $2$, but not $4$.
 Therefore, the product of any $5$ consecutive integers is divisible by $5 \times 4 \times 3 \times 2 = 120$. This means that $n^5 - 5n^3 + 4n$ is divisible by $120$.
+
 
 \item[2.] % Talent Search 1994 year book
 \textit{Four pair of socks are hung out side by side on a straight washing line.
@@ -38,92 +41,81 @@ How many different colour patterns can be made if no sock is allowed to be next 
 
 \textit{Solution}:
 Call the socks a, a, b, b, c, c, d, d.
-There are $4 \times 3 \times 2$ ways of selecting the first three socks as a, b, c (all different).\\
+There are $4 \times 3 \times 2$ ways of selecting the first three socks as a, b, c (all different).
 $$
-\left.
-\begin{matrix}
-abc & a & bdcd\\
-& & cdbd\\
-&& dbdc \\
-&& dbcd  \\
-&&dcdb \\
-&&dcbd
+\mspace{-12mu}
+\left. \begin{matrix}
+  abc & a & bdcd \\
+  & & cdbd \\
+  & & dbdc \\
+  & & dbcd \\
+  & & dcdb \\
+  & & dcbd
+\end{matrix} \right\} 6
+\qquad
+\left. \begin{matrix}
+  abc & b & adcd \\
+  & & cdad \\
+  & & dadc \\
+  & & dacd \\
+  & & dcda \\
+  & & dcad
+\end{matrix} \right\} 6
+\qquad
+\left. \begin{matrix}
+  abc & da & bcd \\
+  & & bdc \\
+  & & cbd \\
+  & & cdb \\
+  & & dbc \\
+  & & dcb
+\end{matrix} \right\} 6
+\qquad
+\left. \begin{matrix}
+  abc & db & acd \\
+  & & adc \\
+  & & cda \\
+  & & cad \\
+  & & dac \\
+  & & dca
+\end{matrix} \right\} 6
+\qquad
+\left. \begin{matrix}
+  abc & dc & abd \\
+  & & adb \\
+  & & dba \\
+  & & dab \\
+  & & bda \\
+  & & bad
 \end{matrix} \right\} 6
 $$
-$$
-\left.
-\begin{matrix}
-abc & b & adcd\\
-& & cdad\\
-&& dadc \\
-&& dacd  \\
-&&dcda \\
-&&dcad
-\end{matrix} \right\} 6
-$$
-$$
-\left.
-\begin{matrix}
-abc & da & bcd\\
-& & bdc\\
-&& cbd \\
-&& cdb  \\
-&&dbc \\
-&&dcb
-\end{matrix} \right\} 6
-$$
-$$
-\left.
-\begin{matrix}
-abc & db & acd\\
-& & adc\\
-&& cda \\
-&& cad  \\
-&&dac \\
-&&dca
-\end{matrix} \right\} 6
-$$
-$$
-\left.
-\begin{matrix}
-abc & dc & abd\\
-& & adb\\
-&& dba \\
-&& dab  \\
-&&bda \\
-&&bad
-\end{matrix} \right\} 6
-$$
-and so there are a total of $(4 \times 3 \times 2) \times (6 \times 5) = 720$ ways here.\\
+and so there are a total of $(4 \times 3 \times 2) \times (6 \times 5) = 720$ ways here.
+
 There are $4 \times 3$ ways of selecting socks a, b, a (third same as first).
 $$
-\left.
-\begin{matrix}
-aba & b & cdcd\\
-& & dcdc
+\left. \begin{matrix}
+  aba & b & cdcd \\
+  & & dcdc
+\end{matrix} \right\} 6
+\qquad
+\left. \begin{matrix}
+  aba & c & bdcd \\
+  & & dbcd \\
+  & & dbdc \\
+  & & dcbd \\
+  & & dcdb
+\end{matrix} \right\} 6
+\qquad
+\left. \begin{matrix}
+  aba & d & bcdc \\
+  & & cbdc \\
+  & & cbcd \\
+  & & cdbc \\
+  & & cdcb
 \end{matrix} \right\} 6
 $$
-$$
-\left.
-\begin{matrix}
-aba & c & bdcd\\
-& & dbcd\\
-&& dbdc \\
-&& dcbd  \\
-&&dcdb
-\end{matrix} \right\} 6
-$$
-$$
-\left.
-\begin{matrix}
-aba & d & bcdc\\
-& & cbdc\\
-&& cbcd \\
-&& cdbc  \\
-&&cdcb
-\end{matrix} \right\} 6
-$$
-and so there are $4 \times 3 \times (2 + 5 + 5) = 144$ ways here.\\
+and so there are $4 \times 3 \times (2 + 5 + 5) = 144$ ways here.
+
 So the total number of arrangements is $720 + 144 = 864$.
 
 
@@ -132,19 +124,19 @@ So the total number of arrangements is $720 + 144 = 864$.
 Determine all $n$ such that it is possible to find a pair of diagonals of a regular $n$-gon which intersect at $90^\circ$.}
 
 \textit{Solution}:
-Clearly, $n = 3$ is not possible. Let circle $\Gamma$, with center $O$, circumscribe the $n$-gon, and let $A$, $B$, $C$, and $D$ be some of its vertices.
+Clearly, $n = 3$ is not possible. Let circle $\Gamma$, with centre $O$, circumscribe the $n$-gon, and let $A$, $B$, $C$, and $D$ be some of its vertices.
 
-Note that $\angle COB = \frac{360^o}{n} \times n_{BC}$, where $n_{BC}$ is the number of sides between $B$ and $C$.
-$$\implies \angle CAB = \frac{180^o}{n} \times n_{BC}$$
+Note that $\angle COB = \frac{360^\circ}{n} \times n_{BC}$, where $n_{BC}$ is the number of sides between $B$ and $C$.
+$$ \implies \angle CAB = \frac{180^\circ}{n} \times n_{BC}. $$
 
-For any two diagonals of the $n$-gon, $AB$ and $CD$ to intersect at $90^o$, we must have that:
+For any two diagonals of the $n$-gon, $AB$ and $CD$ to intersect at $90^\circ$, we must have that:
 \begin{align*}
-  90^o = \angle APC &= \angle DAB + \angle ADC \\
-  &= n_{BD} \times \frac{180^o}{n} + n_{AC} \times \frac{180^o}{n} \\
-  &= \frac{180^o}{n} (n_{BD} + n_{AC}) \\
-  \implies n &= \frac{180^o}{90^o} (n_{BD} + n_{AC}) \\
-  &= 2 (n_{BD} + n_{AC}) \\
-  \implies 2 &\; |\; n
+  90^\circ = \angle APC & = \angle DAB + \angle ADC \\
+  & = n_{BD} \times \frac{180^\circ}{n} + n_{AC} \times \frac{180^\circ}{n} \\
+  & = \frac{180^\circ}{n} (n_{BD} + n_{AC}) \\
+  \implies n & = \frac{180^\circ}{90^\circ} (n_{BD} + n_{AC}) \\
+  & = 2 (n_{BD} + n_{AC}) \\
+  \implies 2 & \; |\; n
 \end{align*}
 
 A construction for all even $n$ is to choose $AC$ such that $A$ and $C$ are directly opposite on the polygon and to choose $B$ and $D$ such that $D$ is the reflection of $B$ over $AC$. This shows that all even $n$ can be constructed and no odd $n$ can be constructed.
@@ -161,6 +153,7 @@ Notice that for $n > 1$, $\floorsqrt{8n + 1}$ and $\floorsqrt{8n + 7}$ differ by
 $$7k + a = 2027$$
 Notice that $2027 \equiv _7 4 \implies a = 4 \implies k = 289$ From this, we see that $\floorsqrt{8n + 1} = 289$ and specifically $\sqrt{8n + 4} = 290 \implies 8n + 4 = 290^2$. Therefore, the only value that works is $n = \frac{290^2 - 4}{8} = \frac{145^2 - 1}{2}$ which is an integer.
 
+
 \item[5.] % Source Irish 2018 Q5
 \textit{
 Let $x_0, x_1,..., x_n$ be real numbers and define
@@ -173,15 +166,14 @@ and determine when equality holds.
 \textit{Solution}: 
 Substitute the definition of all $y_i$ into the inequality:
 \begin{align*}
-  &&\sum_{i = 0}^{n}y_i^2 &\leq 4\sum_{i = 0}^{n}x_i^2 &\\
-  &\iff& \sum_{i = 0}^{n}(x_i - x_{n - i})^2 &\leq 4\sum_{i = 0}^{n}x_i^2 &\\
-  &\iff& 2\sum_{i = 0}^{n}x_i^2 - 2\sum_{i = 0}^{n}x_ix_{n - i} &\leq 4\sum_{i = 0}^{n}x_i^2& \\
-  &\iff& 0 &\leq 2\sum_{i = 0}^{n}x_i^2 + 2\sum_{i = 0}^{n}x_ix_{n - i} \\
-  &\iff& 0 &\leq \sum_{i = 0}^{n}(x_i + x_{n - i})^2 &
+  & & \sum_{i = 0}^{n}y_i^2 = \sum_{i = 0}^{n}(x_i - x_{n-i})^2 & \leq 4\sum_{i = 0}^{n}x_i^2 \\
+  & \iff& 2\sum_{i = 0}^{n}x_i^2 - 2\sum_{i = 0}^{n}x_ix_{n-i} & \leq 4\sum_{i = 0}^{n}x_i^2 \\
+  & \iff& 0 & \leq 2\sum_{i = 0}^{n}x_i^2 + 2\sum_{i = 0}^{n}x_ix_{n-i} \\
+  & \iff& 0 & \leq \sum_{i = 0}^{n}(x_i + x_{n-i})^2 
 \end{align*}
 
 Since the square of a real number is always non-negative, the sum on the right must also be non-negative. Equality only holds when
-$$x_i + x_{n - i} = 0$$
+$$x_i + x_{n-i} = 0$$
 for all choices of $i$ with $0 \le i \le n$.
 
 \end{enumerate}
