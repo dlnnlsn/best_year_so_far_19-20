@@ -50,7 +50,7 @@ Pick two points which are the greatest distance apart. Let these points be $A$ a
 
 Note that the remaining points will be within the ellipse with focal points $A$ and $B$, and such that the perimeter of any triangle formed by $AB$ and a point on the ellipse is $2$.
 
-Additionally, the remaining points must be within the overlap of the circles with radius $2d$ and centers $A$ and $B$.
+Additionally, the remaining points must be within the overlap of the circles with radius $2d$ and centres $A$ and $B$.
 
 If $2d \leq 2\sqrt{2} - 2$ then a strip can cover all of the points with the two sides of the strip passing through $A$ and $B$ and being perpendicular to $AB$.
 
@@ -140,7 +140,16 @@ Show that the angle bisector of $\angle BEC$ intersects $AT$ on a circle which i
 	\end{tikzpicture}
 \end{figure}
 
-Let the angle bisector of  $\angle BEC$ intersect $AT$ at $I$, and let $EI$ intersect $\Gamma$ at $S$. It is well known that $S$ is the midpoint of the minor arc $BC$, and thus $BT$, $CT$, and the tangent at $S$ to $\Gamma$, produces an isosceles triangle. The incircle of this triangle, $\omega$, is therefore tangent to $BT$ and $CT$, as well as to $\Gamma$ at $S$. Construct the point $N$ on $\Gamma$ such that $N$, $O$, and $S$ are collinear. Notice that $N,S,T$ are collinear and $OE=ON=OD=OS \ \Rightarrow \ ND || EN$. Finally, consider the homothety, $\mathcal{H}$, centred at $T$ with ratio $\frac{ST}{NT}$. This maps $N$ to $S$, and since both $\Gamma$ and $\omega$ are tangent to both $BT$ and $CT$ we see that $\Gamma$ maps to $\omega$. Considering the point $D$, we see that the image of $D$ under $\mathcal{H}$, $D'$, is a point on $\omega$ that lies on $AT$ with the property that $SD' || ND \ \Rightarrow SD' || ES \ \Rightarrow \ E,S,D'$ collinear. Thus $D'$ is the intersection of $ES$ and $AT$ and we have that $D'$ lies on $\omega$ as required. 
+Let the angle bisector of  $\angle BEC$ intersect $AT$ at $I$, and let $EI$ intersect $\Gamma$ at $S$.
+It is well known that $S$ is the midpoint of the minor arc $BC$, and thus $BT$, $CT$, and the tangent at $S$ to $\Gamma$, produces an isosceles triangle.
+The incircle of this triangle, $\omega$, is therefore tangent to $BT$ and $CT$, as well as to $\Gamma$ at $S$.
+Construct the point $N$ on $\Gamma$ such that $N$, $O$, and $S$ are collinear.
+Notice that $N,S,T$ are collinear and $OE=ON=OD=OS \ \implies \ ND \parallel EN$.
+Finally, consider the homothety, $\mathcal{H}$, centred at $T$ with ratio $\frac{ST}{NT}$.
+This maps $N$ to $S$, and since both $\Gamma$ and $\omega$ are tangent to both $BT$ and $CT$ we see that $\Gamma$ maps to $\omega$.
+Considering the point $D$, we see that the image of $D$ under $\mathcal{H}$, $D'$, is a point on $\omega$ that lies on $AT$ with the property that $SD' \parallel ND \ \implies SD' \parallel ES \ \implies \ E,S,D'$ collinear.
+Thus $D'$ is the intersection of $ES$ and $AT$ and we have that $D'$ lies on $\omega$ as required. 
+
 
 \item[5.] % PEN M1, N
 {\itshape
@@ -157,14 +166,16 @@ Let $P^k$ denote the polynomial obtained by iterating $P$ $k$ times:
 Using this notation, $a_n = P^n (0)$.
 Suppose that $n \geq m$. We know that $a_m \equiv 0 \pmod{a_m}$, and so
 \[
-	a_n = P^{(n - m)} (a_m) \equiv P^{(n - m)} (0) \equiv a_{n - m} \pmod{a_m}.
+	a_n = P^{(n-m)} (a_m) \equiv P^{(n-m)} (0) \equiv a_{n-m} \pmod{a_m}.
 \]
 We thus have that
 \[
-	\gcd(a_n, a_m) = \gcd(a_{n - m}, a_m).
+	\gcd(a_n, a_m) = \gcd(a_{n-m}, a_m).
 \]
 
-We start with the pair $(a_n, a_m)$ and use this relationship repeatedly, always replacing $(a_s, a_t)$ with either $(a_s, a_{t - s})$ or $(a_{s - t}, a_t)$ depending on whether $s$ or $t$ is larger. We see that the pairs of indices that appear when using this procedure are exactly the pairs of numbers that would appear if we were to use Euclid's Algorithm to calculate the GCD of $m$ and $n$. When Euclid's algorithm (for $m$ and $n$) terminates, we are left with a pair $(a_{\gcd(m, n)}, a_0)$, and so we have that
+We start with the pair $(a_n, a_m)$ and use this relationship repeatedly, always replacing $(a_s, a_t)$ with either $(a_s, a_{t - s})$ or $(a_{s - t}, a_t)$ depending on whether $s$ or $t$ is larger.
+We see that the pairs of indices that appear when using this procedure are exactly the pairs of numbers that would appear if we were to use Euclid's Algorithm to calculate the greatest common divisor of $m$ and $n$.
+When Euclid's algorithm (for $m$ and $n$) terminates, we are left with a pair $(a_{\gcd(m, n)}, a_0)$, and so we have that
 \[
 	\gcd(a_m, a_n) = \gcd(a_{\gcd(m, n)}, a_0) = \gcd(a_{\gcd(m, n)}, 0) = a_{\gcd(m, n)}.
 \]
