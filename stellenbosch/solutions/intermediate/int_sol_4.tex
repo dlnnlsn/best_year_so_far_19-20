@@ -8,7 +8,7 @@
 \begin{document}
 
 \begin{center}
-  \textbf{\Large Intermediate Test 1 Solutions}
+  \textbf{\Large Intermediate Test 4 Solutions}
   \\ \vspace{1em}
   \textbf{\large Stellenbosch Camp 2019}
 \end{center}
@@ -37,6 +37,94 @@ How many different colour patterns can be made if no sock is allowed to be next 
 }
 
 \textit{Solution}:
+Call the socks a, a, b, b, c, c, d, d.
+There are $4 \times 3 \times 2$ ways of selecting the first three socks as a, b, c (all different).\\
+$$
+\left.
+\begin{matrix}
+abc & a & bdcd\\
+& & cdbd\\
+&& dbdc \\
+&& dbcd  \\
+&&dcdb \\
+&&dcbd
+\end{matrix} \right\} 6
+$$
+$$
+\left.
+\begin{matrix}
+abc & b & adcd\\
+& & cdad\\
+&& dadc \\
+&& dacd  \\
+&&dcda \\
+&&dcad
+\end{matrix} \right\} 6
+$$
+$$
+\left.
+\begin{matrix}
+abc & da & bcd\\
+& & bdc\\
+&& cbd \\
+&& cdb  \\
+&&dbc \\
+&&dcb
+\end{matrix} \right\} 6
+$$
+$$
+\left.
+\begin{matrix}
+abc & db & acd\\
+& & adc\\
+&& cda \\
+&& cad  \\
+&&dac \\
+&&dca
+\end{matrix} \right\} 6
+$$
+$$
+\left.
+\begin{matrix}
+abc & dc & abd\\
+& & adb\\
+&& dba \\
+&& dab  \\
+&&bda \\
+&&bad
+\end{matrix} \right\} 6
+$$
+and so there are a total of $(4 \times 3 \times 2) \times (6 \times 5) = 720$ ways here.\\
+There are $4 \times 3$ ways of selecting socks a, b, a (third same as first).
+$$
+\left.
+\begin{matrix}
+aba & b & cdcd\\
+& & dcdc
+\end{matrix} \right\} 6
+$$
+$$
+\left.
+\begin{matrix}
+aba & c & bdcd\\
+& & dbcd\\
+&& dbdc \\
+&& dcbd  \\
+&&dcdb
+\end{matrix} \right\} 6
+$$
+$$
+\left.
+\begin{matrix}
+aba & d & bcdc\\
+& & cbdc\\
+&& cbcd \\
+&& cdbc  \\
+&&cdcb
+\end{matrix} \right\} 6
+$$
+and so there are $4 \times 3 \times (2 + 5 + 5) = 144$ ways here.\\
+So the total number of arrangements is $720 + 144 = 864$.
 
 
 \item[3.] % Source The Emile
