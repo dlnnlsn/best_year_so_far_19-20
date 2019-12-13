@@ -70,6 +70,10 @@ Prove that there exists a positive integer $K$ such that there are $2019$ unique
 \[ |x_i - x_j| + |y_i - y_j| = K. \]
 
 \textit{Solution}:
+Notice that the number of possible Manhattan Distances in a $8076 \times 8076$ grid is $2 \times 8076 - 2 = 16150$. The total number of pairs of points is $\binom{8074}{2} = \frac{8074 \times 8073}{2} = 16150 \times 2018 + 1$.
+
+Therefore, by the Pigeonhole Principle with 16150 distances as pigenoholes and the $\binom{8074}{2}$ pairs of points as pigeons, there will be at least $2019$ with distance $K$ apart, for some $K$.
+
 \vfill
 
 \item % OME 2019 Q6, G
