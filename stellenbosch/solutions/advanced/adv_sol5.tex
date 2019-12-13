@@ -1,0 +1,113 @@
+\documentclass{article}
+
+\usepackage{mathtools,amssymb}
+\usepackage{enumerate}
+\usepackage{geometry}
+% \DeclareMathOperator{\gcd{gcd}}
+% \usepackage{fancyvrb}
+% \usepackage{fullpage}
+
+
+\title{Advanced Test 5}
+\author{Stellenbosch Camp 2019}
+\date{Time: $4$ hours}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\hfill\textit{Each question is worth 7 marks.}
+
+\vfill
+\vfill
+
+
+\begin{enumerate}[1.]
+
+\item % Austrian MO Q15, C
+In the country of Oddland, there are stamps with values $1$ cent, $3$ cents, $5$ cents, etc., one type for each odd number.
+the rules of Oddland Postal Services stipulate the following: for any two distinct values, the number of stamps of the higher value on an envelope must never exceed the number of stamps of the lower value.
+
+In the country of Squareland, on the other hand, there are stamps with values $1$ cent, $4$ cents, $9$ cents, etc., one type for each square number.
+Stamps can be combined in all possible ways in Squareland without additional rules.
+
+Prove that for every positive integer $n$:
+In Oddland and Squareland there are equally many ways to correctly place stamps of a total value $n$ cents on an envelope.
+Rearranging the stamps on an envelope makes no difference.
+
+\textit{Solution}:
+\vfill
+
+\item % Turkish EGMO TST 2018 Q2, N
+Find all pairs of positive integers $(m,n)$ satisfying
+\[ m^2 +n^2 = 2019(m-n). \]
+
+\textit{Solution}:
+\vfill
+
+\item % The Ralph, C
+Given a set of distinct points $(x_1, y_1)$, $(x_2, y_2)$, $\dots$, $(x_{8074}, y_{8074})$ with $x_i, y_i \in \{1, 2, \dots, 8076\}$.
+Prove that there exists a positive integer $K$ such that there are $2019$ unique pairs $( (x_i, y_i), (x_j, y_j) )$ with
+\[ |x_i - x_j| + |y_i - y_j| = K. \]
+
+\textit{Solution}:
+\vfill
+
+\item % OME 2019 Q6, G
+In a triangle $ABC$, the internal bisector of $\angle A$ meets the side $BC$ at $D$.
+The lines through $D$ tangent to the circumcircles of triangles $\triangle ABD$ and $\triangle ACD$ meet the lines $AC$ and $AB$ at points $E$ and $F$, respectively.
+Lines $BE$ and $CF$ intersect at $G$.
+Prove that $\angle EDG = \angle ADF$.
+
+\textit{Solution}:
+\vfill
+
+\item % The Andrew and The Dylan
+\newcommand{\parens}[1]{\left(#1\right)}
+Let $n$ be a positive integer greater than $1$, and consider a circle of radius $1$ in which is inscribed a regular $2n$-gon $P$ with vertices labelled from $1$ to $2n$ in that order.
+Consider the set $S$ of positive divisors of $2n$, and the convex polygon $G$ formed by the points of $P$ with labels in $S$.
+If the area of $G$ is denoted by $|G|$ and the number of elements of $S$ is denoted by $\tau(2n)$, show that
+\[ \frac{1}{2} \parens{\sin\parens{\frac{\pi}{n}} +\cos\parens{\frac{\pi}{n}}} < |G| < \frac{\tau(2n)}{2} \sin\parens{\frac{\pi}{\tau(2n)}}. \]
+
+\textit{Solution}:
+\vfill
+
+Let the centre of the circle be $O$, then for successive divisors $d_k,d_{k+1}$ the area of the triangle $Od_kd_{k+1}$ is given by the sine area formula. It follows that the area of $P$, $|G|$, is given by the sum 
+\begin{flalign}
+  |G| &= \sum_{k=0}^{m-1} \frac{1}{2}r^2 \sin \left( \frac{2 \pi(d_{k+1}-d_k)}{2n} \right) \label{eqn:series5}
+\end{flalign}
+where $m=\tau(2n)$, $1=d_1<d_2<...<d_m=2n$ are the divisors of $2n$, $d_0=0$, and $r=1$ is the radius of the circle. Notice that $d_{m-1}=n$, so the argument of $\sin$  in the last term in the sequence at \eqref{eqn:series5} is $\frac{2 \pi (2n - n)}{2n}= \pi $. Thus for all $d_k<d_{m-1}$ we have that $\frac{2 \pi (d_{k+1} - d_k)}{2n} \le \pi$. We know that the sine function is concave on this interval and so we apply Jensen's Inequality to find an upper bound, but first we notice that $\sin(\pi)=0 = \sin(0)$ so we replace the final term in \eqref{eqn:series5} with $\frac{1}{2}r^2\sin(0)$.
+\begin{flalign*}
+  |G| &= \sum_{k=0}^{m-2} \frac{1}{2}r^2 \sin \left( \frac{2 \pi(d_{k+1}-d_k)}{2n} \right) + \frac{1}{2}r^2 \sin(0) \\
+  |G| &< m \left(\frac{1}{2}r^2 \sin \left( \frac{1}{m} \left( \sum_{k=0}^{m-2}\frac{2\pi(d_{k+1} - d_k)}{2n} +0 \right)  \right)  \right)\\
+\end{flalign*}
+The right hand side contains a telescoping series and thus simplifies to 
+
+\begin{flalign*}
+  |G| &< \frac{m}{2}r^2 \sin \left( \frac{\pi\left( d_{m-1} - d_0 \right) }{n} \right) =\frac{\tau(2n)}{2}\sin \left( \frac{\pi}{\tau(2n)} \right) 
+\end{flalign*}
+
+As required. For the left hand side we notice that $2=d_2$ and $n=d_{m-1}$ are both divisors of $2n$ and thus the triangle $d_0d_2d_{m-1}$ is wholly contained within $P$. Moreover $1=d_1 | 2n$ and so the area is a strict lower bound. The sine area formula yields its area as 
+\begin{flalign*}
+  |G|>|\triangle d_0d_2d_{m-1}| &= \frac{1}{2} r^2 \sin \left( \frac{\pi}{2n} (2-0) \right) + \frac{1}{2}r^2 \sin \left( \frac{\pi}{2n}(n-2) \right)   \\ 
+  &= \frac{1}{2} \sin \left( \frac{\pi}{n}  \right) + \frac{1}{2} \sin \left( \frac{\pi}{2}-\frac{\pi}{n} \right)   \\ 
+  &= \frac{1}{2} \sin \left( \frac{\pi}{n}  \right) + \frac{1}{2} \cos \left( \frac{\pi}{n} \right)
+\end{flalign*}
+
+
+
+
+
+\item % Dutch BxMO TST 2018 Q4, N
+Do there exist a positive integer $k$ and a nonconstant sequence $a_1, a_2, a_3, \dotsc$ of positive integers such that for each positive integer $n$,
+\[ a_n = \gcd(a_{n+k},a_{n+k+1})? \]
+
+\textit{Solution}:
+
+Such a $k$ and a sequence do not exist. We prove this by contradiction, so suppose they do exist. Note that $a_n | a_{n+k}$ and $a_n | a_{n+k+1}$ for all $n \ge 1$. Using simple induction, it follows that $a_n | a_{n+\ell k}$ and $a_n | a_{n+\ell k+ \ell}$ for all $\ell \ge 0$. We will prove by induction to $m$ that $ a_n | a_{n+mk+(m+1)}$ for all $- \le m \le k - 1$. For $m = k - 1$, this follows from $a_n | a_{n+k_k} =a_{n+(k-1)k+k}$. Now suppose that for a certain $m$ with $1 \le m \le k - 1$ we have that $a_n | a_{n+mk+(m+1)}$. We also know that $a_n | a_{n+mk+m}$. Therefore, as $a_{n+(m-1)k+m} = \gcd(a_{n+mk+m}, a_{n+mk+m+1})$, we also have $a_n | a_{n+(m-1)k+m}$. This finishes the induction argument. Substituting $m = 0$ yields $a_n | a_{n+1}$. Because $a_n | a_{n+1}$, we also have $\gcd(a_n, a_{n+1}) = a_n$ for all $n$. Hence, $a_n = a_{n-k}$ for all $n \ge k + 1$. Now we have $a_{n-k} | a_{n-k+1} | a_{n-k+2} | . . . |a_n = a_{n-k}$. Because these are all positive integers, $a_{n-k}, a_{n-k+1}, . . . , a_n$ must all be equal. This must be true for all $n \ge k + 1$, hence the sequence is constant, which gives a contradiction.
+
+
+\end{enumerate}
+
+
+\end{document}
