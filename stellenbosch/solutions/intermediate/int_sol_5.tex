@@ -14,11 +14,16 @@
 
 \begin{enumerate}[1.]
 
-\item %Source of problem
-\textit{Problem statement}
-
-\textit{Solution}: Problem solution
-
+	\item % Source
+	\textit{Given the smiley face colouring, can the board be made completely white through some order of inverting rows.
+	}
+	
+	\textit{Solution}:
+	Let every white squre be denoted by a $1$, and every black square by a $-1$. Let $k$ be the product of all of the values in the grid. 
+	Note that an inversion of a row or column would never change the value of $k$, as you are multiplying each item in the row by $(-1)$ when you invert. Hence, $k$ gets multiplied by $(-1)^8 = 1$.
+	
+	Note that in the original diagram, $k = -1$ and a completely white board will have $k = 1$. Since inversions do not change the value of $k$ for the board, it must be impossible.
+	
 \item %Source of problem
 \textit{Problem statement}
 
