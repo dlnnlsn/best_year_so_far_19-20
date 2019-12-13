@@ -34,7 +34,21 @@ Note that in the original diagram, $k = -1$ and a completely white board will ha
  $n=5r_{1}+3r_{2}$
 \end{center}}
 
-\textit{Solution}: Problem solution
+\textit{Solution}:
+First notice that $r_{1}$ must be prime otherwise there is a smaller odd number that divides $n$. Let $2^k$ be the highest power of $2$ that divides $n$ and so we may write the given condition as 
+$$2^kr_{1}p=5r_{1}+3r_{1}p$$
+for some odd number $p$. 
+
+If $p=1$ then the equation becomes $2^kr_{1}=8r_1$ so $k=3$, therefore $n=8r_{1}$ satisfies this for any odd prime $r_1$. 
+
+If $p\ge 3  $, $r_2=pr_{1}$ and so we have 
+\begin{align*}
+&&2^kr_{1}p &=5r_{1}+3pr_{1} \\
+&\implies& 2^kp &=5+3p \\
+&\implies& p(2^{k}-3) &=5 &
+\end{align*}
+
+and since $p\ge 3$, $p$ must be $5$ and $k$ must be $2$. So $n=20r_1$ for some odd prime not greater than $3$ and so $n=60$ and $n=100$ are valid.  
 
 \vfill
 
