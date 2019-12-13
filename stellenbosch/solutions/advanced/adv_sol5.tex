@@ -62,6 +62,38 @@ Find all pairs of positive integers $(m,n)$ satisfying
 \[ m^2 +n^2 = 2019(m-n). \]
 
 \textit{Solution}:
+The given equation is equivalent to
+\[
+	(m + n)^2 + (m - n - 2019)^2 = 2019^2.
+\]
+Considering the equation modulo $3$, we determine that $m + n$ and $m - n - 2019$ must both be multiples of $3$, and thus $m$ and $n$ are both multiples of $3$. Let $m = 3a$ and $n = 3b$. We must now solve
+\[
+	(a + b)^2 + (a - b - 673)^2 = 673^2.
+\]
+The only possible common divisor of $(a + b)$ and $(a - b - 673)$ is $673$. If both are divisible by $673$, the equation reduces to
+\[
+	\left(\frac{a + b}{673}\right)^2 + \left(\frac{a - b - 673}{673}\right)^2 = 1
+\]
+which forces $a + b = 673$ and $a - b - 673 = 0$. But this gives us $n = 3b = 0$, which is not a valid solution.
+
+We thus have that $(a + b)$ and $(a - b - 673)$ are relatively prime, and so $(a + b)$, $(a - b - 673)$, $673$ forms a primitive pythagorean triple. There are thus integers $x$ and $y$ such that either
+\begin{align*}
+	a + b & = 2xy & a - b - 673 & = x^2 - y^2 & 673 & = x^2 + y^2
+\end{align*}
+or
+\begin{align*}
+	a + b & = x^2 - y^2 & a - b - 673 & = 2xy & 673 & = x^2 + y^2
+\end{align*}
+
+The only way of writing $673$ as a sum of squares is $673 = 23^2 + 12^2$, and so $x = 23$ and $y = 12$, or $x = 12$ and $y = 23$. We thus have that $2xy = 552$ and $x^2 - y^2 = \pm 385$.
+
+If $a + b = 552$ and $a - b - 673 = 385$, we get a negative value for $b$.
+If $a + b = 552$ and $a - b - 673 = -385$, we get $a = 420$ and $b = 132$, which gives us $m = 1260$ and $n = 396$.
+We can not have $a + b = -385$.
+If $a + b = 385$ and $a - b - 673 = 552$, we also get a negative value for $b$.
+
+Thus the only solution is $(m, n) = (1260, 396)$.
+
 \vfill
 
 \item % The Ralph, C
