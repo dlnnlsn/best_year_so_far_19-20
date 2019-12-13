@@ -72,10 +72,15 @@ So the values of $k$ for which 2000 is a term is 3, 23, 87, 667 and 2001.
 
 \textit{Solution}: Problem solution
 
-\item %Source of problem
-\textit{Problem statement}
+\item %The Malwande
+\newcommand{\QQ}{\mathbb{Q}}
+Find all functions $f : \QQ \to \QQ$ such that
+\[ f(x^2) +f(x+2y) = (x+1)f(x) +2f(y) \]
+for all $x, y \in \QQ$. 
 
-\textit{Solution}: Problem solution
+\textit{Solution}: 
+Let $x=y=0$ in the original equation to get that $f(0)+f(0)=f(0)+2f(0)$ and so $f(0)=0$. Next, letting $y=0$ gives that $f(x^2)+f(x)=(x+1)f(x) \implies f(x^2)=xf(x)$ for all $x \in \QQ$. Letting $x=0$ gives that $f(0)+f(2y)=f(0)+2f(y)$ for all $y \in \QQ$. The original equation therefore becomes $xf(x)+f(x+2y)=(x+1)f(x)+f(2y)$ and so $f(x+2y)=f(x)+f(2y)$ for all $x,y \in \QQ$ which is the Cauchy equation over the rationals, hence $f(x)=cx$ for some $c\in\QQ$. A straight-forward check shows this satisfies the original equation.
+
 
 \item %Source of problem
 \textit{Problem statement}
