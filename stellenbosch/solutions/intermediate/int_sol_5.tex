@@ -2,6 +2,8 @@
 
 \usepackage{mathtools,amsfonts}
 \usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{amsthm}
 
 \begin{document}
 
@@ -94,7 +96,25 @@ In Oddland and Squareland there are equally many ways to correctly place stamps 
 Rearranging the stamps on an envelope makes no difference.
 }
 
-\textit{Solution}: Problem solution
+\textit{Solution}: 
+We will show that a bijection exists between Odd- and Squareland's systems.
+
+Note: $n^2 = \sum_{i = 1}^{n}2i - 1$.
+
+Let $a_1$, $a_2$, $a_3$, $\dots$ be the number of stamps of each denomination for Squareland where $a_i$ dictates the number of $i^2$ stamps.
+
+Similarly, $b_1$, $b_2$, $\dots$ are the stamps for Oddland where $b_i$ dictates the number of $2i - 1$ stamps.
+
+For any Squareland combination we have that:
+
+\begin{align*}
+	n &= \sum_ {}^{} a_i \cdot i^2 \\
+	&= \sum_ {}^{} (a_i \sum_{j = 1}^{i} 2j - 1) \\
+	&= \sum_ {}^{} ((2i - 1) \sum_{j = 1}^{i}a_j)
+\end{align*}
+which is a valid oddland combination as $a_i > 0 \forall i \in \mathbb{N}$.
+
+The reverse also holds, meaning we have a bijection, and we are done.
 
 \end{enumerate}
 
