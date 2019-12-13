@@ -26,6 +26,8 @@ Note that an inversion of a row or column would never change the value of $k$, a
 	
 Note that in the original diagram, $k = -1$ and a completely white board will have $k = 1$. Since inversions do not change the value of $k$ for the board, it must be impossible.
 	
+\vfill
+
 \item % , 2018 December Monthly Assignment Q1
 \textit{Let $n$ be a positive integer greater than 2. Let $r_1$ be the smallest odd divisor of $n$ greater than $1$ and let $r_2$ be the largest odd divisor of $n$. Find all $n$ such that
 \begin{center}
@@ -33,6 +35,8 @@ Note that in the original diagram, $k = -1$ and a completely white board will ha
 \end{center}}
 
 \textit{Solution}: Problem solution
+
+\vfill
 
 \item % Source 2001 booklet, The Monthly Problem Sets number 4
 \textit{For each positive integer $k$, define the sequence $(a_{n})$ by
@@ -69,11 +73,15 @@ There are thus four cases to consider to determine whether 2000 appears:
 \end{itemize}
 So the values of $k$ for which 2000 is a term is 3, 23, 87, 667 and 2001.
 
+\vfill
+
 \item % Moldova 2018: 7.8, G
 Let $\triangle XYZ$ be such that $\angle XZY = 30^o$. Let $M$ be a point inside $\triangle XYZ$. Let $A$ and $B$ be points on $XZ$ and $YZ$ respectively such that $\angle ZAM = \angle ZBM = 90^o$. Prove that $ZM = 2 \cdot AB$.
 
 \textit{Solution}:
 Denote by $O$ the midpoint of $ZM$. Notice then that $AMBZ$ is cyclic since $\angle ZAM = \angle ZBM = 90^\circ$. Also, $ZM$ is the diameter of the circle $AMBZ$ and $O$ is its centre. So then $AO=OB$ and $\angle AOB=2\angle AZB=60^\circ \implies \triangle AOC$ is equilateral. And so $AB=AO=MO=\frac{ZM}{2}$ which is what we wanted. 
+
+\vfill
 
 \item %The Malwande
 \newcommand{\QQ}{\mathbb{Q}}
@@ -84,6 +92,7 @@ for all $x, y \in \QQ$.
 \textit{Solution}: 
 Let $x=y=0$ in the original equation to get that $f(0)+f(0)=f(0)+2f(0)$ and so $f(0)=0$. Next, letting $y=0$ gives that $f(x^2)+f(x)=(x+1)f(x) \implies f(x^2)=xf(x)$ for all $x \in \QQ$. Letting $x=0$ gives that $f(0)+f(2y)=f(0)+2f(y)$ for all $y \in \QQ$. The original equation therefore becomes $xf(x)+f(x+2y)=(x+1)f(x)+f(2y)$ and so $f(x+2y)=f(x)+f(2y)$ for all $x,y \in \QQ$ which is the Cauchy equation over the rationals, hence $f(x)=cx$ for some $c\in\QQ$. A straight-forward check shows this satisfies the original equation.
 
+\vfill
 
 \item % Austrian MO Q15, C
 \textit{In the country of Oddland, there are stamps with values $1$ cent, $3$ cents, $5$ cents, etc., one type for each odd number.
@@ -100,18 +109,19 @@ We will show that a bijection exists between Odd- and Squareland's systems.
 
 Note: $n^2 = \sum_{i = 1}^{n}2i - 1$.
 
-Let $a_1$, $a_2$, $a_3$, $\dots$ be the number of stamps of each denomination for Squareland where $a_i$ dictates the number of $i^2$ stamps.
+Let $a_1$, $a_2$, $a_3$, $\dots$, $a_s$ be the number of stamps of each denomination for Squareland where $a_i$ dictates the number of $i^2$ stamps.
 
-Similarly, $b_1$, $b_2$, $\dots$ are the stamps for Oddland where $b_i$ dictates the number of $2i - 1$ stamps.
+Similarly, $b_1$, $b_2$, $\dots$, $b_t$ are the stamps for Oddland where $b_i$ dictates the number of $2i - 1$ stamps.
 
 For any Squareland combination we have that:
 
 \begin{align*}
-	n &= \sum_ {}^{} a_i \cdot i^2 \\
-	&= \sum_ {}^{} (a_i \sum_{j = 1}^{i} 2j - 1) \\
-	&= \sum_ {}^{} ((2i - 1) \sum_{j = 1}^{i}a_j)
+	n &= \sum_ {i = 1}^{s} a_i \cdot i^2 \\
+	&= \sum_ {i = 1}^{s} (a_i \sum_{j = 1}^{i} (2j - 1) ) \\
+	&= \sum_ {j = 1}^{k} ((2j - 1) \sum_{i = 1}^{s - j + 1}a_i) \\
+	&= \sum_ {j = 1}^{k} ((2j - 1) b_j 
 \end{align*}
-which is a valid oddland combination as $a_i > 0 \forall i \in \mathbb{N}$.
+which is a valid Oddland combination as $a_i > 0 \;\forall\; i \in \mathbb{N}$.
 
 The reverse also holds, meaning we have a bijection, and we are done.
 
