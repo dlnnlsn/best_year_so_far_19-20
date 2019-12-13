@@ -3,6 +3,7 @@
 \usepackage{mathtools,amssymb}
 \usepackage{enumerate}
 \usepackage{geometry}
+% \DeclareMathOperator{\gcd{gcd}}
 % \usepackage{fancyvrb}
 % \usepackage{fullpage}
 
@@ -102,6 +103,8 @@ Do there exist a positive integer $k$ and a nonconstant sequence $a_1, a_2, a_3,
 \[ a_n = \gcd(a_{n+k},a_{n+k+1})? \]
 
 \textit{Solution}:
+
+Such a $k$ and a sequence do not exist. We prove this by contradiction, so suppose they do exist. Note that $a_n | a_{n+k}$ and $a_n | a_{n+k+1}$ for all $n \ge 1$. Using simple induction, it follows that $a_n | a_{n+\ell k}$ and $a_n | a_{n+\ell k+ \ell}$ for all $\ell \ge 0$. We will prove by induction to $m$ that $ a_n | a_{n+mk+(m+1)}$ for all $- \le m \le k - 1$. For $m = k - 1$, this follows from $a_n | a_{n+k_k} =a_{n+(k-1)k+k}$. Now suppose that for a certain $m$ with $1 \le m \le k - 1$ we have that $a_n | a_{n+mk+(m+1)}$. We also know that $a_n | a_{n+mk+m}$. Therefore, as $a_{n+(m-1)k+m} = \gcd(a_{n+mk+m}, a_{n+mk+m+1})$, we also have $a_n | a_{n+(m-1)k+m}$. This finishes the induction argument. Substituting $m = 0$ yields $a_n | a_{n+1}$. Because $a_n | a_{n+1}$, we also have $\gcd(a_n, a_{n+1}) = a_n$ for all $n$. Hence, $a_n = a_{n-k}$ for all $n \ge k + 1$. Now we have $a_{n-k} | a_{n-k+1} | a_{n-k+2} | . . . |a_n = a_{n-k}$. Because these are all positive integers, $a_{n-k}, a_{n-k+1}, . . . , a_n$ must all be equal. This must be true for all $n \ge k + 1$, hence the sequence is constant, which gives a contradiction.
 
 
 \end{enumerate}
