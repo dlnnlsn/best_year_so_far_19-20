@@ -3,8 +3,21 @@
 \usepackage{amsmath,amssymb}
 \usepackage{hyperref}
 \usepackage{amssymb}
+\usepackage{graphicx}
+\graphicspath{{../logos/}}
+
 
 \begin{document}
+
+\setlength{\tabcolsep}{0.015\textwidth}
+\begin{center} \begin{tabular}{cccc}
+	\includegraphics[width=0.16\textwidth]{SAMF_logo.jpg} &
+	\includegraphics[width=0.35\textwidth]{SAICA_logo.jpg} &
+	\includegraphics[width=0.18\textwidth]{Liberty_logo.jpg} &
+	\includegraphics[width=0.18\textwidth]{SAMO2019.png}
+\end{tabular} \end{center}
+
+\bigskip
 
 \begin{center}
 \textbf{\Large Senior January Monthly Problem Set}
@@ -12,9 +25,10 @@
 \textbf{\large Due: Friday, 17 January 2020}
 \end{center}
 
+
 \begin{enumerate}
 
-\vspace{6pt}
+\bigskip
 \item[1.] %PAMO Shortlist 2019
 On the board, we write the integers $1, 2, 3, \dots, 2019$.
 At each minute, we pick two numbers on the board $a$ and $b$, erase them, and write down the number $s(a + b)$ instead where $s(n)$ denotes the sum of the digits of the integer $n$.
@@ -25,17 +39,17 @@ Let $N$ be the last number remaining on the board.
 \end{enumerate}
 
 
-\vspace{6pt}
+\medskip
 \item[2.] %Baltic Way 2009 Problem 8
-For which positive integers $n$ is it possible to divide the numbers $n, (n + 1), (n + 2), \dots, (n + 8)$ into two disjoint sets $A$ and $B$ such that the product of the numbers in $A$ is equal to the product of the numbers in $B$?
+For which positive integers $n$ is it possible to divide the set of numbers $\{n, n+1, n+2, \dotsc, n+8\}$ into two disjoint sets $A$ and $B$ such that the product of the numbers in $A$ is equal to the product of the numbers in $B$?
 
 
-\vspace{6pt}
+\medskip
 \item[3.] % Liam
-Let $M$ be a positive integer, and let $S$ denote the set of finite sequences of positive integers, including the empty sequence of length zero, which we denote as $\mathbf{0}$.
-Also, for a sequence $\mathbf{x} = (x_1, x_2, \dotsc, x_{n-1}, x_n)$ let $\overline{\mathbf{x}}$ denote the reverse sequence $\overline{\mathbf{x}} = (x_n, x_{n-1}, \dotsc, x_2, x_1)$.
+Let $M$ be a positive integer, and let $S$ denote the set of finite sequences of positive integers less than or equal to $M$, including the empty sequence of length zero, which we denote as $\mathbf{0}$.
+Also, for a sequence $\mathbf{x} = (x_1, x_2, \dotsc, x_n)$ let $\overline{\mathbf{x}}$ denote the reverse sequence $\overline{\mathbf{x}} = (x_n, x_{n-1}, \dotsc, x_1)$.
 
-Define a function $d$ from finite sequences of positive integers to the integers as follows:
+Define a function $d$ from $S$ to the integers as follows:
 \begin{itemize}
 \item $d(\mathbf{0}) = 0$.
 \item If $\mathbf{x} = (x_1, x_2, \dotsc, x_n)$ is a sequence of positive length, let $m$ be the largest integer such that $x_1 +x_2 +\dotsb +x_m \leq M$, and let $\mathbf{x}'$ denote the rest of the sequence: $\mathbf{x}' = (x_{m+1}, \dotsc, x_n)$.
@@ -44,7 +58,7 @@ Then $d(\mathbf{x}) = 1 +d(\mathbf{x}')$.
 Show that $d(\mathbf{x}) = d(\overline{\mathbf{x}})$.
 
 
-\vspace{6pt}
+\medskip
 \item[4.]
 Let $ABCD$ be a cyclic quadrilateral with its diagonals intersecting at $E$.
 Let $M$ be the midpoint of $AB$.
@@ -52,7 +66,7 @@ Suppose that $ME$ is perpendicular to $CD$.
 Show that either $AC$ is perpendicular to $BD$ or $AB$ is parallel to $CD$.
 
 
-\vspace{6pt}
+\medskip
 \item[5.] % IMO 2008 Shortlist C3
 We have done it! We have planted an infinite number of trees on the vertices of an infinite regular grid, one for each vertex. Let $T$ be a positive integer. 
 We define a \textit{T-forest} as a set of trees such that for any two trees in the $T$-forest, there exists another tree planted in the grid such that the area of the triangle with these three trees as vertices is $T$.
@@ -60,16 +74,16 @@ We define a \textit{T-forest} as a set of trees such that for any two trees in t
 What is the smallest $T$ such that our $T$-forest has more than $200$ trees?
 
 
-\vspace{6pt}
+\medskip
 \item[6.] % IMO 2009 Shortlist N4
-Given a series $t_1$, $t_2$, $\dots$, $t_n$, such that 
-$$t_{k + 1} = \frac{t_k^2 + 1}{t_{k - 1} + 1} - 1 \; \forall \; k \in \{2, 3, \dots, n - 1\}$$
-For which $n \in \mathbb{N}$ does there exist a $t_1$ and $t_2$ such that $t_i \in \mathbb{N} \; \forall \; i \in \{1, 2, 3, \dots, n \}$?
+Given a series $t_1, t_2, \dotsc, t_n$ such that 
+\[ t_{k + 1} = \frac{t_k^2 + 1}{t_{k-1} + 1} - 1 \quad \forall \ k \in \{2, 3, \dots, n - 1\}. \]
+For which $n \in \mathbb{N}$ does there exist a $t_1$ and $t_2$ such that $t_i \in \mathbb{N}$ for all $i \in \{1, 2, 3, \dotsc, n\}$?
 
 
-\vspace{6pt}
+\medskip
 \item[7.]
-Let $AB$ and $CD$ be 2 chords of a circle $\Gamma$ that intersect at $X$ in the interior of $\Gamma$.
+Let $AB$ and $CD$ be two chords of a circle $\Gamma$ that intersect at $X$ in the interior of $\Gamma$.
 Let $\Gamma_1$ and $\Gamma_2$ be circles that are mutually tangent at $X$ and are tangent to $\Gamma$ at $P$ and $Q$.
 Let $\omega$ be a circle tangent to $\omega_1$ and $\omega_2$ at $X$ that intersects the chords $AB$ and $CD$ at $M$ and $N$ respectively.
 Prove that 
@@ -77,7 +91,7 @@ Prove that
 	\frac{MP}{MQ} = \frac{NP}{NQ} \implies \angle AXM = \angle DMN.
 \]
 
-\vspace{6pt}
+\medskip
 \item[8.] % The Andrew and The Dylan
 Let $n$ be a positive integer greater than $1$, and consider a circle of radius $1$ in which is inscribed a regular $n$-gon $P$ with vertices labelled from $1$ to $n$ in that order.
 Consider the set $S$ of positive divisors of $n$, and the convex polygon $G$ formed by the points of $P$ with labels in $S$.
