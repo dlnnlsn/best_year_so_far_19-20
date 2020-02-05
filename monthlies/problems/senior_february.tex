@@ -1,9 +1,9 @@
 \documentclass{article}
 
 \usepackage{amsmath,amssymb}
-\usepackage{fullpage}
+% \usepackage{fullpage}
 \usepackage{enumerate}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{lmodern}
 \graphicspath{{../logos/}}
@@ -14,10 +14,10 @@
 \setlength{\tabcolsep}{6pt}
 \begin{center} \begin{tabular}{cccc}
 	% set heights below to 43pt if fullpage not used
-	\includegraphics[height=56pt]{SAMF_logo.jpg} &
-	\includegraphics[height=56pt]{SAICA_logo.jpg} &
-	\includegraphics[height=56pt]{OM_Logo_Stacked_Vignette_on_White_RGB.jpg} &
-	\includegraphics[height=56pt]{SAMO2019.png}
+	\includegraphics[height=43pt]{SAMF_logo.jpg} &
+	\includegraphics[height=43pt]{SAICA_logo.jpg} &
+	\includegraphics[height=43pt]{OM_Logo_Stacked_Vignette_on_White_RGB.jpg} &
+	\includegraphics[height=43pt]{SAMO2019.png}
 \end{tabular} \end{center}
 
 
@@ -56,7 +56,7 @@ An $8 \times 8$ chessboard is divided into several regions by 13 straight lines.
 
 \medskip
 \item % Adapted from Sharygin 2005, G11 P1, G
-Let the midpoints of the sides $BC,CA,AB$ of an equilateral triangle $ABC$ be $D,E,F$ respectively. Let $j,k,\ell$ be lines passing through $D,E,F$ respectively such that $j \parallel k \parallel \ell$. Define points $P,Q,R$ by $P= j\cap EF, Q= k \cap FD, R = \ell \cap DE$. Prove that the points $X,Y,Z$ defined by $X = BC\cap QR, Y = CA \cap RP, Z = AB \cap PQ$ are  collinear.
+Let the midpoints of the sides $BC$, $CA$, $AB$ of an equilateral triangle $ABC$ be $D,E,F$ respectively. Let $j,k,\ell$ be lines passing through $D,E,F$ respectively such that $j \parallel k \parallel \ell$. Define points $P,Q,R$ by $P = j\cap EF$, $Q = k \cap FD$, $R = \ell \cap DE$. Prove that the points $X,Y,Z$ defined by $X = BC \cap QR$, $Y = CA \cap RP$, $Z = AB \cap PQ$ are  collinear.
 
 
 \medskip
@@ -67,18 +67,20 @@ where $m, n \in \mathbb{N} \setminus \{1\}$ are given constants.
 
 
 \medskip
-\item
+\item %Spain, Round 2, 1992
+In the land of Graphopia there are $n$ towns. Between some pairs of towns there are direct roads. The residents of these towns want to have mathematics tournaments. They've decided that in order to have a mathematics tournament they need to have $a$ participating towns. Further they decide that in order to have a tournament the connections between the towns involved must be symmetrical. That is either every pair of towns in a tournament are directly linked by a road or no pair is. 
+
+As mathematics competitions are rightly adored by every member of Graphopia every grouping of $a$ towns that can hold a tournament holds one once a year (some towns may be in multiple groupings). However in some years new roads are built and old ones lost to the elements. If a group of $a$ towns find themselves able to put on a tournament they immediately do. If a tournament finds itself unallowable due to road connections, that tournament is regretfully discontinued. Prove that it is possible that one year poor Graphopia finds itself having less than $\binom{n}{a} $$2^{1-\binom{a}{2}}$ tournaments.
+
+
+\medskip
+\item %Serbian Mathematical Olympiad 2007
 For positive real numbers $a,b,c$ with $a+b+c=1$ prove that:
 \begin{flalign*}
  	\frac{a^{n+2}}{a^{n+1} + b^n + c^n} + \frac{b^{n+2}}{a^n + b^{n+1} + c^n} + \frac{c^{n+2}}{a^n + b^n + c^{n+1}} \ge \frac{1}{7}
 \end{flalign*}
 
 where $n \in \mathbb{N}$. Where does equality occur?
-
-
-\medskip
-\item
-
 
 \end{enumerate}
 
