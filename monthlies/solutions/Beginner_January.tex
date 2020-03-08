@@ -1,0 +1,153 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+
+\begin{document}
+
+\begin{center}
+	\textbf{\Large Beginner Monthly Problem Solutions}
+	\\ \vspace{1em}
+	\textbf{\large Due: Friday, 17 January 2020}
+\end{center}
+
+\begin{enumerate}[1.]
+
+\vspace{6pt}
+\item % 2010 Team Q6 
+How many positive square numbers are factors of 1600?
+\medskip
+\item[ANS:]
+Factorising yield: $1600 = 2^6 \times 5^2 = (2^2)^3 \times (5^2)^1 $
+Note that a square number has only even exponents in its factorization, hence is made of square factors. Hence the square factors of $1600 = (3+1)(1+1) = 8$ 
+
+\vspace{6pt}
+\item % 2011 Team Q5
+A palindrome is a positive integer whose digits are the same when read forwards or backwards.
+For example, 2882 is a four-digit palindrome and 49194 is a five-digit palindrome. There are
+pairs of four-digit palindromes whose sum is a five-digit palindrome. One such pair is 2882
+and 9339. How many such pairs are there including this pair?
+
+\medskip
+\item[ANS:]
+Let $P_1 = abba, P_2 = cddc$
+Note that the first digit, and therefor the last digit, of the $5$ digit palindrome, $P_1+P_2 = xyzyx$, is $1 \implies x = 1 \implies a+c = 11 \implies y = 1,2$
+
+If $y=1 \implies b+d < 10$ and $b+d \equiv_{10} = 0 \implies b+d = 0 \implies b=d=0$, hence there are $9-2+1 = 8$ possibilities in this case.
+If $y=2 \implies b+d \geq 10$ and $b+d \equiv_{10} = 1 \implies b+d = 11$, hence there are $(9-2+1)\times(9-2+1) = 64$ possibilities in this case.
+
+In total there are $72$ ordered possibilities $\implies 36$ pairs.
+
+\vspace{6pt}
+\item %2013 Team Q6
+Show all the ways the number 365 can be written as the sum of two or more different perfect
+square numbers?
+\medskip
+\item[ANS:]
+$365 = a^2+b^2$ W.L.O.G $x>y$
+Note we only have check for $y \leq 13$ as $\sqrt{\frac{365}{2}} < 14$
+The only cases which work is $y = 2,13$ which has integer solutions for $x=19,14$ respectively.
+
+\vspace{6pt}
+\item %2014 Team Q5
+How many squares on an $8 \times 8$ chessboard are more black than white?
+\medskip
+\item[ANS:]
+Note that even $\times$ even squares have the same amount of black and white squares, hence we will only look at odd $\times$ odd squares. Note that the total amount of odd $\times$ odd squares has the same amount of more white as more black squares by symmetry. Therefor the amount of total odd $\times$ odd squares is twice the amount of more black squares. 
+Total more black $ = \frac{2^2+4^2+6^2+8^2}{2} = 60$
+
+\vspace{6pt}
+\item %2014 Team Q8
+In triangle $ABC$, $\widehat{A} = 45^{\circ}$. Point $P$ is on $BC$, $Q$ on $AB$ and $R$ on $AC$ such that $BP = QP$ and $CP = RP$. Find $Q \widehat{P} R$.
+\medskip
+\item[ANS:]
+
+$B\hat{Q}P = \hat{B}$ 
+$\implies B\hat{P}Q = 180 - 2\hat{B}$ \\
+Similarly $C\hat{P}R = 180 - 2\hat{C}$ 
+\begin{center}
+$\implies Q\hat{P}R = 180 - (180 - 2\hat{C}) - (180 - 2\hat{B}) = 180 - 2(180 - \hat{C} - \hat{B}) = 180 - 2\hat{A} = 90$
+\end{center}
+
+\vspace{6pt}
+\item % 2016 Team Q3
+If $X$ and $Y$ are two digits and the five digit number $30XY5$ can be expressed as the product $225 \times n$, find all possible positive integer values of $n$.
+\medskip
+\item[ANS:]
+$30XY5$ is odd, hence $225\times n$ is odd $\implies n$ is odd.
+\begin{center}
+$n = \lceil{\frac{30XY5}{225}}\rceil \geq \lceil{\frac{30005}{225}}\rceil = 134$ \\
+$n = \lfloor{\frac{30XY5}{225}}\rfloor \leq \lfloor{\frac{30995}{225}}\rfloor = 137$ \\
+$\implies n = 135,137$
+\end{center}
+
+
+\vspace{6pt}
+\item %Junior 2009 Team Competition
+The symbol $\left \lfloor{x}\right \rfloor$ means the greatest integer less than or equal to $x$. For example, 
+\begin{center}
+	$\left \lfloor{5.7}\right \rfloor = 5$ and $\left \lfloor{4}\right \rfloor = 4$.
+\end{center} 
+Calculate the value of the sum
+\begin{center}
+	$\left \lfloor{\sqrt{1}}\right \rfloor$ + $\left \lfloor{\sqrt{2}}\right \rfloor$ + $\left \lfloor{\sqrt{3}}\right \rfloor$ + $\left \lfloor{\sqrt{4}}\right \rfloor$ + ... + $\left \lfloor{\sqrt{49}}\right \rfloor$ + $\left \lfloor{\sqrt{50}}\right \rfloor$
+\end{center}
+\medskip
+\item[ANS:]
+Note $\left \lfloor{\sqrt{n^2}}\right\rfloor = n$ and $\left \lfloor{\sqrt{n^2-1}}\right\rfloor = n-1$ and  $\left \lfloor{\sqrt{x}}\right\rfloor$ is an increasing function.\\
+Hence the sum becomes:\\
+$1 + 1 + 1 + 2 + 2 + ... + 6 + 7 + 7 = 1(2^2-1^2) + 2(3^2-2^2) + 3(4^2-3^2) + ... + 6(7^2-6^2) + 7 + 7 = 217$
+
+
+\vspace{6pt}
+\item %2012 Team Q7
+On a page, there are 10 circles. Any pair of them intersect at exactly 2 points but no 3 of
+them intersect at one common point. Into how many parts do these circles divide the page?
+\item[ANS:]
+Let $C$ be one of the circles. $C$ meets each of the other $n-1$ circles in 2 points. The $2n-2$ points where $C$ crosses one of the other circles divide the circle $C$ into $2n-2$ arcs, which we consider as edges of a plane graph. There are $2n-2$ such arcs on each of the $n$ circles, making a total of $E=n(2n-2)$ edges in the graph
+
+Now we can use the following formula:
+\begin{center}
+$F=E-V+2=n(2n-2)-n(n-1)+2=n(n-1)+2=n^2-n+2$
+\end{center}
+Where $F$ is the amount of parts, $V$ the amount of vertices and $E$ the amount of edges we just calculated.
+
+Subbing in $n = 10$ yields $F = 100 - 10 + 2 = 92$
+
+
+\vspace{6pt}
+\item %2015 Team Q9
+Twelve points are equally spaced on the circumference of a circle. How many different rectangles may be formed by joining any four points at a time?
+\medskip
+\item[ANS:]
+Note that by choosing any two points which aren't diametrically opposite, we can find the other two points which will form a rectangle by taking the two points which are diametrically opposite the two chosen points.
+
+Let the points be labeled $a_1,a_2,..,a_{12}$, Note that the rectangles formed by choosing $a_i,a_{i+c}$ is the same size as $a_j,a_{j+c}$ as well as $a_j,a_{j+c-6}$ and the latter two are identical. Additionally varying $c$ will find us all the differently sized rectangles. Total different rectangles is $5\times\frac{12}{2} = 30$
+
+\vspace{6pt}
+\item %2012 Team Q5
+What is the remainder when $6^{2012} + 8^{2021}$ is divided by 49?
+\medskip
+\item[ANS:]
+$6^{2012} + 8^{2021} \equiv_{49} 6^{-4} + 8^{5}$ by Euler Phi\\
+The multiplicative inverse of $6$ is $-8$ (mod $49$)\\
+Hence the above simplifies to $(-8)^{4} + 8^{5}\equiv_{49} 29+36 \equiv_{49} 16$
+
+
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{\Large Email submission guidelines}
+\begin{itemize}
+	\item Email your solutions to \href{mailto:samf.training.assignments@gmail.com}{\texttt{samf.training.assignments@gmail.com}}.
+	\item In the subject of your email, include your name and the level of the assignment (Beginner, Intermediate or Senior).
+	\item Submit each question in a single separate PDF file (with multiple pages if necessary), with your name and the question number written on each page.
+	\item If you take photographs of your work, use a document scanner such as Office Lens to convert to PDF.
+	\item If you have multiple PDF files for a question, combine them using software such as PDFsam.
+\end{itemize}
+
+\end{document}
