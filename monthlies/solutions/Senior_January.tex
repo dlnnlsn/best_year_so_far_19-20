@@ -29,10 +29,25 @@
 \begin{enumerate}
 
 \medskip
-\item[1.] % Problem source
-Problem statement
+\begin{enumerate}
 
+\medskip
+\item % PAMO Shortlist 2019
+{\itshape On the board, we write the integers $1, 2, 3, \dots, 2019$.
+At each minute, we pick two numbers on the board $a$ and $b$, erase them, and write down the number $s(a + b)$ instead where $s(n)$ denotes the sum of the digits of the integer $n$.
+Let $N$ be the last number remaining on the board.
+\begin{enumerate}
+	\item Is it possible that $N = 19$?
+	\item Is it possible that $N = 15$?
+\end{enumerate}}
+\\ Solution.
 
+\\ {Since $10^{n} \equiv 1 \pmod 3$ for all non-negative integers $n$, we have that $s(n) \equiv n \pmod 3$ and so replacing $a$ and $b$ with $s(a+b)$ does not change the sum of the numbers on the board in mod 3. 
+\\ Now $1 + 2 +... + 2019 = \frac{(2019)(2020)}{2} \equiv 0 \pmod 3$ but $19 \not\equiv 0 \pmod 3$ so we cannot have $N=19$ as the last number on the board. 
+\\
+\\ We now show that we can in fact get to $15$. 
+\\ For each $k \neq \{1010, 906\}$, replace the numbers $k$ and $2020-k$ with $s(k + 2020-k) = s(2020)$ = $4$. So remaining on the board now is $906, 1114, 1010$ and $1008$ $4$s. Now taking the $4$s in pairs and applying the procedure gives $504$ $8$s, taking these in pairs gives $252$ $7$s, and taking these $7$s in pairs gives $126$ $5$s and again taking these $5$s as pairs gives $63$ $1$s. So we have left $906, 1114, 1010$ and $63$ $1$s. Now apply the procedure in $1114$ and $1010$ to get $s(2125)=9$ and remain with $9, 906$ and $63$ $1$s. Now from the $63$ $1$s, we can make $7$ $9$s by taking $1$s and applying the procedure until we get to a $7$ then we stop and take a $1$ that has not been used. We then have $8$ $9$s and $906$ left on the board. Since $s(9 + 9) = s(18) = 9$, we can apply this procedure to the $9$s until just one $9$ remains. Finally, we combine this $9$ with the $906$ to get $s(906 + 9) = s(915) = 15$.} 
+\\ \\Remark. {\itshape The steps used to get to 15 are not unique.}
 \medskip
 \item[2.]
 
