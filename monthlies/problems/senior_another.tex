@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsmath,amssymb}
+\usepackage{mathtools}
 \usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -29,7 +30,7 @@
 \begin{enumerate}
 
 \bigskip
-\item[1.] % 2015 Azerbaijan IMO TST, Q1
+\item[1.] % 2015 Azerbaijan IMO TST Q1, A(N)
 A set $A = \{a_1, a_2, \dotsc, a_n\}$ of distinct positive integers is called \emph{powerful} if
 \[ \prod_{i \neq j} a_j \mid a_i^{2020} \]
 for all $i \in \{1, 2, \dotsc, n\}$.
@@ -37,7 +38,7 @@ Find all $n \ge 3$ such that there exists a powerful set containing exactly $n$ 
 
 
 \medskip
-\item[2.] % All Russian Olympiad 2017, Grade 10, Q2 
+\item[2.] % All Russian Olympiad 2017 Grade 10 Q2, G
 Let $ABC$ be an acute angled isosceles triangle with $AB = AC$ and circumcentre $O$.
 Lines $BO$ and $CO$ intersect $AC$ and $AB$ at $D$ and $E$ respectively.
 A straight line $l$ is drawn through $E$ parallel to $AC$.
@@ -45,13 +46,13 @@ Prove that the line $l$ is tangent to the circumcircle of $\triangle DOC$.
 
 
 \medskip
-\item[3.] % 2017 Princeton University Maths Competition A4
+\item[3.] % 2017 Princeton University Maths Competition A4, A
 Let the sequence $a_1$, $a_2$, $\dotsc$ be defined by $a_n = 11 a_{n - 1} - n$.
 Find the smallest possible value of $a_1$ such that $a_i > 0$ for all $i \in \mathbb{N}$.
 
 
 \medskip
-\item[4.] % China Southeast Math Olympiad 2014, Q2
+\item[4.] % China Southeast Math Olympiad 2014, Q2, C
 There are $n \ge 4$ people at a fencing competition.
 Each player plays against every other player exactly once, and there are no draws.
 The organisers decide that the competition is representative if they can find $4$ people, $a_1$, $a_2$, $a_3$, and $a_4$, such that $a_i$ beats $a_j$ whenever $i < j$.
@@ -59,13 +60,13 @@ Find the smallest value $n$ such that the competition will always be representat
 
 
 \medskip
-\item[5.] % 2011 Japan Mathematical Olympiad Finals Problem 5
-Given some $4$ points in the plane, one can construct $4$ different triangles with vertices amongst the $4$ points. If the inscribed circles
-of these $4$ triangles all have the same radius, show that the $4$ triangles are congruent. 
+\item[5.] % 2011 Japan Mathematical Olympiad Finals Problem 5, G
+Given some $4$ points in the plane, one can construct $4$ different triangles with vertices amongst the $4$ points.
+If the inscribed circles of these $4$ triangles all have the same radius, show that the $4$ triangles are congruent. 
 
 
 \medskip
-\item[6.] % Emile Tredoux 2020
+\item[6.] % Emile Tredoux 2020, N(G)
 Your second favourite thing in this world is Table Mountain, how perfectly horizontal the top of it is.
 Your favourite thing in this world is, of course, Mathematics.
 Hence, for your birthday you received $n-2$ regular polygons, with number of sides $3, 4, \dotsc, n$ respectively.
@@ -76,7 +77,12 @@ i.e. the top-most edge and bottom-most edge of your stack are parallel.
 
 
 \medskip
-\item[7.] % 
+\item[7.] % SAMO Longlist JM-2014-1, N
+Let $\mathbb{N}$ denote the set of positive integers.
+
+Consider the function $f : \mathbb{N} \times \mathbb{N} \to \{-1,1\}$, defined as follows:
+\[ f(i,j) = \begin{dcases*} -1 & if $i = 1$ or $j = 1$ \\ f(i-1,j) \cdot f(i,j-1) & if $i > 1$ and $j > 1$ \end{dcases*}. \]
+Determine the largest $i \leq 2015$ such that $f(i,2015) = -1$.
 
 
 \medskip
