@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{../logos/}}
+
+
+\begin{document}
+
+\setlength{\tabcolsep}{6pt}
+\begin{center} \begin{tabular}{cccc}
+	\includegraphics[height=56pt]{SAMF_logo.jpg} &
+	\includegraphics[height=56pt]{SAICA_logo.jpg} &
+	\includegraphics[height=56pt]{OM_Logo_Stacked_Vignette_on_White_RGB.jpg} &
+	\includegraphics[height=56pt]{SAMO2019.png}
+\end{tabular} \end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\textbf{\Large <LEVEL> Monthly Problem Set Solutions}
+\end{center}
+
+\begin{enumerate}
+
+\medskip
+\item[1.] % Problem source
+Problem statement
+
+
+\medskip
+\item[2.]
+
+
+\medskip
+\item[3.]
+
+
+\medskip
+\item[4.]
+
+
+\medskip
+\item[5.]
+
+
+\medskip
+\item[6.] % Emile Tredoux 2020
+Let $E_0,E_1,...,E_{n-2}$ be the set of shared edges in your stack, with $E_i$ being the edge that's shared between the $i^{th}$ and $i+1^{th}$ placed polygons, and with $E_0$ and $E_{n-2}$ being the bottom- and top-most edge respectively.
+
+Note that the edges of a regular $p-gon$ are just rotated by an integer multiple of $\frac{360}{p}$ degrees, therefore edge $E_i$ is just $E_{i-1}$ rotated by some positive integer multiple $a_q < q$ of $\frac{360}{q}$, where $q$ is the number of sides of the polygon shared by $E_i$ and $E_{i-1}$.
+Let this multiple be called $q_i$ for $0<i<n-2$
+
+Therefore the angle of inclination of $E_{n-2}$ is just some sum of these $q_i$ mod $180$.
+For $E_{n-2}$ to be perfectly flat, this value must equal $0$.
+
+\[ \sum_{i=1}^{n-2} q_i \equiv_{180} 0 \implies {\sum_{i=3}^{n} \frac{a_i}{i} \equiv_{1} 0} \]
+
+Let $p$ be the largest prime less than or equal to $n$.
+Note that $\frac{a_p}{p} + \frac{a_i}{i}$ will always have a fractional part with denominator some multiple of $p$ unless $gcd(p,i) \neq 1$, meaning $i \geq 2p$, which by Bertrand's postulate implies that there exists some prime $q$ such that $p < q < 2p$, which is a contradiction.
+
+Therefore no $n$ exist to satisfy the condition in the question statement.
+
+\medskip
+\item[7.]
+
+
+\medskip
+\item[8.]
+
+
+\end{enumerate}
+
+\end{document}
