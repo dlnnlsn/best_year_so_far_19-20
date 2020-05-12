@@ -1,0 +1,163 @@
+\documentclass{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{fullpage}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{../logos/}}
+
+
+\begin{document}
+
+\setlength{\tabcolsep}{6pt}
+\begin{center} \begin{tabular}{cccc}
+	\includegraphics[height=56pt]{SAMF_logo.jpg} &
+	\includegraphics[height=56pt]{SAICA_logo.jpg} &
+	\includegraphics[height=56pt]{OM_Logo_Stacked_Vignette_on_White_RGB.jpg} &
+	\includegraphics[height=56pt]{SAMO2019.png}
+\end{tabular} \end{center}
+
+
+\bigskip
+
+
+\begin{center}
+	\textbf{\Large Senior January Monthly Problem Set Solutions}
+\end{center}
+
+\begin{enumerate}
+
+\medskip
+\item % PAMO Shortlist 2019
+{\itshape On the board, we write the integers $1, 2, 3, \dots, 2019$.
+At each minute, we pick two numbers on the board $a$ and $b$, erase them, and write down the number $s(a + b)$ instead where $s(n)$ denotes the sum of the digits of the integer $n$.
+Let $N$ be the last number remaining on the board.
+\begin{enumerate}
+	\item Is it possible that $N = 19$?
+	\item Is it possible that $N = 15$?
+\end{enumerate}}
+
+Recall that $s(n)$, the sum of the digits of $n$, is always congruent to $n$ modulo $9$.
+Thus, when $a$ and $b$ are replaced by $s(a+b)$, the total sum of all the numbers on the board stays the same modulo $9$; in particular, $N$, which is the last number on the board, must be congruent modulo $9$ to
+\[ 1 +2 +3 +\dotsb +2019 = 2019 \times 2020 / 2 \equiv_9 3 \times 2 = 6. \]
+Thus it is not possible that $N = 19$, as $19$ is not congruent to $6$ modulo $9$.
+$15$, however, \emph{is} congruent to $6$ modulo $9$, and we will show that $n = 15$ is indeed possible.
+
+% TODO: complete
+
+
+\medskip
+\item % Baltic Way 2009 Problem 8
+{\itshape For which positive integers $n$ is it possible to divide the set of numbers $\{n, n+1, n+2, \dotsc, n+8\}$ into two disjoint sets $A$ and $B$ such that the product of the numbers in $A$ is equal to the product of the numbers in $B$?}
+
+Let $S = \{n, n+1, \dotsc, n+8\}$.
+Without loss of generality let $A$ have more elements than $B$; since we have $9$ elements in total, it is impossible for them to have the same number of elements, and $\#A +\#B = 9$ gives that $A$ has at least $5$ elements and $B$ has at least $4$ elements.
+The $5$ smallest elements of $S$ are $n$, $n+1$, $n+2$, $n+3$, and $n+4$, while the $4$ largest elements of $S$ are $n+5$, $n+6$, $n+7$, and $n+8$.
+
+Note that for $n \geq 6$ we have that $n^3 \geq 216$ and $9n^3 \geq 1944$, and so
+\begin{align*}
+	& \prod_{a \in A} a -\prod_{b \in B} b \\
+	\geq & n(n+1)(n+2)(n+3)(n+4) - (n+5)(n+6)(n+7)(n+8) \\
+	= & n^5 +9n^4 +9n^3 -201n^2 -1042n -1680 \\
+	= & n^2(n^3-201) +n(9n^3-1042) +9n^3-1680 \\
+	> & 0.
+\end{align*}
+Thus the products of the elements in $A$ cannot equal those of the elements in $B$ if $n \geq 6$.
+
+However, if $n \leq 5$ then $S$ contains the prime number $7$ and no other multiple of $7$.
+Thus either the product of the elements of $A$ will be divisible by $7$ and that of $B$ will not, or vice versa; hence it is not possible for $n \leq 5$.
+Thus there are no positive integers $n$ which satisfy the desired conditions.
+
+
+\medskip
+\item % Liam
+{\itshape Let $M$ be a positive integer, and let $S$ denote the set of finite sequences of positive integers less than or equal to $M$, including the empty sequence of length zero, which we denote as $\mathbf{0}$.
+Also, for a sequence $\mathbf{x} = (x_1, x_2, \dotsc, x_n)$ let $\overline{\mathbf{x}}$ denote the reverse sequence $\overline{\mathbf{x}} = (x_n, x_{n-1}, \dotsc, x_1)$.
+
+Define a function $d$ from $S$ to the integers as follows:
+\begin{itemize}
+\item $d(\mathbf{0}) = 0$.
+\item If $\mathbf{x} = (x_1, x_2, \dotsc, x_n)$ is a sequence of positive length, let $m$ be the largest integer such that $x_1 +x_2 +\dotsb +x_m \leq M$, and let $\mathbf{x}'$ denote the rest of the sequence: $\mathbf{x}' = (x_{m+1}, \dotsc, x_n)$.
+Then $d(\mathbf{x}) = 1 +d(\mathbf{x}')$.
+\end{itemize}
+Show that $d(\mathbf{x}) = d(\overline{\mathbf{x}})$.}
+
+
+
+\medskip
+\item
+{\itshape Let $ABCD$ be a cyclic quadrilateral with its diagonals intersecting at $E$.
+Let $M$ be the midpoint of $AB$.
+Suppose that $ME$ is perpendicular to $CD$.
+Show that either $AC$ is perpendicular to $BD$ or $AB$ is parallel to $CD$.}
+
+We will solve this problem using complex numbers; let each point have a corresponding complex number indicated by the corresponding lower case letter ($a$ for $A$), and the complex conjugate of a complex number $x$ be denoted by $\bar{x}$.
+
+Without loss of generality, let $A$, $B$, $C$, and $D$ lie on the unit circle, so that $\bar{a} = 1/a$, and similarly for $b$, $c$ and $d$.
+Then $m = (a+b)/2$.
+$E$ lies on the line $AC$ and on the line $BD$, so that
+\[ \frac{e-a}{c-a} \in \mathbb{R} \iff \frac{e-a}{c-a} = \frac{\bar{e}-\bar{a}}{\bar{c}-\bar{a}} = \frac{\bar{e}-1/a}{1/c-1/a} = \frac{ac\bar{e}-c}{a-c} \iff e-a = c-ac\bar{e}. \]
+Similarly, $e-b = d-bd\bar{e}$, and so
+\[ (bd-ac)e = bd(c+a-ac\bar{e}) -ac(b+d-bd\bar{e}) = bcd -cda +dab -abc \implies e = \frac{abc-bcd+cda-dab}{ac-bd}. \]
+Thus $\bar{e} = \frac{1/abc -1/bcd +1/cda -1/dab}{1/ac -1/bd} = \frac{a-b+c-d}{ac-bd}$.
+
+Now we are given that $ME \perp CD$, in other words
+\begin{align*}
+	     & \frac{m-e}{c-d} = -\frac{\bar{m}-\bar{e}}{\bar{c}-\bar{d}} \\
+	\iff & \frac{a+b-2e}{c-d} = -\frac{1/a+1/b-2\bar{e}}{1/c-1/d} = \frac{2abcd\bar{e}-cd(a+b)}{ab(d-c)} \\
+	\iff & ab(ac-bd)(a+b)-2ab(ac-bd)e = -2abcd(ac-bd)\bar{e} +cd(ac-bd)(a+b) \\
+	\iff & (ab-cd)(ac-bd)(a+b) = -2abcd(a+c-b-d) +2ab(ac(b+d)-bd(a+c)) \\
+	\iff & (a-b)(ac+bd)(ab-cd) = 0 \\
+	\iff & a = b \quad \text{or} \quad ac+bd = 0 \quad \text{or} \quad ab = cd.
+\end{align*}
+
+Now $a \neq b$ since $A$ and $B$ are distinct points.
+Moreover, $AC$ is perpendicular to $BD$ if and only if
+\[ \frac{a-c}{b-d} \in i\mathbb{R} \iff \frac{a-c}{b-d} = -\frac{\bar{a}-\bar{c}}{\bar{b}-\bar{d}} = -\frac{1/a-1/c}{1/b-1/d} = -\frac{bd(a-c)}{ac(b-d)} \iff ac+bd = 0, \]
+and similarly $AB$ is parallel to $CD$ if and only if $ab = cd$.
+This completes the solution.
+
+
+\medskip
+\item % IMO 2008 Shortlist C3
+{\itshape We have done it! We have planted an infinite number of trees on the vertices of an infinite regular grid, one for each vertex. Let $T$ be a positive integer. 
+We define a {\itshape T-forest} as a set of trees such that for any two trees in the $T$-forest, there exists another tree planted in the grid such that the area of the triangle with these three trees as vertices is $T$.
+
+What is the smallest $T$ such that our $T$-forest has more than $200$ trees?}
+
+
+
+\medskip
+\item % IMO 2009 Shortlist N4
+{\itshape Given a series $t_1, t_2, \dotsc, t_n$ such that 
+\[ t_{k + 1} = \frac{t_k^2 + 1}{t_{k-1} + 1} - 1 \quad \forall \ k \in \{2, 3, \dots, n-1\}. \]
+For which $n \in \mathbb{N}$ does there exist a $t_1$ and $t_2$ such that $t_i \in \mathbb{N}$ for all $i \in \{1, 2, 3, \dotsc, n\}$?}
+
+
+
+\medskip
+\item % Modified Iran TST 2018 Q6
+{\itshape Let $AC$ and $BD$ be two chords of a circle $\Gamma$ that intersect at $X$ in the interior of $\Gamma$.
+Let $\Gamma_1$ and $\Gamma_2$ be circles that are mutually tangent at $X$ and are tangent to $\Gamma$ at $P$ and $Q$.
+Let $\omega$ be a circle tangent to $\Gamma_1$ and $\Gamma_2$ at $X$ that intersects the chords $AB$ and $CD$ at $M$ and $N$ respectively.
+Prove that
+\[
+	\frac{MP}{MQ} = \frac{NP}{NQ} \implies \angle AXM = \angle DXN.
+\]}
+
+
+
+\medskip
+\item % The Andrew and The Dylan
+{\itshape Let $n$ be a positive integer greater than $1$, and consider a circle of radius $1$ in which is inscribed a regular $n$-gon $P$ with vertices labelled from $1$ to $n$ in that order.
+Consider the set $S$ of positive divisors of $n$, and the convex polygon $G$ formed by the points of $P$ with labels in $S$.
+If the area of $G$ is denoted by $|G|$, show that
+\[ 
+	|G| < \frac{3}{2}.
+\]}
+
+
+\end{enumerate}
+
+\end{document}
