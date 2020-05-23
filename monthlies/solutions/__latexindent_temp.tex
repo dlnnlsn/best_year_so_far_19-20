@@ -38,14 +38,14 @@ Let $N$ be the last number remaining on the board.
 	\item Is it possible that $N = 15$?
 \end{enumerate}}
 
-Recall that $s(n)$, the sum of the digits of $n$, is always congruent to $n$ modulo $9$.
-Thus, when $a$ and $b$ are replaced by $s(a+b)$, the total sum of all the numbers on the board stays the same modulo $9$; in particular, $N$, which is the last number on the board, must be congruent modulo $9$ to
-\[ 1 +2 +3 +\dotsb +2019 = 2019 \times 2020 / 2 \equiv_9 3 \times 2 = 6. \]
-Thus it is not possible that $N = 19$, as $19$ is not congruent to $6$ modulo $9$.
-$15$, however, \emph{is} congruent to $6$ modulo $9$, and we will show that $n = 15$ is indeed possible.
+Since $10^{n} \equiv 1 \pmod 3$ for all non-negative integers $n$, we have that $s(n) \equiv n \pmod 3$ and so replacing $a$ and $b$ with $s(a+b)$ does not change the sum of the numbers on the board in mod 3. 
+Now $1 + 2 +... + 2019 = \frac{(2019)(2020)}{2} \equiv 0 \pmod 3$ but $19 \not\equiv 0 \pmod 3$ so we cannot have $N=19$ as the last number on the board. 
 
-% TODO: complete
+We now show that we can in fact get to $15$. 
 
+For each $k \neq \{1010, 906\}$, replace the numbers $k$ and $2020-k$ with $s(k + 2020-k) = s(2020)$ = $4$. So remaining on the board now is $906, 1114, 1010$ and $1008$ $4$s. Now taking the $4$s in pairs and applying the procedure gives $504$ $8$s, taking these in pairs gives $252$ $7$s, and taking these $7$s in pairs gives $126$ $5$s and again taking these $5$s as pairs gives $63$ $1$s. So we have left $906, 1114, 1010$ and $63$ $1$s. Now apply the procedure in $1114$ and $1010$ to get $s(2125)=9$ and remain with $9, 906$ and $63$ $1$s. Now from the $63$ $1$s, we can make $7$ $9$s by taking $1$s and applying the procedure until we get to a $7$ then we stop and take a $1$ that has not been used. We then have $8$ $9$s and $906$ left on the board. Since $s(9 + 9) = s(18) = 9$, we can apply this procedure to the $9$s until just one $9$ remains. Finally, we combine this $9$ with the $906$ to get $s(906 + 9) = s(915) = 15$.
+
+Remark: {\itshape The steps used to get to 15 are not unique.}
 
 \medskip
 \item % Baltic Way 2009 Problem 8
@@ -82,6 +82,17 @@ Define a function $d$ from $S$ to the integers as follows:
 Then $d(\mathbf{x}) = 1 +d(\mathbf{x}')$.
 \end{itemize}
 Show that $d(\mathbf{x}) = d(\overline{\mathbf{x}})$.}
+Note that $d$ partitions the sequence $\mathbf{x}$ into sub-sequences $s.t.$ the sum of each sub-sequence does not exceed $M$ and then counts the total amount of these sub-sequences. Let ${s_1, s_2, .., s_{d(\mathbf{x})}}$ be the indices of the  starts of these sub-sequences.
+
+For the partitioning of $\bar{\mathbf{x}}$ we conjecture that none of the sub-sequences can have more than one of these $x_{s_i}$
+
+If there are exist a sub-sequence with at least two of these $s_i$ we have:
+\begin{center}
+    $M \geq (\sum_{j=s_{i+1}}^{s_i} x_j) = (\sum_{j=s_i}^{s_{i+1}-1} x_j) + x_{s_{i+1}} > M$ 
+\end{center}
+which is a contradiction $\implies$ each $s_i$ in its own sub-sequence which implies $d(\overline{\mathbf{x}}) \geq d(\mathbf{x})$
+
+Hence $d(\mathbf{x}) = d(\overline{\overline{\mathbf{x}}}) \geq d(\overline{\mathbf{x}}) \geq d(\mathbf{x})\implies d(x) = d(\bar x)$
 
 
 
@@ -157,7 +168,19 @@ This implies that $t_3 + 1 | t_2^2 + 1$ and $t_2 + 1 | t_3^2 + 1$. Suppose for t
 
 Since $(t_2 + 1)(t_4 + 1) = t_3^2 + 1$, and $t_3^2 + 1 \equiv 2 \pmod{4}$, $t_4$ must be even, so $t_4^2 + 1$ must be odd. But $t_3 + 1 | t_4^2 + 1$, so $t_4^2 + 1$ must be even, which is a contradiction. Hence, $t_3 + 1 | t_2^2 + 1$, $t_2 + 1 | t_3^2 + 1$, and $t_2$ and $t_3$ are both even.
 
-I claim that there no positive even integers $m$ and $n$ such that $m+1 | n^2 + 1$ and $n+1 | m^2 + 1$. Suppose there are; take the two that make $m + n$ minimal. Let $(m+1)(p+1) = n^2 + 1$. $p$ is even, or else $4 | n^2 + 1$. $m = \frac{n^2+1}{p+1} - 1$, so $n + 1 | \left(\frac{n^2+1}{p+1} - 1\right)^2 + 1$, so $(n+1)(p+1)^2 | (n^2 - p)^2 + (p+1)^2$, so $n+1 | 2(p^2+1)$. $n$ is even, so $n | p^2 + 1$. Because $m+n$ is minimal, either $p=0$ or $p \geq m$. In the latter case, $n^2 + 1 = (m+1)(p+1) \geq (m+1)^2$, so $p = m$, yielding $n^2 + 1 = (m+1)^2$, which has no solutions. If $p=0$, then $m = n^2$, giving $n+1 | n^4 + 1$, or $n=1$, which is impossible since $n$ is even. It follows that there are no sequences with 5 terms, so our proof is complete.
+We claim that there no positive even integers $m$ and $n$ such that $m+1 | n^2 + 1$ and $n+1 | m^2 + 1$. Suppose there are; take the two that make $m + n$ minimal. WLOG, let $m > n$. 
+Let $(m+1)(p+1) = n^2 + 1$. $p$ must be even, otherwise $4 | n^2 + 1$. $m = \frac{n^2+1}{p+1} - 1$, so 
+$$n + 1 | \left(\frac{n^2+1}{p+1} - 1\right)^2 + 1$$
+$$ \implies (n+1)(p+1)^2 | (n^2 - p)^2 + (p+1)^2 = (n^4 - 1) - 2(n^2 - 1)p + 2p^2 + 2$$
+$$\implies n+1 | 2(p^2+1)$$ 
+
+Since $n$ is even, $n + 1 | p^2 + 1$ and by construction $p + 1 | n^2 + 1$. Notice that:
+
+$$m \ge n + 1 = \frac{n^2 + 2n + 1}{n + 1} > \frac{n^2 + 1}{n + 1} > \frac{n^2 + 1}{m + 1} = p + 1 > p$$
+
+So we have $n + p < m + n$ which can only happen when $p = 0$ since we assumed $m + n$ was minimal, so $m = n^2$ which has no valid solutions. It follows that there are no sequences with 5 terms, so the proof is complete.
+
+
 
 \medskip
 \item % Modified Iran TST 2018 Q6
