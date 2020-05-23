@@ -69,7 +69,32 @@ where $m$ is also a positive integer.}
 $$\sum_{i = 1}^{m} (x + i)^n = \sum_{i = 1}^{m} (y + i)^{2n}$$
 where $m, n \in \mathbb{N} \setminus \{1\}$ are given constants.}
 
+By the Power-Mean Inequality, we have:
+$$(\frac{(x + i)^n + (x + m + 1 - i)^n}{2})^{\frac{1}{n}} > x + \frac{m + 1}{2}$$
+$$\implies \frac{(x + i)^n + (x + m + 1 - i)^n}{2} > (x + \frac{m + 1}{2})^n$$
+$$\implies \sum_{i = 1}^{n} (x + i)^n > m(x + \frac{m + 1}{2})^n$$
 
+Expanding the LHS gives:
+$$\sum_{i = 1}^{m} (x + i)^n = mx^n + \frac{mn(m + 1)}{2}x^{n - 1} + O_1(x^{n - 2})$$
+
+Similarly:
+
+$$m(x + \frac{m + 2}{2})^n = mx^n + \frac{mn(m + 2)}{2}x^{n - 1} + O_2(x^{n - 2})$$
+
+Since the coefficients of the second term will dominate the expression after subtracting the two, we have:
+
+$$m(x + \frac{m + 2}{2})^n > \sum_{i = 1}^{m} (x + i)^n > m(x + \frac{m + 1}{2})^n ~\forall x > T$$
+
+where $T$ is some sufficiently large real number. Following a similar process and replacing $n$ by $2n$ and $x$ by $y$, we get:
+
+$$m(y + \frac{m + 2}{2})^{2n} > \sum_{i = 1}^{m} (y + i)^{2n} > m(y + \frac{m + 1}{2})^{2n} ~\forall y > K$$
+
+where $K$ is some sufficiently large real number. Adding $1$ to $y$ yields:
+
+$$m(y + \frac{m + 2}{2} + 1)^{2n} > \sum_{i = 1}^{m} (y + i + 1)^{2n} > m(y + \frac{m + 1}{2} + 1)^{2n} ~\forall y > K$$
+
+Since $m$ is fixed, we can choose $y > K$ such that: 
+$$y^2 + (m + 2)y + (\frac{m + 2}{2})^2 - \frac{m + 1}{2} > T$$
 
 \medskip
 \item % Spain, Round 2, 1992
