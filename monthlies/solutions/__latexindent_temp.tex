@@ -168,7 +168,17 @@ This implies that $t_3 + 1 | t_2^2 + 1$ and $t_2 + 1 | t_3^2 + 1$. Suppose for t
 
 Since $(t_2 + 1)(t_4 + 1) = t_3^2 + 1$, and $t_3^2 + 1 \equiv 2 \pmod{4}$, $t_4$ must be even, so $t_4^2 + 1$ must be odd. But $t_3 + 1 | t_4^2 + 1$, so $t_4^2 + 1$ must be even, which is a contradiction. Hence, $t_3 + 1 | t_2^2 + 1$, $t_2 + 1 | t_3^2 + 1$, and $t_2$ and $t_3$ are both even.
 
-I claim that there no positive even integers $m$ and $n$ such that $m+1 | n^2 + 1$ and $n+1 | m^2 + 1$. Suppose there are; take the two that make $m + n$ minimal. Let $(m+1)(p+1) = n^2 + 1$. $p$ is even, or else $4 | n^2 + 1$. $m = \frac{n^2+1}{p+1} - 1$, so $n + 1 | \left(\frac{n^2+1}{p+1} - 1\right)^2 + 1$, so $(n+1)(p+1)^2 | (n^2 - p)^2 + (p+1)^2$, so $n+1 | 2(p^2+1)$. $n$ is even, so $n | p^2 + 1$. Because $m+n$ is minimal, either $p=0$ or $p \geq m$. In the latter case, $n^2 + 1 = (m+1)(p+1) \geq (m+1)^2$, so $p = m$, yielding $n^2 + 1 = (m+1)^2$, which has no solutions. If $p=0$, then $m = n^2$, giving $n+1 | n^4 + 1$, or $n=1$, which is impossible since $n$ is even. It follows that there are no sequences with 5 terms, so our proof is complete.
+We claim that there no positive even integers $m$ and $n$ such that $m+1 | n^2 + 1$ and $n+1 | m^2 + 1$. Suppose there are; take the two that make $m + n$ minimal. WLOG, let $m > n$. 
+Let $(m+1)(p+1) = n^2 + 1$. $p$ must be even, otherwise $4 | n^2 + 1$. $m = \frac{n^2+1}{p+1} - 1$, so 
+$$n + 1 | \left(\frac{n^2+1}{p+1} - 1\right)^2 + 1$$
+$$ \implies (n+1)(p+1)^2 | (n^2 - p)^2 + (p+1)^2 = (n^4 - 1) - 2(n^2 - 1)p + 2p^2 + 2$$
+$$\implies n+1 | 2(p^2+1)$$ 
+
+Since $n$ is even, $n + 1 | p^2 + 1$ and by construction $p + 1 | n^2 + 1$. Notice that:
+
+$$m \ge n + 1 = \frac{n^2 + 2n + 1}{n + 1} > \frac{n^2 + 1}{n + 1} > \frac{frac{n^2 + 1}}{m + 1} = p + 1 > p$$
+
+So we $n + p < m + n$ which can only happen when $p = 0$, so $m = n^2$ which has no valid solutions. It follows that there are no sequences with 5 terms, so the proof is complete.
 
 
 
