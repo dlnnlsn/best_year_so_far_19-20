@@ -1,0 +1,181 @@
+\documentclass{article}
+
+\usepackage{mathtools,amssymb}
+\usepackage{enumerate}
+\usepackage{geometry}
+\usepackage{fullpage}
+
+
+\title{Advanced Test 5}
+\author{Stellenbosch Camp 2019}
+\date{Time: $4$ hours}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\hfill\textit{Each question is worth 7 marks.}
+
+\begin{enumerate}[1.]
+
+\item % Austrian MO Q15, C
+\textit{In the country of Oddland, there are stamps with values $1$ cent, $3$ cents, $5$ cents, etc., one type for each odd number.
+The rules of Oddland Postal Services stipulate the following: for any two distinct values, the number of stamps of the higher value on an envelope must never exceed the number of stamps of the lower value.
+In the country of Squareland, on the other hand, there are stamps with values $1$ cent, $4$ cents, $9$ cents, etc., one type for each square number.
+Stamps can be combined in all possible ways in Squareland without additional rules.
+Prove that for every positive integer $n$:
+In Oddland and Squareland there are equally many ways to correctly place stamps of a total value $n$ cents on an envelope.
+Rearranging the stamps on an envelope makes no difference.
+}
+
+\textit{Solution}: 
+We will show that a bijection exists between Odd- and Squareland's systems.
+
+Note: $n^2 = \sum_{i = 1}^{n} 2i - 1$.
+
+Let $a_1$, $a_2$, $a_3$, $\dots$, $a_s$ be the number of stamps of each denomination for Squareland where $a_i$ dictates the number of $i^2$ stamps.
+Similarly, $b_1$, $b_2$, $\dots$, $b_t$ are the stamps for Oddland where $b_i$ dictates the number of $2i - 1$ stamps.
+For any Squareland combination we have that:
+\begin{align*}
+  n &= \sum_ {i = 1}^{s} a_i \cdot i^2 \\
+  &= \sum_ {i = 1}^{s} (a_i \sum_{j = 1}^{i} (2j - 1) ) \\
+  &= \sum_ {j = 1}^{k} ((2j - 1) \sum_{i = 1}^{s - j + 1}a_i) \\
+  &= \sum_ {j = 1}^{k} ((2j - 1) b_j 
+\end{align*}
+which is a valid Oddland combination as $a_i > 0 \;\forall\; i \in \mathbb{N}$.
+
+The reverse also holds, meaning we have a bijection, and we are done.
+
+
+\item % Turkish EGMO TST 2018 Q2, N
+Find all pairs of positive integers $(m,n)$ satisfying
+\[ m^2 +n^2 = 2019(m-n). \]
+
+\textit{Solution}:
+The given equation is equivalent to
+\[
+	(m + n)^2 + (m - n - 2019)^2 = 2019^2.
+\]
+Considering the equation modulo $3$, we determine that $m + n$ and $m - n - 2019$ must both be multiples of $3$, and thus $m$ and $n$ are both multiples of $3$. Let $m = 3a$ and $n = 3b$. We must now solve
+\[
+	(a + b)^2 + (a - b - 673)^2 = 673^2.
+\]
+The only possible common divisor of $(a + b)$ and $(a - b - 673)$ is $673$. If both are divisible by $673$, the equation reduces to
+\[
+	\left(\frac{a + b}{673}\right)^2 + \left(\frac{a - b - 673}{673}\right)^2 = 1
+\]
+which forces $a + b = 673$ and $a - b - 673 = 0$. But this gives us $n = 3b = 0$, which is not a valid solution.
+
+We thus have that $(a + b)$ and $(a - b - 673)$ are relatively prime, and so $(a + b)$, $(a - b - 673)$, $673$ forms a primitive pythagorean triple. There are thus integers $x$ and $y$ such that either
+\begin{align*}
+	a + b & = 2xy & a - b - 673 & = x^2 - y^2 & 673 & = x^2 + y^2
+\shortintertext{or}
+	a + b & = x^2 - y^2 & a - b - 673 & = 2xy & 673 & = x^2 + y^2.
+\end{align*}
+
+The only way of writing $673$ as a sum of squares is $673 = 23^2 + 12^2$, and so $x = 23$ and $y = 12$, or $x = 12$ and $y = 23$. We thus have that $2xy = 552$ and $x^2 - y^2 = \pm 385$.
+
+If $a + b = 552$ and $a - b - 673 = 385$, we get a negative value for $b$.
+If $a + b = 552$ and $a - b - 673 = -385$, we get $a = 420$ and $b = 132$, which gives us $m = 1260$ and $n = 396$.
+We can not have $a + b = -385$.
+If $a + b = 385$ and $a - b - 673 = 552$, we also get a negative value for $b$.
+
+Thus the only solution is $(m, n) = (1260, 396)$.
+
+\item % The Ralph, C
+Given a set of distinct points $(x_1, y_1)$, $(x_2, y_2)$, $\dots$, $(x_{8074}, y_{8074})$ with $x_i, y_i \in \{1, 2, \dots, 8076\}$.
+Prove that there exists a positive integer $K$ such that there are $2019$ unique pairs $( (x_i, y_i), (x_j, y_j) )$ with
+\[ |x_i - x_j| + |y_i - y_j| = K. \]
+
+\textit{Solution}:
+Notice that the number of possible Manhattan Distances in a $8076 \times 8076$ grid is $2 \times 8076 - 2 = 16150$. The total number of pairs of points is $\binom{8074}{2} = \frac{8074 \times 8073}{2} = 16150 \times 2018 + 1$.
+
+Therefore, by the Pigeonhole Principle with 16150 distances as pigeonholes and the $\binom{8074}{2}$ pairs of points as pigeons, there will be at least $2019$ with distance $K$ apart, for some $K$.
+
+
+\item % OME 2019 Q6, G
+In a triangle $ABC$, the internal bisector of $\angle A$ meets the side $BC$ at $D$.
+The lines through $D$ tangent to the circumcircles of triangles $\triangle ABD$ and $\triangle ACD$ meet the lines $AC$ and $AB$ at points $E$ and $F$, respectively.
+Lines $BE$ and $CF$ intersect at $G$.
+Prove that $\angle EDG = \angle ADF$.
+
+\textit{Solution}:
+Define $X= AD \cap EF, Y = DG \cap EF $.
+Using a combination of vertically opposite angles and tan-chord theorem we obtain $\angle FDB = \angle FAB =\frac{1}{2} \angle BAC $ and $\angle EDC = \angle EAC =\frac{1}{2} \angle BAC $ and so $\angle EDF = 180^\circ -\frac{1}{2}\angle BAC -\frac{1}{2}\angle BAC= 180^\circ - \angle BAC$.
+Thus $AEDF$ is a cyclic quadrilateral.
+Moreover $\angle FED =\angle BAD = \angle DAC= \angle DEC$ so $EF \parallel CB$.
+Thus considering $A$ and $G$ as centres of similarity we obtain 
+\[
+  \frac{EX}{XF} = \frac{CD}{DB} \quad \text{and} \quad \frac{EY}{YF} =\frac{BD}{DC}.
+\]
+It is well known that in $\triangle EDF $, $\angle FDX = \angle EDY \Leftrightarrow \frac{FX \cdot FY}{ EY \cdot EX} = \frac{FD^2}{ED^2}$.
+Recalling that $ED = FD$ ($D$ is the midpoint of the arc $FDE$) and substituting in the above ratios the desired result follows.  
+
+
+\item % The Andrew and The Dylan
+\newcommand{\parens}[1]{\left(#1\right)}
+Let $n$ be a positive integer greater than $1$, and consider a circle of radius $1$ in which is inscribed a regular $2n$-gon $P$ with vertices labelled from $1$ to $2n$ in that order.
+Consider the set $S$ of positive divisors of $2n$, and the convex polygon $G$ formed by the points of $P$ with labels in $S$.
+If the area of $G$ is denoted by $|G|$ and the number of elements of $S$ is denoted by $\tau(2n)$, show that
+\[ \frac{1}{2} \parens{\sin\parens{\frac{\pi}{n}} +\cos\parens{\frac{\pi}{n}}} < |G| < \frac{\tau(2n)}{2} \sin\parens{\frac{\pi}{\tau(2n)}}. \]
+
+\textit{Solution}:
+
+Let the centre of the circle be $O$, then for successive divisors $d_k,d_{k+1}$ the area of the triangle $Od_kd_{k+1}$ is given by the sine area formula.
+It follows that the area of $P$, $|G|$, is given by the sum 
+\begin{equation}
+  |G| = \sum_{k=0}^{m-1} \frac{1}{2}r^2 \sin \left( \frac{2 \pi(d_{k+1}-d_k)}{2n} \right) \label{eqn:series5}
+\end{equation}
+where $m=\tau(2n)$, $1=d_1<d_2<...<d_m=2n$ are the divisors of $2n$, $d_0=0$, and $r=1$ is the radius of the circle.
+Notice that $d_{m-1}=n$, so the argument of $\sin$  in the last term in the sequence at \eqref{eqn:series5} is $\frac{2 \pi (2n - n)}{2n}= \pi $.
+Thus for all $d_k<d_{m-1}$ we have that $\frac{2 \pi (d_{k+1} - d_k)}{2n} \leq \pi$.
+We know that the sine function is concave on this interval and so we apply Jensen's Inequality to find an upper bound, but first we notice that $\sin(\pi) = 0 = \sin(0)$ so we replace the final term in \eqref{eqn:series5} with $\frac{1}{2}r^2\sin(0)$.
+\begin{flalign*}
+  |G| &= \sum_{k=0}^{m-2} \frac{1}{2}r^2 \sin \left( \frac{2 \pi(d_{k+1}-d_k)}{2n} \right) + \frac{1}{2}r^2 \sin(0) \\
+  |G| &< m \left(\frac{1}{2}r^2 \sin \left( \frac{1}{m} \left( \sum_{k=0}^{m-2}\frac{2\pi(d_{k+1} - d_k)}{2n} +0 \right)  \right)  \right).
+\end{flalign*}
+
+The right hand side contains a telescoping series and thus simplifies to
+\begin{flalign*}
+  |G| &< \frac{m}{2}r^2 \sin \left( \frac{\pi\left( d_{m-1} - d_0 \right) }{n} \right) =\frac{\tau(2n)}{2}\sin \left( \frac{\pi}{\tau(2n)} \right) 
+\end{flalign*}
+as required.
+
+For the left hand side we notice that $2 = d_2$ and $n = d_{m-1}$ are both divisors of $2n$ and thus the triangle $d_0d_2d_{m-1}$ is wholly contained within $P$.
+Moreover $1 = d_1 | 2n$ and so the area is a strict lower bound.
+The sine area formula yields its area as 
+\begin{flalign*}
+  |G|>|\triangle d_0d_2d_{m-1}| &= \frac{1}{2} r^2 \sin \left( \frac{\pi}{2n} (2-0) \right) + \frac{1}{2}r^2 \sin \left( \frac{\pi}{2n}(n-2) \right)   \\ 
+  &= \frac{1}{2} \sin \left( \frac{\pi}{n}  \right) + \frac{1}{2} \sin \left( \frac{\pi}{2}-\frac{\pi}{n} \right)   \\ 
+  &= \frac{1}{2} \sin \left( \frac{\pi}{n}  \right) + \frac{1}{2} \cos \left( \frac{\pi}{n} \right).
+\end{flalign*}
+
+
+\item % Dutch BxMO TST 2018 Q4, N
+Do there exist a positive integer $k$ and a nonconstant sequence $a_1, a_2, a_3, \dotsc$ of positive integers such that for each positive integer $n$,
+\[ a_n = \gcd(a_{n+k},a_{n+k+1})? \]
+
+\textit{Solution}:
+
+Such a $k$ and a sequence do not exist.
+We prove this by contradiction, so suppose they do exist.
+Note that $a_n | a_{n+k}$ and $a_n | a_{n+k+1}$ for all $n \ge 1$.
+Using simple induction, it follows that $a_n | a_{n+\ell k}$ and $a_n | a_{n+\ell k+ \ell}$ for all $\ell \ge 0$.
+We will prove by induction to $m$ that $ a_n | a_{n+mk+(m+1)}$ for all $- \le m \leq k - 1$.
+For $m = k - 1$, this follows from $a_n | a_{n+k_k} =a_{n+(k-1)k+k}$.
+Now suppose that for a certain $m$ with $1 \le m \le k - 1$ we have that $a_n | a_{n+mk+(m+1)}$. We also know that $a_n | a_{n+mk+m}$.
+Therefore, as $a_{n+(m-1)k+m} = \gcd(a_{n+mk+m}, a_{n+mk+m+1})$, we also have $a_n | a_{n+(m-1)k+m}$.
+This finishes the induction argument.
+
+Substituting $m = 0$ yields $a_n | a_{n+1}$.
+Because $a_n | a_{n+1}$, we also have $\gcd(a_n, a_{n+1}) = a_n$ for all $n$.
+Hence, $a_n = a_{n-k}$ for all $n \ge k + 1$.
+Now we have $a_{n-k} | a_{n-k+1} | a_{n-k+2} | \dotsb | a_n = a_{n-k}$.
+Because these are all positive integers, $a_{n-k}, a_{n-k+1}, . . . , a_n$ must all be equal.
+This must be true for all $n \ge k + 1$, hence the sequence is constant, which gives a contradiction.
+
+
+\end{enumerate}
+
+
+\end{document}

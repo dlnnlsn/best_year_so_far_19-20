@@ -37,19 +37,37 @@ Let $N$ be the last number remaining on the board.
 	\item Is it possible that $N = 19$?
 	\item Is it possible that $N = 15$?
 \end{enumerate}}
-Solution.
-\\ {Since $10^{n} \equiv 1 \pmod 3$ for all non-negative integers $n$, we have that $s(n) \equiv n \pmod 3$ and so replacing $a$ and $b$ with $s(a+b)$ does not change the sum of the numbers on the board in mod 3. 
-\\ Now $1 + 2 +... + 2019 = \frac{(2019)(2020)}{2} \equiv 0 \pmod 3$ but $19 \not\equiv 0 \pmod 3$ so we cannot have $N=19$ as the last number on the board. 
-\\
-\\ We now show that we can in fact get to $15$. 
-\\ For each $k \neq \{1010, 906\}$, replace the numbers $k$ and $2020-k$ with $s(k + 2020-k) = s(2020)$ = $4$. So remaining on the board now is $906, 1114, 1010$ and $1008$ $4$s. Now taking the $4$s in pairs and applying the procedure gives $504$ $8$s, taking these in pairs gives $252$ $7$s, and taking these $7$s in pairs gives $126$ $5$s and again taking these $5$s as pairs gives $63$ $1$s. So we have left $906, 1114, 1010$ and $63$ $1$s. Now apply the procedure in $1114$ and $1010$ to get $s(2125)=9$ and remain with $9, 906$ and $63$ $1$s. Now from the $63$ $1$s, we can make $7$ $9$s by taking $1$s and applying the procedure until we get to a $7$ then we stop and take a $1$ that has not been used. We then have $8$ $9$s and $906$ left on the board. Since $s(9 + 9) = s(18) = 9$, we can apply this procedure to the $9$s until just one $9$ remains. Finally, we combine this $9$ with the $906$ to get $s(906 + 9) = s(915) = 15$.} 
-\\ \\Remark. {\itshape The steps used to get to 15 are not unique.} 
+
+Recall that $s(n)$, the sum of the digits of $n$, is always congruent to $n$ modulo $9$.
+Thus, when $a$ and $b$ are replaced by $s(a+b)$, the total sum of all the numbers on the board stays the same modulo $9$; in particular, $N$, which is the last number on the board, must be congruent modulo $9$ to
+\[ 1 +2 +3 +\dotsb +2019 = 2019 \times 2020 / 2 \equiv_9 3 \times 2 = 6. \]
+Thus it is not possible that $N = 19$, as $19$ is not congruent to $6$ modulo $9$.
+$15$, however, \emph{is} congruent to $6$ modulo $9$, and we will show that $n = 15$ is indeed possible.
+
+% TODO: complete
 
 
 \medskip
 \item % Baltic Way 2009 Problem 8
 {\itshape For which positive integers $n$ is it possible to divide the set of numbers $\{n, n+1, n+2, \dotsc, n+8\}$ into two disjoint sets $A$ and $B$ such that the product of the numbers in $A$ is equal to the product of the numbers in $B$?}
 
+Let $S = \{n, n+1, \dotsc, n+8\}$.
+Without loss of generality let $A$ have more elements than $B$; since we have $9$ elements in total, it is impossible for them to have the same number of elements, and $\#A +\#B = 9$ gives that $A$ has at least $5$ elements and $B$ has at least $4$ elements.
+The $5$ smallest elements of $S$ are $n$, $n+1$, $n+2$, $n+3$, and $n+4$, while the $4$ largest elements of $S$ are $n+5$, $n+6$, $n+7$, and $n+8$.
+
+Note that for $n \geq 6$ we have that $n^3 \geq 216$ and $9n^3 \geq 1944$, and so
+\begin{align*}
+	& \prod_{a \in A} a -\prod_{b \in B} b \\
+	\geq & n(n+1)(n+2)(n+3)(n+4) - (n+5)(n+6)(n+7)(n+8) \\
+	= & n^5 +9n^4 +9n^3 -201n^2 -1042n -1680 \\
+	= & n^2(n^3-201) +n(9n^3-1042) +9n^3-1680 \\
+	> & 0.
+\end{align*}
+Thus the products of the elements in $A$ cannot equal those of the elements in $B$ if $n \geq 6$.
+
+However, if $n \leq 5$ then $S$ contains the prime number $7$ and no other multiple of $7$.
+Thus either the product of the elements of $A$ will be divisible by $7$ and that of $B$ will not, or vice versa; hence it is not possible for $n \leq 5$.
+Thus there are no positive integers $n$ which satisfy the desired conditions.
 
 
 \medskip
@@ -74,6 +92,31 @@ Let $M$ be the midpoint of $AB$.
 Suppose that $ME$ is perpendicular to $CD$.
 Show that either $AC$ is perpendicular to $BD$ or $AB$ is parallel to $CD$.}
 
+We will solve this problem using complex numbers; let each point have a corresponding complex number indicated by the corresponding lower case letter ($a$ for $A$), and the complex conjugate of a complex number $x$ be denoted by $\bar{x}$.
+
+Without loss of generality, let $A$, $B$, $C$, and $D$ lie on the unit circle, so that $\bar{a} = 1/a$, and similarly for $b$, $c$ and $d$.
+Then $m = (a+b)/2$.
+$E$ lies on the line $AC$ and on the line $BD$, so that
+\[ \frac{e-a}{c-a} \in \mathbb{R} \iff \frac{e-a}{c-a} = \frac{\bar{e}-\bar{a}}{\bar{c}-\bar{a}} = \frac{\bar{e}-1/a}{1/c-1/a} = \frac{ac\bar{e}-c}{a-c} \iff e-a = c-ac\bar{e}. \]
+Similarly, $e-b = d-bd\bar{e}$, and so
+\[ (bd-ac)e = bd(c+a-ac\bar{e}) -ac(b+d-bd\bar{e}) = bcd -cda +dab -abc \implies e = \frac{abc-bcd+cda-dab}{ac-bd}. \]
+Thus $\bar{e} = \frac{1/abc -1/bcd +1/cda -1/dab}{1/ac -1/bd} = \frac{a-b+c-d}{ac-bd}$.
+
+Now we are given that $ME \perp CD$, in other words
+\begin{align*}
+	     & \frac{m-e}{c-d} = -\frac{\bar{m}-\bar{e}}{\bar{c}-\bar{d}} \\
+	\iff & \frac{a+b-2e}{c-d} = -\frac{1/a+1/b-2\bar{e}}{1/c-1/d} = \frac{2abcd\bar{e}-cd(a+b)}{ab(d-c)} \\
+	\iff & ab(ac-bd)(a+b)-2ab(ac-bd)e = -2abcd(ac-bd)\bar{e} +cd(ac-bd)(a+b) \\
+	\iff & (ab-cd)(ac-bd)(a+b) = -2abcd(a+c-b-d) +2ab(ac(b+d)-bd(a+c)) \\
+	\iff & (a-b)(ac+bd)(ab-cd) = 0 \\
+	\iff & a = b \quad \text{or} \quad ac+bd = 0 \quad \text{or} \quad ab = cd.
+\end{align*}
+
+Now $a \neq b$ since $A$ and $B$ are distinct points.
+Moreover, $AC$ is perpendicular to $BD$ if and only if
+\[ \frac{a-c}{b-d} \in i\mathbb{R} \iff \frac{a-c}{b-d} = -\frac{\bar{a}-\bar{c}}{\bar{b}-\bar{d}} = -\frac{1/a-1/c}{1/b-1/d} = -\frac{bd(a-c)}{ac(b-d)} \iff ac+bd = 0, \]
+and similarly $AB$ is parallel to $CD$ if and only if $ab = cd$.
+This completes the solution.
 
 
 \medskip
