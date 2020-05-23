@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+\usepackage{mathtools,amssymb}
+\usepackage{enumerate}
+\usepackage{fancyvrb}
+% \usepackage{fullpage}
+
+
+\title{Test 2}
+\author{`April' Camp 2020}
+\date{Time: $4\frac{1}{2}$ hours}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+\begin{enumerate}[1.]
+
+\vfill
+\item % Ukraine 2011 10-6, Bogdan Rublyov
+Two players write pluses or minuses in front of consecutive natural numbers $1, 2, 3, \dotsc$ and calculate the sum of all the numbers that have a sign in front of them.
+This way, the first player starts with writing a sign in front of $1$, and this is his sum after the first move.
+Then the second player writes a sign in front of $2$ and calculates the sum of the first two numbers with signs -- this is the sum after his first move.
+After that the first player writes a sign in front of $3$ and calculates the sum of three numbers with signs, and so on.
+When the sum becomes larger than $2019$ in absolute value, the game stops.
+The player who made the last move loses.
+Which player has a winning strategy?
+
+
+\vfill
+\item % IMO2019 N3
+We say that a set $S$ of integers is \emph{rootiful} if, for any positive integer $n$ and any $a_0, a_2, \dotsc, a_n \in S$, all integer roots of the polynomial $a_0 +a_1 x +\dotsb +a_n x^n$ are also in $S$.
+Find all rootiful sets of integers that contain all numbers of the form $2^a-2^b$ for positive integers $a$ and $b$.
+
+
+\vfill
+\item % IMO2019 G5
+\newcommand{\area}[1]{\text{area}\left(#1\right)}
+Let $ABCDE$ be a convex pentagon such that $\angle EDC \neq 2 \cdot \angle ADB$ and $CD = DE$.
+Suppose that a point $P$ is located in the interior of the pentagon such that $AP = AE$ and $BP = BC$.
+Prove that $P$ lies on the diagonal $CE$ if and only if
+\[ \area{BCD} +\area{ADE} = \area{ABD} +\area{ABP}. \]
+
+\vfill
+\end{enumerate}
+
+\end{document}
