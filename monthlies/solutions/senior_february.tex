@@ -40,7 +40,18 @@
 {\itshape For any 4 points in $\mathbb{R}^3$, does there exist a plane such that the orthogonal projections of the points on the plane make up the vertices of a parallelogram?
 
 }
+Let $A,B,C,D$ be vectors from the origin to the $4$ respective points.
+And let $p_U(v)$ denote the projection of $v$ onto $U$ for a plane $U$ that goes through the origin. It is well known that $p_U(v) + p_U(w) = p_U(v + w)$
 
+We want to find a plane, $U$, such that the projections of $A$, $B$, $C$ and $D$ are a parallelogram. This is equivalent to
+$p_U(A) - p_U(B) = p_U(D) - p_U(C)$
+
+But by additivity of $p_U$ the above is equivalent to
+$p_U(A - B + C - D) = 0$
+
+Which means all we need is a plane $U$ through the origin that is perpendicular to $A - B + C - D$, which clearly exists.
+
+In the case where $A - B + C - D = 0$, any plane $U$ would result in a parallelogram.
 
 \medskip
 \item % IMO Long List 1992 Q75, N
@@ -54,7 +65,8 @@ where $m$ is also a positive integer.}
 \item % A Russian Olympiad 1975, C
 {\itshape An $8 \times 8$ chessboard is divided into several regions by 13 straight lines. Can the lines be placed in such a way that each region contains at most 1 centre of the original 64 squares?}
 
-
+Construct the centers of all $28$ outer edge squares, and connect the adjacent centers, resulting in the outline of a square with $28$ segments, $7$ per side. If, after the lines have been placed, there exists one of these segments which have not been crossed, it implies that these $2$ centers lie on the same region. 
+Note that a line can pass through at most $2$ of these segments, meaning that there is at least $2$ segments which are uncrossed, resulting in two centers being on the same region.
 
 
 \medskip
@@ -104,6 +116,20 @@ As mathematics competitions are rightly adored by every member of Graphopia ever
 }
 
 
+Let the towns be nodes of a connected graph. If there is a road between two towns, let the edge be coloured red, and blue if not.
+Consider the sample-space, $\Omega$, of all possible colourings of the graph and note that each edge has equal frequency and therefor equal probability of being either red or blue for a randomly selected colouring.
+
+Therefor a collection of $a$ towns has probability $2^{1-{{a}\choose{2}}}$ of being mono-coloured.
+
+Let the number of competitions be denoted by ${X}$.
+
+Note that the number of collections of $a$ towns is ${n}\choose{a}$
+
+Now, by Linearity of Expectation: 
+
+$\mathbb{E}({X}) = {{n}\choose{a}}\times2^{1-{{a}\choose{2}}}$
+
+Ignoring the trivial case of $a=2$, since $X$ is discrete and there exists a colouring where $X>\mathbb{E}({X})$, namely the graph where all edges are blue, there must exist a colouring where $X$ is less than $\mathbb{E}({X})$.
 
 \medskip
 \item % Serbian Mathematical Olympiad 2007
