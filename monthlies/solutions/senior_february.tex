@@ -59,6 +59,14 @@ In the case where $A - B + C - D = 0$, any plane $U$ would result in a parallelo
 $$n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor$$
 where $m$ is also a positive integer.}
 
+All positive integers except those that are perfect squares can be written in this form. 
+\\ Let $k^{2} \leq m < (k+1)^{2}$ and let $m = k^{2} + x$ where $x \in \{0,1,...,2k\}$
+\\ Now consider when $x=\{0,1,2,...,k\}$, then $m \leq k^{2} + k \implies m < k^{2} + k + \frac{1}{4} = (k+\frac{1}{2})^{2}$ and so $\sqrt{m} < k + \frac{1}{2}$
+Then $n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor = m + \left\lfloor  \sqrt{m} + \frac{1}{2} \right\rfloor = m + k$. Taking all possible values for $m$ gives that the numbers $n$ that can be formed are $\{k^{2}+k, k^{2}+k+1,..., k^{2}+2k\}$ $\forall k \in \mathbb{N}$
+\\ Then consider when $x=\{k+1,k+2,,...,2k\}$, then $m > k^{2} + k \implies m > k^{2} + k + \frac{1}{4} = (k+\frac{1}{2})^{2}$ and so $\sqrt{m} > k + \frac{1}{2}$
+Then $n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor = m + \left\lfloor  \sqrt{m} + \frac{1}{2} \right\rfloor = m + k + 1$. Taking possible values for $m$ gives that the numbers $n$ that can be formed are $\{k^{2}+2k+2, k^{2}+2k+3,..., k^{2}+3k+1\}$ $\forall k \in \mathbb{N}$ Letting $k \to k-1$ here generates the set $\{k^{2}, k^{2}+1,...,k^{2}+k\}$. 
+\\ In total we can produce numbers only in the form $\{k^{2}+1, k^{2}+2,..., k^{2}+2k\}$ $\forall k \in \mathbb{N}$ which is clearly all the positive integers except the perfect squares. 
+
 
 
 \medskip
