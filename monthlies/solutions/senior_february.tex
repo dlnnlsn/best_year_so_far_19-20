@@ -1,5 +1,9 @@
 \documentclass{article}
 
+\usepackage{pgf,tikz,pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
 \usepackage{amsmath,amssymb}
 \usepackage{fullpage}
 \usepackage{enumerate}
@@ -32,7 +36,46 @@
 \item % Malwande
 {\itshape Let $ABC$ be a triangle with orthocentre $H$, such that $AB<BC$ and $\angle BAC < 90^\circ$. Let the circle $\Gamma$ centred at $B$ and passing through $A$ intersect $AC$ again at $D$. The circumcircle of $\triangle BCD$ intersects $\Gamma$ again at $E$. $ED$ and $BH$ intersect at $F$. Prove that $BD$ is tangent to the circumcircle of $\triangle DHF$.
 }
-% TODO: complete
+\medskip
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-8,-5) rectangle (8,6);
+\draw [line width=0.5pt,color=wrwrwr] (-1.38,3.06)-- (-2.4,0);
+\draw [line width=0.5pt,color=wrwrwr] (2,0)-- (-1.38,3.06);
+\draw [line width=0.5pt,color=wrwrwr] (-2.4,0)-- (2,0);
+\draw [line width=0.5pt,color=wrwrwr] (-2.4,0) circle (3.2255232133717473cm);
+\draw [line width=0.5pt,color=wrwrwr] (-2.4,0)-- (0.5438098903213396,1.3183259572830477);
+\draw [line width=0.5pt,color=wrwrwr] (-1.38,-9.12) -- (-1.38,8.172);
+\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(-8.112-3.38*\x)/-3.06});
+\draw [line width=0.5pt,color=wrwrwr] (-0.2,-0.9666666666666669) circle (2.403007375029141cm);
+\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(--0.15523155666730615--4.378325957283048*\x)/1.9238098903213392});
+\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(--2.431982297479315--0.19165929061638076*\x)/1.9238098903213396});
+\begin{scriptsize}
+\draw [fill=wrwrwr] (-1.38,3.06) circle (2.5pt);
+\draw[color=wrwrwr] (-1.194,3.541) node {$A$};
+\draw [fill=wrwrwr] (-2.4,0) circle (2.5pt);
+\draw[color=wrwrwr] (-2.6,0.37) node {$B$};
+\draw [fill=wrwrwr] (2,0) circle (2.5pt);
+\draw[color=wrwrwr] (2.172,0.453) node {$C$};
+\draw [fill=wrwrwr] (0.5438098903213396,1.3183259572830477) circle (2pt);
+\draw[color=wrwrwr] (0.72,1.737) node {$D$};
+\draw [fill=wrwrwr] (-1.38,1.126666666666667) circle (2pt);
+\draw[color=wrwrwr] (-1.194,1.561) node {$H$};
+\draw [fill=wrwrwr] (-1.38,-3.06) circle (2pt);
+\draw[color=wrwrwr] (-1.194,-2.641) node {$E$};
+\draw [fill=wrwrwr] (2.1944160092360985,5.074877814123534) circle (2pt);
+\draw[color=wrwrwr] (2.5,5.2) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+We will first show that $H$ lies on the circumcircle of $\triangle BCD$ 
+\\ Since $AB = BD$ and $BH \perp AD$, then $AH$ bisects $AD$, then $AH = HD \implies \angle HAD = \angle HDA$. Now $\angle HBC = 90^{\circ} - \angle ACB = \angle HAC$ and so $\angle HBC = \angle HDA$ and so $BHDC$ is cyclic. 
+\\ Next we show that $A$, $H$ and $E$ are collinear
+\\It is equivalent to to show that $\angle HED = \angle AED$. 
+\\ $\angle HED = \angle HBD$ since $BHDC$ is cyclic. 
+\\ Also, $\angle AED = \frac{\angle ABD}{2} = \angle HBD$ and so $A$, $H$ and $E$ are collinear. 
+\\ Since $\angle ABF = \angle AEF$, then $ABEF$ is cyclic and so $\angle HFD = \angle BAH = 90^{\circ} - \angle ABC = \angle HCB = \angle HDB \implies BD$ is tangent to the circumcircle of $ \triangle DHF$
+
 
 
 \medskip
