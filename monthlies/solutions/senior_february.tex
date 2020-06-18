@@ -124,6 +124,9 @@ Note that a line can pass through at most $2$ of these segments, meaning that th
 \item % Adapted from Sharygin 2005, G11 P1, G
 {\itshape Let the midpoints of the sides $BC$, $CA$, $AB$ of an equilateral triangle $ABC$ be $D$, $E$, and $F$ respectively. Let $j$, $k$, and $\ell$ be lines passing through $D$, $E$, and $F$ respectively such that $j \parallel k \parallel \ell$. Define points $P$, $Q$, and $R$ by $P = j\cap EF$, $Q = k \cap FD$, and $R = \ell \cap DE$. Prove that the points $X$, $Y$, and $Z$ defined by $X = BC \cap QR$, $Y = CA \cap RP$, and $Z = AB \cap PQ$ are  collinear.}
 
+%Kgaogelo
+Let $QR \cap AC = S$
+
 
 
 \medskip
@@ -191,6 +194,43 @@ Ignoring the trivial case of $a=2$, since $X$ is discrete and there exists a col
 
 where $n \in \mathbb{N}$. Where does equality occur?}
 
+Assume without loss of generality that $a \geq b \geq c$.
+\\ We will first show that 
+\begin{align} 
+\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \geq \frac{b^{n+1}}{a^{n}+b^{n+1}+c^{n}} \geq \frac{c^{n+1}}{a^{n}+b^{n}+c^{n+1}}
+\end{align}
+and 
+\begin{align}
+a^{n}+b^{n}+c^{n+1} \geq a^{n}+b^{n+1}+c^{n} \geq a^{n+1}+b^{n}+c^{n}
+\end{align}
+For the first inequality, we show the left side holds since the other part is done similarly.
+\\ The left side is equivalent to
+\begin{align*}
+ a^{n+1}(a+c^{n}) \geq b^{n+1}(b+c^{n})
+\end{align*}
+which is true and so the first inequality holds. 
+\\ To show that (2) is true, we again only consider the left side which is equivalent to 
+\begin{align*}
+b^{n}+c^{n+1} \geq b^{n+1}+c^{n}
+\iff (\frac{b}{c})^{n} \geq \frac{1-c}{1-b}
+\end{align*}
+Now
+\begin{align*}
+\\a(b-c)&\geq 0 
+\\ \iff (b-c)(1-(b+c))&\geq 0
+\\ \iff b(1-b)&\geq c(1-c) 
+\\ \iff \frac{b}{c} &\geq \frac{1-c}{1-b}
+\\ \iff (\frac{b}{c})^{n} &\geq \frac{1-c}{1-b}
+\end{align*}
+and so (2) holds.
+\\Now applying Chebyshev's inequality gives:
+\begin{align*} 
+\sum_{cyc}\frac{a^{n+2}}{a^{n+1}+b^{n}+c^{n}} &\geq \frac{a+b+c}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \\ &=\frac{1}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}}\frac{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}\\
+&\geq \frac{1}{3}(3\sum_{cyc}a^{n+1})\frac{1}{\sum_{cyc}a^{n+1}+2\sum_{cyc}a^{n}}\\
+&\geq \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}a^{n+1}}
+\\&=\frac{1}{7}
+\end{align*}
+Equality holds when $a=b=c=\frac{1}{3}$.
 
 \end{enumerate}
 
