@@ -206,9 +206,9 @@ a^{n}+b^{n}+c^{n+1} \geq a^{n}+b^{n+1}+c^{n} \geq a^{n+1}+b^{n}+c^{n}
 For the first inequality, we show the left side holds since the other part is done similarly.
 \\ The left side is equivalent to
 \begin{align*}
- a^{n+1}(a+c^{n}) \geq b^{n+1}(b+c^{n})
+ a^{n+1}(a^{n}+c^{n}) \geq b^{n+1}(b^{n}+c^{n})
 \end{align*}
-which is true and so the first inequality holds. 
+which is true since $a \geq b \iff a^{n} \geq b^{n}$ and so the (1) holds. 
 \\ To show that (2) is true, we again only consider the left side which is equivalent to 
 \begin{align*}
 b^{n}+c^{n+1} \geq b^{n+1}+c^{n}
@@ -227,7 +227,8 @@ and so (2) holds.
 \begin{align*} 
 \sum_{cyc}\frac{a^{n+2}}{a^{n+1}+b^{n}+c^{n}} &\geq \frac{a+b+c}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \\ &=\frac{1}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}}\frac{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}\\
 &\geq \frac{1}{3}(3\sum_{cyc}a^{n+1})\frac{1}{\sum_{cyc}a^{n+1}+2\sum_{cyc}a^{n}}\\
-&\geq \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}a^{n+1}}
+&\geq \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}\frac{a^{n}\times a}{a+b+c}} \\
+&= \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}a^{n+1}}
 \\&=\frac{1}{7}
 \end{align*}
 Equality holds when $a=b=c=\frac{1}{3}$.
