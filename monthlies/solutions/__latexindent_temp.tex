@@ -199,36 +199,44 @@ Then Ali-Baba again selects 4 piles of 10, places mugs beside the piles, etc.
 At any moment Ali-Baba can quit and go away with any 3 mugs he chooses, the remaining coins being the robber's share.
 What is the greatest number of coins Ali-Baba can guarantee to collect?}
 
-\textit{Solution by Kgaugelo Bopape}
+\textit{(Solution by Kgaugelo Bopape)}
 First we show that Ali-Baba can take at least $72$ coins by applying the following
 procedure:
-\begin{itemize}
-	\item If the four piles with most coins all have at least $5$ coins, then choose those piles. If not then we are done and Ali-Baba can take the three piles with the most stones.
-	\item Let the four piles with the most coins be $A$, $B$, $C$ and $D$ respectively (arranged from most to least).
-	Take $1$ coin from pile $A$, $2$ coins from pile $B$, $3$ coins from pile $C$ and $4$ coins from pile $D$.
-	Let there be $A_i$, $B_i$, $C_i$, $D_i$ coins in the piles before the iteration of the procedure and $A_f$, $B_f$, $C_f$, $D_f$ coins after the iteration of the procedure.
-	Clearly, $A_f \ge A_i$.
-	If $A_f = A_i$, then $B_f \ge B_i \implies A_f + B_f \ge A_i + B_i$.
-	If $A_f > A_i$, then $A_f \ge A_i + 1$ and $1 \ge B_i − B_f \implies A_f + B_f \ge A_i + B_i$.
-	$A_i + B_i + C_i + D_i = A_f + B_f + C_f + D_f$ and $D_i \ge D_f \implies A_f + B_f + C_f \ge
-	A_i + B_i + C_i$
-	Hence:
-	$$A_f \ge A_i$$
-	$$A_f + B_f \ge A_i + B_i$$
-	$$A_f + B_f + C_f \ge A_i + B_i + C_i$$
-	If all the above inequalities become equalities then, $A_f = A_i$, $B_f = B_i$, $C_f = C_i$, $D_f = D_i$ which Liam said is not possible.
-	Let the three piles with the most coins have $W$, $X$ and $Y$ coins respectively.
-	$W \ge A_f$
-	W + X ≥ A f + B f
-	W + X + Y ≥ A f + B f + C f
-	3W + 2X + Y ≥ 3A f + 2B f + 2C f > 3A i + 2B i + C i
-	⇒ the quantity Z = 3W + 2X + Y strictly increases after each iteration of
-	the procedure. Also notice that 3(W + X + Y ) > 3W + 2X + Y
-	So the procedure ends either when 3(W + X + Y ) = 216 or smallest 7 piles
-	all have at most 4 coins, either way, Ali-Baba can always take 72 coins.
-\end{itemize}
+	
+If the four biggest piles have at least $5$ coins, then choose those piles. If not then we are done and Ali-Baba can take the three piles with the most stones.
+Let the four piles with the most coins be $A$, $B$, $C$ and $D$ respectively (arranged from most to least).
+Take $1$ coin from pile $A$, $2$ coins from pile $B$, $3$ coins from pile $C$ and $4$ coins from pile $D$.
+Let there be $A_i$, $B_i$, $C_i$, $D_i$ coins in the piles before the iteration of the procedure and $A_f$, $B_f$, $C_f$, $D_f$ coins after the iteration of the procedure.
+Clearly, $A_f \ge A_i$.
+If $A_f = A_i$, then $B_f \ge B_i \implies A_f + B_f \ge A_i + B_i$.
+If $A_f > A_i$, then $A_f \ge A_i + 1$ and $1 \ge B_i - B_f \implies A_f + B_f \ge A_i + B_i$.
+$A_i + B_i + C_i + D_i = A_f + B_f + C_f + D_f$ and $D_i \ge D_f \implies A_f + B_f + C_f \ge A_i + B_i + C_i$
+Hence:
+$$A_f \ge A_i$$
+$$A_f + B_f \ge A_i + B_i$$
+$$A_f + B_f + C_f \ge A_i + B_i + C_i$$
+If all the above inequalities become equalities then, $A_f = A_i$, $B_f = B_i$, $C_f = C_i$, $D_f = D_i$ which is not possible.
+Let the three piles with the most coins have $W$, $X$ and $Y$ coins respectively.
+$$W \ge A_f$$
+$$W + X \ge A_f + B_f$$
+$$W + X + Y \ge A_f + B_f + C_f$$
+$$3W + 2X + Y \ge 3A_f + 2B_f + 2C_f > 3A_i + 2B_i + C_i$$
+$\implies$ the quantity $Z = 3W + 2X + Y$ strictly increases after each iteration of the procedure. Also notice that $3(W + X + Y) > 3W + 2X + Y$, so the procedure ends either when $3(W + X + Y ) = 216$ or smallest $7$ piles all have at most $4$ coins. Either way, Ali-Baba can always take $72$ coins.
 
+Now we will show that the robber can always take at least $28$ coins if the robber applies the following procedure:
 
+Assume that Alibaba chooses piles with $A_1$, $A_2$, $A_3$ and $A_4$ coins and removes $b_1$, $b_2$, $b_3$ and $b_4$ coins from the piles. Suppose $b_i = b_j$ for some $i$, $j$ ($i \ne j$), where $b_i$ coins were removed from the pile with $A_m$ coins and $b_j$ coins were removed from the pile with $A_n$ coins ($m \ne n$). The robber can just place the mug with $b_i$ coins beside the pile which had $A_n$ coins and the mug with $b_j$ coins beside the pile which had $A_m$ coins and place the other mugs next to the piles from which they came. Then the state of the piles remains the same.
+
+Now assume that immediately after the coins were removed, $c_1$, $c_2$, $c_3$ and $c_4$ remained in the piles. Suppose $c_i = c_j$ for some $i$, $j$ ($i \ne j$), and $c_i$ coins remained from the pile which had $A_m$ coins and $c_j$ coins remained from the pile which had $A_n$ coins ($m \ne n$), and that $b_p$ coins were removed from the pile which had $A_m$ coins and $b_q$ coins were removed from the pile which had $A_n$ coins. Then the robber can just place the mug with $b_p$ coins beside the pile with $c_j$ remaining coins and the mug with $b_q$ coins beside the pile with $c_i$ remaining coins and place the other mugs next to the piles from which they came. Then the state of the piles remains the same.
+
+WLOG assume $b_4 > b_3 > b_2 > b_1 \ge 1$ and $c_4 > c_3 > c_2 > c_1 \ge 1$. Notice that $b_i \ge i$ and $c_i \ge i$ for all $i$ ($1 \le i \le 4$) so you can either choose $(b_i + c_{5-i} )$ for all $i$ or
+$$(b_1 + c_4 )$$
+$$(b_2 + c_3 )$$
+$$(b_3 + c_2 )$$
+$$(b_4 + c_1 )$$
+depending on which is the identity permutation. This means that after every iteration of the procedure, the number of piles with less than $4$ coins does not increase. Since there are initially no coins with $4$ coins. The total number of coins of the $7$ smallest piles is at least $28$.
+
+Hence the maximum amount of coins Ali-Baba is guaranteed to collect is $72$.
 \end{enumerate}
 
 \end{document}
