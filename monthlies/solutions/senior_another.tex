@@ -2,6 +2,7 @@
 
 \usepackage{amsmath,amssymb}
 \usepackage{fullpage}
+\usepackage{mathtools}
 \usepackage{enumerate}
 \usepackage{hyperref}
 \usepackage{graphicx}
@@ -23,19 +24,19 @@
 
 
 \begin{center}
-	\textbf{\Large <LEVEL> Monthly Problem Set Solutions}
+	\textbf{\Large Senior Another Monthly Problem Set Solutions}
 \end{center}
 
 \begin{enumerate}
 
 \medskip
 \item[1.] % 2015 Azerbaijan IMO TST Q1, A(N)
-A set $A = \{a_1, a_2, \dotsc, a_n\}$ of distinct positive integers is called \emph{powerful} if
+{\itshape A set $A = \{a_1, a_2, \dotsc, a_n\}$ of distinct positive integers is called \emph{powerful} if
 \[ \prod_{i \neq j} a_j \mid a_i^{2020} \]
 for all $i \in \{1, 2, \dotsc, n\}$.
-Find all $n \ge 3$ such that there exists a powerful set containing exactly $n$ elements.
+Find all $n \ge 3$ such that there exists a powerful set containing exactly $n$ elements.}
 
-\item[1. ANS]
+%\item[1. ANS]
 For $n\leq2020$, consider the set of unique primes $(p_1,p_2,...,p_n)$ and let $P = \prod_{i=1}^{n} p_i$. Let $a_i = Pp_i$. We now show that this set is $powerful$.
 \\$\prod_{j=1}^{n} a_j \mid {a_i}^{2021} \iff P^{n+1} \mid P^{2021}p_i^{2021}$, which is true.
 \\For $n>2020$ let $a_i$ be the minimal value in the $powerful$ set $A$.
@@ -44,11 +45,12 @@ For $n\leq2020$, consider the set of unique primes $(p_1,p_2,...,p_n)$ and let $
 
 \medskip
 \item[2.] % All Russian Olympiad 2017 Grade 10 Q2, G
-Let $ABC$ be an acute angled isosceles triangle with $AB = AC$ and circumcenter $O$.
+{\itshape Let $ABC$ be an acute angled isosceles triangle with $AB = AC$ and circumcenter $O$.
 Lines $BO$ and $CO$ intersect $AC$ and $AB$ at $D$ and $E$ respectively.
 A straight line $l$ is drawn through $E$ parallel to $AC$.
-Prove that the line $l$ is tangent to the circumcircle of $\triangle DOC$.
-\item[2. ANS]
+Prove that the line $l$ is tangent to the circumcircle of $\triangle DOC$.}
+
+%\item[2. ANS]
 Note that $AO$ is a line of symmetry that maps $B\rightarrow C$ and $D\rightarrow E$. Let $l$ and it's reflection $k$ intersect on $AO$ at $F$.
 Note $AC||EF, AB||DF$ and $AE=AD$ meaning $ADFE$ is a rhombus $\implies \angle AFD = \angle FAD = \angle OAC$.
 Additionally as $O$ is the circumcenter, $OA = OC \implies \angle OCA = \angle OAC = \angle AFD \implies ODCF$ cyclic.
@@ -56,25 +58,29 @@ And since $EF||AC\implies\angle EFD = \angle FDC\implies l$ tangent to the circu
 
 
 \medskip
-\item[3.]
+\item[3.] % 2017 Princeton University Maths Competition A4, A
+{\itshape Let the sequence $a_1$, $a_2$, $\dotsc$ be defined by $a_n = 11 a_{n - 1} - n$.
+Find the smallest possible value of $a_1$ such that $a_i > 0$ for all $i \in \mathbb{N}$.}
 
+Stuff
 
 \medskip
 \item[4.] % China Southeast Math Olympiad 2014, Q2, C
-There are $n \ge 4$ people at a fencing competition.
+{\itshape There are $n \ge 4$ people at a fencing competition.
 Each player plays against every other player exactly once, and there are no draws.
 The organisers decide that the competition is representative if they can find $4$ people, $a_1$, $a_2$, $a_3$, and $a_4$, such that $a_i$ beats $a_j$ whenever $i < j$.
-Find the smallest value $n$ such that the competition will always be representative.
-\item[4. ANS]
+Find the smallest value $n$ such that the competition will always be representative.}
+
+%\item[4. ANS]
 Let $S = (a_1,a_2,...,a_n)$ be a directed graph where there is a edge from $a_i$ to $a_j$ iff $a_i$ beats $a_j$. Note that if $S$ is $non-representative$ then $a_1,...,a_{n-1}$ is also $non-representative$. A construction for a $non-representative$ graph $S$ for $n=7$ is as follow: $a_i$ beats $a_{i+1}$, $a_{i+2}$ and $a_{i+4}$, where $a_j = a_{j-7}$ if $j>7$. For $n=8$ let $A$ be the set of people $a_1$ beats or loses to in $S$, whichever is greater. By Pigeon Hole Principal there are at least $\lceil{\frac{7}{2}}\rceil$ people in $A$, WLOG let $A$ be the set of people $a_1$ beats and have it include $a_2$. Similarly, let $B$ be the set of people $a_2$ beats or loses to in $A$, whichever is greater. There are at least $\lceil{\frac{3}{2}}\rceil$ people in $B$, WLOG let $B$ be the set of people $a_2$ beats and have it include $a_3$ and $a_4$. Note that $a_1$ beats $a_2$, $a_3$ and $a_4$; $a_2$ beats $a_3$ and $a_4$; WLOG $a_3$ beats $a_4$, meaning $S$ is always $representative$ for $n=8$
 
 
 \medskip
 \item[5.] % 2011 Japan Mathematical Olympiad Finals Problem 5, G
-Given some $4$ points in the plane, one can construct $4$ different triangles with vertices amongst the $4$ points.
-If the inscribed circles of these $4$ triangles all have the same radius, show that the $4$ triangles are congruent. 
+{\itshape Given some $4$ points in the plane, one can construct $4$ different triangles with vertices amongst the $4$ points.
+If the inscribed circles of these $4$ triangles all have the same radius, show that the $4$ triangles are congruent. }
 
-\item[5. ANS]
+%\item[5. ANS]
 Let $A,B,C,D$ be the $4$ points in a clockwise order and let $I_A$ be the in-center of $\triangle ABD$, similarly define $I_B$,$I_C$ and $I_D$. Let $A_1$,$A_2$ and $A_3$ be the tangency points of the in-circle with center $I_A$ to sides $AB$,$BD$ and $DA$ respectively. Similarly define the other tangency points. 
 \\Note $A_1B = A_2B$, $A_3D = A_2D$, $B_1B = B_3B$ and $D_1D = D_3D$
 \\$\implies B_3B+A_1B_3+A_3D_1+D_1D = A_1B+A_3D = A_2B+A_2D = BD = C_2B+C_2D = C_3B+C_1D = B_1B+C_3B_1+C_1D_3+D_3D$
@@ -89,15 +95,14 @@ Let $A,B,C,D$ be the $4$ points in a clockwise order and let $I_A$ be the in-cen
 
 \medskip
 \item[6.] % Emile Tredoux 2020, N(G)
-Your second favourite thing in this world is Table Mountain, how perfectly horizontal the top of it is.
+{\itshape Your second favourite thing in this world is Table Mountain, how perfectly horizontal the top of it is.
 Your favourite thing in this world is, of course, Mathematics.
 Hence, for your birthday you received $n-2$ regular polygons, with number of sides $3, 4, \dotsc, n$ respectively.
-
 You want to combine your two favourite things by stacking all of your polygons on top of each other such that any two consecutively placed polygon share an edge.
 For which values of $n$ can you stack your polygon such that the top of your stack is perfectly flat like the top of Table Mountain?
-i.e. the top-most edge and bottom-most edge of your stack are parallel.
+i.e. the top-most edge and bottom-most edge of your stack are parallel.}
 
-\item[6. ANS] % Emile Tredoux 2020
+%\item[6. ANS] % Emile Tredoux 2020
 Let $E_0,E_1,...,E_{n-2}$ be the set of shared edges in your stack, with $E_i$ being the edge that's shared between the $i^{th}$ and $i+1^{th}$ placed polygons, and with $E_0$ and $E_{n-2}$ being the bottom- and top-most edge respectively.
 
 Note that the edges of a regular $p-gon$ are just rotated by an integer multiple of $\frac{360}{p}$ degrees, therefore edge $E_i$ is just $E_{i-1}$ rotated by some positive integer multiple $a_q < q$ of $\frac{360}{q}$, where $q$ is the number of sides of the polygon shared by $E_i$ and $E_{i-1}$.
@@ -114,11 +119,28 @@ Note that $\frac{a_p}{p} + \frac{a_i}{i}$ will always have a fractional part wit
 Therefore no $n$ exist to satisfy the condition in the question statement.
 
 \medskip
-\item[7.]
+\item[7.]% SAMO Longlist JM-2014-1, N
+{\itshape Let $\mathbb{N}$ denote the set of positive integers.
+
+Consider the function $f : \mathbb{N} \times \mathbb{N} \to \{-1,1\}$, defined as follows:
+\[ f(i,j) = \begin{dcases*} -1 & if $i = 1$ or $j = 1$ \\ f(i-1,j) \cdot f(i,j-1) & if $i > 1$ and $j > 1$ \end{dcases*}. \]
+Determine the largest $i \leq 2015$ such that $f(i,2015) = -1$.}
+
+stuff
 
 
 \medskip
-\item[8.]
+\item[8.] % Moscow Olympiad 1996 59.9.5, C
+{\itshape Ali-Baba and a robber divide a treasure consisting of 100 golden coins, which is initially split into 10 piles of 10 coins each.
+
+Ali-Baba chooses 4 piles, places a mug beside each pile, and puts several coins (at least $1$, but not the whole pile) from the respective pile into each mug.
+The robber must permute the mugs, after which the coins are taken out from each mug and added to its newly associated pile.
+Then Ali-Baba again selects 4 piles of 10, places mugs beside the piles, etc.
+
+At any moment Ali-Baba can quit and go away with any 3 mugs he chooses, the remaining coins being the robber's share.
+What is the greatest number of coins Ali-Baba can guarantee to collect?}
+
+Stuff
 
 
 \end{enumerate}
