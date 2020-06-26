@@ -62,7 +62,16 @@ And since $EF||AC\implies\angle EFD = \angle FDC\implies l$ tangent to the circu
 {\itshape Let the sequence $a_1$, $a_2$, $\dotsc$ be defined by $a_n = 11 a_{n - 1} - n$.
 Find the smallest possible value of $a_1$ such that $a_i > 0$ for all $i \in \mathbb{N}$.}
 
-Stuff
+Let $b_n = a_{n + 1} - a_n$. Then, we have
+
+\begin{align*}
+	b_n &= 10a_n - (n + 1) \\
+	 &= 10(11a_{n - 1} - n) - (n + 1) \\
+	 &= 11(10a_{n - 1} - n) - 1 \\
+	 &= 11b_{n - 1} - 1
+\end{align*}
+
+Therefore, if $b_1 < \frac{1}{10}$, then the sequence $b_1$, $b_2$, $\dots$ is decreasing, and in fact becomes arbitratily small, which means that the sequence $a_1$, $a_2$, $\dots$ becomes arbitratily small as well. Therefore, $b_1 \ge \frac{1}{10}$, so we have $a_2 - a_1 \ge \frac{1}{10}$, or equivalently $a_1 \ge \frac{21}{100}$. Since the sequence $a_1$, $a_2$, $\dots$ is increasing if $a_1 = \frac{21}{100}$, this is our answer.
 
 \medskip
 \item[4.] % China Southeast Math Olympiad 2014, Q2, C
@@ -126,8 +135,58 @@ Consider the function $f : \mathbb{N} \times \mathbb{N} \to \{-1,1\}$, defined a
 \[ f(i,j) = \begin{dcases*} -1 & if $i = 1$ or $j = 1$ \\ f(i-1,j) \cdot f(i,j-1) & if $i > 1$ and $j > 1$ \end{dcases*}. \]
 Determine the largest $i \leq 2015$ such that $f(i,2015) = -1$.}
 
-stuff
+We shall use double induction to get the function into a closed form that allows us to calculate arbitrary terms easily.
 
+\textbf{Induction Hypothesis 1:} The function is given by
+$$f(i, j) = (-1)^{\binom{i + j - 2}{i - 1}}. $$
+for all $i$, $j$ $\in \mathbb{N}$.
+
+\textbf{Base Case 1: $i = 1$:} By definition, we have $f(i, j) = -1$. Notice that $\binom{i + j - 2}{i - 1} = \binom{i + j - 2}{0} = 1$. Thus, we have that
+$$LHS = f(i, j) = -1 = (-1)^1 = (-1)^{\binom{i + j - 2}{i - 1}} = RHS.$$
+So the base case is true.
+
+\textbf{Inductive Step 1:} Assume that Induction Hypothesis 1 is true for $i = k \in \mathbb{N}$. We shall prove that it is also true for $i = k + 1$. To do this, we shall perform induction on $j$.
+
+\begin{quote}
+\textbf{Induction Hypothesis 2:} The function is given by
+$$f(k + 1, j) = (-1)^{\binom{(k + 1) + j - 2}{(k + 1) - 1}}. $$
+for all $j$ $\in \mathbb{N}$ with $k$ being a fixed value such that Induction Hypothesis 1 holds for $i = k$.
+
+\textbf{Base Case 2: $j = 1$:} By definition, we have $f(k + 1, j) = -1$. Notice that $\binom{(k + 1) + j - 2}{(k + 1) - 1} = \binom{k}{k} = 1$. Thus, we have that
+$$LHS = f(k + 1, j) = -1 = (-1)^1 = (-1)^{\binom{(k + 1) + j - 2}{(k + 1) - 1}} = RHS.$$
+So the base case is true.
+
+\textbf{Inductive Step 2:} Assume that Induction Hypothesis 2 is true for $j = m \in \mathbb{N}$. We shall prove that it is true for $j = m + 1$ as well.
+
+We have that $f(k + 1, m + 1) = f(k, m + 1) \cdot f(k + 1, m)$. From Induction Hypothesis 1 we have that 
+$$f(k, m + 1) = (-1)^{\binom{k + (m + 1) - 2}{k - 1}} = (-1)^{\binom{k + m - 1}{k - 1}}.$$
+From Induction Hypothesis 2 we have that
+$$f(k + 1, m) = (-1)^{\binom{(k + 1) + m - 2}{(k + 1) - 1}} = (-1)^{\binom{k + m - 1}{k}}.$$
+
+Putting these together we get that
+
+$$f(k + 1, m + 1) = (-1)^{\binom{k + m - 1}{k - 1}} \cdot (-1)^{\binom{k + m - 1}{k}} = (-1)^{\binom{k + m}{k}} = (-1)^{\binom{(k + 1) + (m + 1) - 2}{(k + 1) - 1}}$$
+
+so indeed, we have that if the formula holds for $j = m$, it must also be true for $j = m + 1$. So by the Principle of Mathematical Induction, Induction Hypothesis 2 is true for all $j \in \mathbb{N}$ and $k$ is some fixed value.
+\end{quote}
+
+Coming back to the first induction, we now have that if Induction Hypothesis 1 is true for $i = k$, then indeed, we have that
+
+$$f(k + 1, j) = (-1)^{\binom{(k + 1) + j - 2}{(k + 1) - 1}} ~\forall j \in \mathbb{N}$$
+
+which is what was required to prove from Induction Step 1. Thus, by the Principle of Mathematical Induction, we also have that Induction Hypothesis 1 is true for all $i \in \mathbb{N}$.\\
+
+We have thus reduces the problem from determining when $f(i, 2015) = -1$ to when $\binom{i + 2015 - 2}{i - 1} = \binom{i + 2013}{i - 1}$ is odd.
+
+$$\binom{i + 2013}{i - 1} = \frac{(i + 2013)!}{(i - 1)!(2014)!}$$
+
+For this expression to be odd, we need the highest power of two dividing the numerator to be the same as the highest power of two dividing the denominator. This statement is equivalent to
+
+$$\sum_{r = 1}^{\infty} \lfloor{\frac{i + 2013}{2^r}}\rfloor = \sum_{r = 1}^{\infty}\lfloor \frac{i - 1}{2^r} \rfloor + \lfloor \frac{2014}{2^r} \rfloor.$$
+
+Since $\lfloor a + b \rfloor \ge \lfloor a \rfloor + \lfloor b \rfloor$ for all $a, b \in \mathbb{R}$, the above equality holds iff equality holds in each term. Notice that for $i \le 2015$, $\lfloor \frac{i + 2013}{2^{11}} \rfloor = \lfloor \frac{i - 1}{2^{11}} \rfloor + \lfloor \frac{2014}{2^{11}} \rfloor \iff i + 2013 < 2^{11} \iff i < 35 \iff i \le 34$. From here it is an exercise in arithmetic to confirm that $i = 34$ does indeed satisfy the equality of the infinite sums.
+
+$\implies i = 34$ is the largest value of $i$ such that $f(i, 2015) = -1$.
 
 \medskip
 \item[8.] % Moscow Olympiad 1996 59.9.5, C
