@@ -33,7 +33,7 @@
 \item[1.] % Silk Road Maths Competition, 2012
 \textit{Let $ABCD$ be a cyclic quadrilateral with $AD \parallel BC$. Let $X$ be the midpoint of arc $AD$ that does not contain point $C$ and $P$ be a point on the tangent to the circle at $C$ such that $\angle CPX = 90 \si{\degree} $. Prove that $BC = 2 CP$.}
 
-If $O$ is the circumcenter of $ABCD$, then line $OX$ intersects $BC$ at it's midpoint $M$. and $\angle XMC = 90 \si{\degree}$. The desired result is thus equivalent to $CM = CP$. In triangle $CMX$ and triangle $CPX$, we have that line $CX$ is common and $\angle CMX = 90 \si{\degree} = \angle CPX$. Thus, the triangles will be congruent, and the desired result proven, if $\angle MCX = \angle PCX$. Notice that $\angle PCX = \angle CBX$ by the tan-chord theorem. Since $\triangle XBM \equiv \triangle XCM$, we have that $\angle MCX = \angle MBX = \angle CBX
+If $O$ is the circumcenter of $ABCD$, then line $\overleftrightarrow{OX}$ intersects $\overline{BC}$ at it's midpoint $M$. and $\angle XMC = 90 \si{\degree}$. The desired result is thus equivalent to $CM = CP$. In triangle $CMX$ and triangle $CPX$, we have that line $CX$ is common and $\angle CMX = 90 \si{\degree} = \angle CPX$. Thus, the triangles will be congruent, and the desired result proven, if $\angle MCX = \angle PCX$. Notice that $\angle PCX = \angle CBX$ by the tan-chord theorem. Since $\triangle XBM \equiv \triangle XCM$, we have that $\angle MCX = \angle MBX = \angle CBX = \angle PCX$, and we are done.
 
 
 \medskip
@@ -76,7 +76,9 @@ Notice that the difference of the last two factors is less than $1$, and one of 
 \item[4.] % Iranian TST 2018, Day 2, Q4
 \textit{Let $ABC$ be a triangle with $\angle BAC$ not being a right-angle. $BD$ and $CE$ are the altitudes of the triangle, and the angle bisector of $\angle BAC$ meets $DE$ and $BC$ at $M$ and $N$ respecively. Furthermore, $P$ is a point satisfying $MP \perp DE$ and $NP \perp BC$. Prove that $AP$ bisects segment $BC$.}
 
+WLOG $AB<AC$. Let $T=\overline{EF} \cap \overline{BC}$; $H=\overline{BE} \cap \overline{CF}$ and $X$ be the $A$-HM point in $\triangle ABC$. Then we claim that $X$ lies on $\odot(TMN)$. Observe that ray $\overrightarrow{XM}$ bisects the arc $EAF$ of $\odot(AEF)$ since $\overline{AX}$ is a symmedian in $\triangle AEF$ and $X \in \odot(AEF)$. Thus, $\angle FXM=90^{\circ}-\tfrac{1}{2}\angle A$. Now $\tfrac{XB}{XC}=\tfrac{NB}{NC}$ hence $\angle BXN=90^{\circ}-\tfrac{1}{2}\angle A$. Finally, $\angle BXF=\angle BXH+\angle FXH=\angle BCH+\angle FAH=180^{\circ}-2\angle B$. Hence $\angle MXN=180^{\circ}-(\angle B-\angle C)$ so $X$ lies on $\odot(TMN)$ as desired.
 
+Observe that $\angle PMN=\angle PNM=\tfrac{1}{2}(\angle B-\angle C)$ hence $P$ is the antipode of $T$ in $\odot(TMN)$. Thus, $\overline{TX} \perp \overline{XP}$. However $X$ lies on the $A$-median which is also perpendicular to line $\overline{TX}$; thus $\overline{AP}$ bisects the side $\overline{BC}$.
 
 
 \medskip
@@ -85,7 +87,20 @@ Notice that the difference of the last two factors is less than $1$, and one of 
 
 $$\sum_{i = 1}^{m} f(p_i) = 0.$$
 
+Call the circles which contain at least three of the points from $S$ \textit{interesting}. The problem's conditions tell us that every triplet of the points belongs to exactly one interesting circle.
 
+\textbf{Lemma: $\sum_{P\in S} f(P) = 0$}
+
+Proof: For a triplet of points $T = \{P, Q, R\}$ let $f(T) = f(P) + f(Q) + f(R)$. Consider $\sum_{T\subset S} f(T)$, with $T$ ranging over every possible triplet.
+
+On one hand, every point of $S$ is included in exactly $\binom{n-1}{2}$ triplets, so \[ \sum_{T\subset S} f(T) = \binom{n-1}{2}\sum_{P\in S} f(P). \]
+
+On the other hand, suppose we choose an interesting circle $\mathcal{C}$ and count all the triplets which are entirely on it. Then if the circle has $k$ points from $S$, each point will be included in $\binom{k-1}{2}$ triplets; thus \[ \sum_{T\subset S\cap\mathcal{C}} f(T) = \binom{k-1}{2} \sum_{P\in S\cap\mathcal{C}} f(P) = 0. \] Now we simply sum over all interesting circles; since each triplet is included in exactly one interesting circle we have \[ \sum_{T\subset S} f(T) = 0 \] and combining these two equations proves the lemma.
+
+Now let $A$ and $B$ be two arbitrary points and let $Q$ be the set of all interesting circles which pass through both of them. Not all of the points of $S$ are concyclic, hence $|Q| > 1$. Also, every point other than $A$ and $B$ which is in $S$ is in exactly one circle of $Q$, so \[ 0 = \sum_{\mathcal{C}\in Q}\sum_{P\in \mathcal{C}\cap S} f(P) = |Q|(f(A) + f(B)) + \sum_{P\in S\setminus\{A, B\}} f(P). \]
+Applying the lemma, we have $0 = (|Q|-1)(f(A) + f(B))$; since $|Q| > 1$ we know $f(A) + f(B) = 0$.
+
+The rest of the proof is easy: for three arbitrary points $A, B, C$ we have $2f(A) = (f(A) + f(B)) + (f(A) + f(C)) - (f(B) + f(C)) = 0$ so the only function that works is the zero function.
 
 \medskip
 \item[6.] % 2012 European Girlsâ€™ Mathematical Olympiad P8
@@ -95,7 +110,18 @@ $$\sum_{i = 1}^{m} f(p_i) = 0.$$
 \item[7.] % Sharygin Geometry Olympiad 2019, 10 Form, Q7
 \textit{Given a triangle $ABC$, let $P$ be some point on side $BC$. Construct point $K$ to be the incenter of $PAB$, and let the incircle of triangle $PAC$ be tangent to $BC$ at point $F$. Point $G$ is constructed on line $CK$ such that $FG \parallel PK$. What is the locus of point $G$ as point $P$ changes?}
 
+In triangle ABC, let $I_B$ and $I_C$ be the excenters opposite to $B$ and $C$. Let the excircle opposite to $B$ touch line $BC$ at $T$ and let $l$ be the line through $T$ parallel to $BI_C$. Let $P$ be any point on line $BC$ and let line $PI_C$ meet line $l$ at $Q$.
 
+\textbf{Lemma: $CQ \perp PI_B$} \\
+Proof of the lemma: Let $R$ be the intersection point of line $PI_B$ and the line through $T$ perpendicular to $l$ (and parallel to $BI_B$). 
+Then $TQ : BI_C = TP : PB = TR : BI_B$, thus $TQ : TR = BI_C : BI_B = TC : TI_B$, i.e. triangles $CTI_B$ and $QTR$ are similar. It follows that triangles $CTQ$ and $I_BTR$ are similar as well. 
+The angle of rotation of the similarity centered at $T$ that maps one triangle onto the other equals $\angle CTI_B = \angle QTR = 90 \si{\degree}$, so $CQ$ is perpendicular to $PI_B$, as needed.
+
+Return to the problem. Let the incircle touch sides $AC$ and $BC$ at $X$ and $Y$ respectively, and let $Z$ be the midpoint of segment $XY$.
+We claim that the desired locus is the segment $YZ$. To see this, observe first that the second common interior tangent to the incircles of triangles $ABP$ and $ACP$ passes through $Y$; this is well-known.
+Then apply the lemma to the triangle formed by the two common interior tangents to the incircles of triangles $ABP$ and $ACP$ and their common
+exterior tangent $BC$, and to point $C$ on side $PY$ of this triangle. 
+We obtain that $G$ lies on line $XY$. When $P$ approaches $B$, $G$ approaches $Y$; and when $P$ approaches $C$, $G$ approaches $Z$.
 
 \medskip
 \item[8.] % Ralph, 2020
