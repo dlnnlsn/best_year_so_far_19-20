@@ -40,7 +40,31 @@ If $O$ is the circumcenter of $ABCD$, then line $\overleftrightarrow{OX}$ inters
 \item[2.] % AoPS, 2020
 \textit{For $n,m\in\mathbb{N}$ let $S_{n,m}$ be the set of all increasing integer sequences $x_{1},x_{2},\ldots,x_{nm}$, where $0\leq x_i\leq nm$ and satisfying $n \mid x_{1} + x_{2} + \cdots +x_{nm}$. Prove that exactly half of the elements of $S_{n,m}$ have $x_{nm}=nm$.}
 
+Let $A$ and $B$ be subsets of $S_{nm}$ where $x_{nm} = nm$ and $x_1 = 0$ respectively. The question statement then becomes to prove $|A|$ = $|\overline{A}|$, where $|A|$ is the amount of elements in $A$.
 
+First we will show that $|\overline{A}\cap B| = |A\cap\overline{B}|$. 
+Let $\mathbf{x} \in \overline{A}\cap B$. Now, let $\mathbf{y}$ be a sequence of $nm$ integers defined by $y_i = nm - x_{nm-i}$. Now trivially note that $\mathbf{y} \in A\cap\overline{B} \implies |\overline{A}\cap B| \leq |A\cap\overline{B}|$. But note that we can similarly define $\mathbf{x}$ for any element $\mathbf{y}$ in $A\cap\overline{B}$, thereby reversing the inequality and proving equality. 
+
+Now we will show that $|A\cap B| = |\overline{A}\cap\overline{B}|$.
+Let $\mathbf{x} \in A\cap B$. Now, let $\mathbf{y}$ be a sequence of $nm$ integers defined by $y_i$ being the amount of $x_j$ in $\mathbf{x}$ such that $x_j > nm-i$. 
+Note that:
+\begin{center}
+$\mathbf{y}$ is an increasing integer sequence,
+\\$y_1 \neq 0$ as $x_{nm} = nm > nm-1$,
+\\$y_{nm} \neq nm$ as $x_1 = 0 \ngtr nm - nm$
+\end{center}
+Therefor $\mathbf{y}\in\overline{A}\cap\overline{B}\implies|A\cap B|\leq |\overline{A}\cap\overline{B}|$.
+Similarly, for the reverse case, let  $\mathbf{y}\in\overline{A}\cap\overline{B}$, and let $\mathbf{x}$ be a sequence of $nm$ integers defined by $x_i$ being the amount of $y_j$ in $\mathbf{y}$ such that $y_j > nm-i$.
+Note that:
+\begin{center}
+$\mathbf{x}$ is an increasing integer sequence,
+\\$x_1 = 0$ as $y_{nm} \leq nm-1$,
+\\$x_{nm} = nm$ as $y_1 \geq 1 > nm - nm$
+\end{center}
+Therefor $\mathbf{x}\in A\cap B\implies|\overline{A}\cap\overline{B}|\leq|A\cap B| \implies |A\cap B| = |\overline{A}\cap\overline{B}|$.
+
+Hence we have that: 
+$|A| = |A\cap B| + |A\cap\overline{B}| = |\overline{A}\cap\overline{B}| + |\overline{A}\cap B| = |\overline{A}|$
 
 \medskip
 \item[3.] % IMC 2015, Day 1, Problem 2, Stephan Wagner
@@ -103,7 +127,7 @@ Applying the lemma, we have $0 = (|Q|-1)(f(A) + f(B))$; since $|Q| > 1$ we know 
 The rest of the proof is easy: for three arbitrary points $A, B, C$ we have $2f(A) = (f(A) + f(B)) + (f(A) + f(C)) - (f(B) + f(C)) = 0$ so the only function that works is the zero function.
 
 \medskip
-\item[6.] % 2012 European Girlsâ€™ Mathematical Olympiad P8
+\item[6.] % 2012 European GirlsÃ¢â‚¬â„¢ Mathematical Olympiad P8
 \textit{A word is a collection of letters. Define a word to be $rhythmical$ if it can be written as the concatenation of $2$ or more identical words (for example, $hehehe$ and $fufufu$ are $rhythmical$, but $hahah$ and $hohohaha$ are not). A word is said to be $melodic$ if after swapping any two differing adjacent letters, the resulting word would be $rhythmical$. Find all $melodic$ words.}
 
 \medskip
