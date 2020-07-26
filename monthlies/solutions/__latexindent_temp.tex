@@ -127,8 +127,15 @@ Applying the lemma, we have $0 = (|Q|-1)(f(A) + f(B))$; since $|Q| > 1$ we know 
 The rest of the proof is easy: for three arbitrary points $A, B, C$ we have $2f(A) = (f(A) + f(B)) + (f(A) + f(C)) - (f(B) + f(C)) = 0$ so the only function that works is the zero function.
 
 \medskip
-\item[6.] % 2012 European GirlsÃ¢â‚¬â„¢ Mathematical Olympiad P8
+\item[6.] % 2012 European Girlsâ€:tm: Mathematical Olympiad P8
 \textit{A word is a collection of letters. Define a word to be $rhythmical$ if it can be written as the concatenation of $2$ or more identical words (for example, $hehehe$ and $fufufu$ are $rhythmical$, but $hahah$ and $hohohaha$ are not). A word is said to be $melodic$ if after swapping any two differing adjacent letters, the resulting word would be $rhythmical$. Find all $melodic$ words.}
+
+Let $s$ be our word. We will change every letter, $s_i$, in $s$ into a real number, $w_i$, such that $w_i = w_j$ iff $s_i = s_j$. Define $\omega=e^{\frac{2 \pi i}{n}}$, where $n$ is length of $s$ and define ${W=\sum_{i=1}^n}w_i \omega^{i-1}$. Note that if $s$ is $rhythmical$ that implies $W = 0$.   
+
+Note that a swap between $s_i$ and $s_{i+1}$ would change the value of $W$ by $\omega^{i-1}(w_{i+1} -w_i)(1-\omega)$, let this difference be $\triangle$. Meaning that for $s$ to be melodic $W$ must be equal to $-\triangle$, and that any swap in $s$ should increase $W$ by $\triangle$. As $\triangle$ is non-zero and has a scalar factor of $w_i-w_j$, we can deduce that all swaps must have this same factor, which implies that there are at at most $2$ different letters in $s$. Let these letters be $x$ and $o$. There are only two types of swaps in this case, $xo\rightarrow ox$ and $ox\rightarrow xo$. Now see that due to the factor of $\omega^{i-1}$, if there are two of the same type of swaps, we have that  $\omega^{i-1}(w_x -w_o)(1-\omega) = \omega^{j-1}(w_x -w_o)(1-\omega) \implies \omega^{i-j} = 1$, but $0<i-j<n$, hence a contradiction. Hence we have that there are either $1$ or $2$ valid swaps for any $melodic$ $s$.
+
+If only one swap occurs we have $s = x\ldots xo \ldots o$, which trivially implies $s = xxoo$. 
+If two swaps occur we have  $s = x\ldots xo \ldots ox \ldots x$, which can be seen to imply  $s = xoox$
 
 \medskip
 \item[7.] % Sharygin Geometry Olympiad 2019, 10 Form, Q7
@@ -154,7 +161,7 @@ $$\sum_{k = 1}^{m} \frac{f(k)}{2^k} < \frac{1}{4}$$
 for all positive integers $m$.}
 
 Notice that if $P$ is the set of all prime numbers then
-$$\sum_{k = 1}^{m} \frac{f(k)}{2^k} < \sum_{k = 1}^{\infty} \frac{f(k)}{2^k} = (\sum_{p \in P} \frac{1}{2^p})^2 < (\sum_{i = 2}^{\infty} \frac{1}{2^i}) = (\frac{1}{2})^2 = \frac{1}{4}.$$
+$$\sum_{k = 1}^{m} \frac{f(k)}{2^k} < \sum_{k = 1}^{\infty} \frac{f(k)}{2^k} = (\sum_{p \in P} \frac{1}{2^p})^2 < (\sum_{i = 2}^{\infty} \frac{1}{2^i})^2 = (\frac{1}{2})^2 = \frac{1}{4}.$$
 
 \end{enumerate}
 
