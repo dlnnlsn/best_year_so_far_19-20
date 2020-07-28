@@ -38,7 +38,17 @@ He devises a way to cut a circular pizza such that all cuts go through the cente
 Prove that all \textit{rational} pizzas have rational internal angles at the center of the pizza, as this will make Pythagoras very happy.
 
 \medskip
-\item  %
+\item % Emile Tredoux A
+Define an infinite series $a_0$,$a_1$,$a_2$,\ldots by:
+\begin{center}
+\begin{tabular}{ l l }
+    $a_0 = p$ & where $p$ is prime
+    \\$a_{n+1} = 2\lfloor \frac{a_n+1}{4}\rfloor + 1$ & if $a_n$ prime, $\forall n \in \mathbb{N}_0$
+    \\$a_{n+1} = a_{n} + 1$ & otherwise, $\forall n \in \mathbb{N}_0$
+    
+\end{tabular}
+\end{center}
+For which values of $p$ does the series converge?
 
 \medskip
 \item % Emile Tredoux, G
