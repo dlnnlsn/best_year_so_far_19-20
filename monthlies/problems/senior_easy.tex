@@ -24,7 +24,7 @@
 \begin{center}
 \textbf{\Large An Easy Senior Monthly Problem Set :)}
 \\ \vspace{1em}
-\textbf{\large Due: XX, XX XX 2020}
+\textbf{\large Due: Sunday, 30 August 2020}
 \end{center}
 
 \begin{enumerate}
@@ -81,7 +81,19 @@ Given $n$ distinct lattice points $(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n)$ and giv
 Find all $n$ for where there is guaranteed to be some pair $(i,j)$ such that $|x_iy_{j}-y_ix_{j}| = 1$ and $i-j\not\equiv_n 1$
 
 \medskip
-\item % 
+\item % Liam, N
+Let $p_n$ denote the $n$-th prime number. Define a sequence $\{a_i\}$ by $a_1 = \frac{1}{2}$, and
+$$
+a_n = 
+\begin{cases}
+	\frac{1}{p_n} + a_{n - 1} - \frac{a_{n - 1}}{p_n} \quad \text{if } p_n \equiv _4 1 \\
+	\frac{p_na_{n - 1} + 1}{p_n + 1} \quad \text{otherwise}
+\end{cases}
+$$
+
+Find the value of 
+$$\lim_{n \to \infty} a_n.$$
+
 \end{enumerate}
 
 

@@ -24,13 +24,13 @@
 \begin{center}
 \textbf{\Large An Easy Senior Monthly Problem Set :)}
 \\ \vspace{1em}
-\textbf{\large Due: XX, XX XX 2020}
+\textbf{\large Due: Sunday, 30 August 2020}
 \end{center}
 
 \begin{enumerate}
 
 \medskip
-\item % Emile Tredoux, G
+\item % Emile Tredoux, G/N
 Pythagoras has discovered pizza! And immediately proceeded to working on combining it with his one true love, rational numbers.
 
 He devises a way to cut a circular pizza such that all cuts go through the center of the pizza and that the ratio of areas of adjacent slices of pizza are rational numbers. He calls such a pizza a \textit{rational} pizza.
@@ -38,27 +38,62 @@ He devises a way to cut a circular pizza such that all cuts go through the cente
 Prove that all \textit{rational} pizzas have rational internal angles at the center of the pizza, as this will make Pythagoras very happy.
 
 \medskip
-\item  %
+\item % Emile Tredoux, N
+Define an infinite series $a_0$,$a_1$,$a_2$,\ldots by:
+\begin{center}
+\begin{tabular}{ l l }
+    $a_0 = p$ & where $p$ is prime
+    \\$a_{n+1} = 2\lfloor \frac{a_n+1}{4}\rfloor + 1$ & if $a_n$ prime, $\forall n \in \mathbb{N}_0$
+    \\$a_{n+1} = a_{n} + 1$ & otherwise, $\forall n \in \mathbb{N}_0$
+    
+\end{tabular}
+\end{center}
+For which values of $p$ does the series converge?
 
 \medskip
 \item % Emile Tredoux, G
 Given a triangle, $\triangle ABC$, with $AB = BC$ and circumcenter $O$, let $C'$ be a point on $AB$ such that $AC = AC'$ with $B$ and $C$ on the same side as $A$. Let the circle through $CBC'$ intersect with line $OB$ at $P$, and let $P'$ be the point diametrically opposite $P$. Finally let $Q$ and $Q'$ be the altitudes dropped from $P$ and $P'$ onto $BC$ respectively. Prove $QQ' = BC'$.
 
 \medskip
-\item % 
+\item % Phil, A
+Find all polynomials $P$ with real coefficients such that
+\begin{center}
+    $P(x^2) + 2P(x) = {P(x)}^2 + 2$
+\end{center}
+holds for every $x\in\mathbb{R}$
 
 \medskip
 \item % Ralph, C
 Liam and Dylan have been tasked with painting an infinitely long, tiled pavement. Since they would much rather continue their work on solving the Riemann Hypothesis, they have constructed two robots (Liam-bot and Dylan-bot) to do the job for them. Both robots start at the boundary of the first tile. Thereafter, they are only able to walk forward some constant amount, then paint the tile they have landed on, and repeat. If a robot stops on the boundary of two tiles, it paints the tile in front of it. In order to be as efficient as possible, no tile may be painted twice, and every tile after must be painted. The first tile is exempted from both of these conditions as Liam and Dylan will paint it themselves. Prove that the distance that Dylan-bot can move in any step is uniquely determined by the distance that Liam-bot can move in any step.
 
 \medskip
-\item % 
+\item % AoPS 2006, A
+
+Given $a$,$b$,$c\in\mathbb{R}$ with $a$,$b$,$c\leq 1$ and $a+b+c = 1$, prove that:
+\begin{center}
+   $\sum_{cyc} \sqrt{a^2+2b+1}\geq 4$ 
+\end{center}
+And find when equality occurs.
 
 \medskip
-\item % 
+\item % Korea 2001 : P6, C/G
+Given $n$ distinct lattice points $(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n)$ and given that $|x_iy_{j}-y_ix_{j}| = 1$ if $i-j\equiv_n 1$;
+Find all $n$ for where there is guaranteed to be some pair $(i,j)$ such that $|x_iy_{j}-y_ix_{j}| = 1$ and $i-j\not\equiv_n 1$
 
 \medskip
-\item % 
+\item % Liam, N
+Let $p_n$ denote the $n$-th prime number. Define a sequence $\{a_i\}$ by $a_1 = \frac{1}{2}$, and
+$$
+a_n = 
+\begin{cases}
+	\frac{1}{p_n} + a_{n - 1} - \frac{a_{n - 1}}{p_n} \quad \text{if } p_n \equiv _4 1 \\
+	\frac{p_na_{n - 1} + 1}{p_n + 1} \quad \text{otherwise}
+\end{cases}
+$$
+
+Find the value of 
+$$\lim_{n \to \infty} a_n.$$
+
 \end{enumerate}
 
 
