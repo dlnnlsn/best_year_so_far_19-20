@@ -38,14 +38,15 @@ Find all $n \ge 3$ such that there exists a powerful set containing exactly $n$ 
 
 %\item[1. ANS]
 For $n\leq2020$, consider the set of unique primes $(p_1,p_2,...,p_n)$ and let $P = \prod_{i=1}^{n} p_i$. Let $a_i = Pp_i$. We now show that this set is $powerful$.
-\\$\prod_{j=1}^{n} a_j \mid {a_i}^{2021} \iff P^{n+1} \mid P^{2021}p_i^{2021}$, which is true.
-\\For $n>2020$ let $a_i$ be the minimal value in the $powerful$ set $A$.
-\\${a_i}^{2021} \leq \prod_{j=1}^{n} a_i <  \prod_{j=1}^{n} a_j \leq {a_i}^{2020}$, which is a contradiction.
+
+$\prod_{j=1}^{n} a_j \mid {a_i}^{2021} \iff P^{n+1} \mid P^{2021}p_i^{2021}$, which is true.
+For $n>2020$ let $a_i$ be the minimal value in the $powerful$ set $A$.
+But ${a_i}^{2021} \leq \prod_{j=1}^{n} a_i < \prod_{j=1}^{n} a_j \leq {a_i}^{2020}$, which is a contradiction.
 
 
 \medskip
 \item[2.] % All Russian Olympiad 2017 Grade 10 Q2, G
-{\itshape Let $ABC$ be an acute angled isosceles triangle with $AB = AC$ and circumcenter $O$.
+{\itshape Let $ABC$ be an acute angled isosceles triangle with $AB = AC$ and circumcentre $O$.
 Lines $BO$ and $CO$ intersect $AC$ and $AB$ at $D$ and $E$ respectively.
 A straight line $l$ is drawn through $E$ parallel to $AC$.
 Prove that the line $l$ is tangent to the circumcircle of $\triangle DOC$.}
@@ -53,7 +54,7 @@ Prove that the line $l$ is tangent to the circumcircle of $\triangle DOC$.}
 %\item[2. ANS]
 Note that $AO$ is a line of symmetry that maps $B\rightarrow C$ and $D\rightarrow E$. Let $l$ and it's reflection $k$ intersect on $AO$ at $F$.
 Note $AC||EF, AB||DF$ and $AE=AD$ meaning $ADFE$ is a rhombus $\implies \angle AFD = \angle FAD = \angle OAC$.
-Additionally as $O$ is the circumcenter, $OA = OC \implies \angle OCA = \angle OAC = \angle AFD \implies ODCF$ cyclic.
+Additionally as $O$ is the circumcentre, $OA = OC \implies \angle OCA = \angle OAC = \angle AFD \implies ODCF$ cyclic.
 And since $EF||AC\implies\angle EFD = \angle FDC\implies l$ tangent to the circumcircle of $\triangle DOC$
 
 
@@ -63,7 +64,6 @@ And since $EF||AC\implies\angle EFD = \angle FDC\implies l$ tangent to the circu
 Find the smallest possible value of $a_1$ such that $a_i > 0$ for all $i \in \mathbb{N}$.}
 
 Let $b_n = a_{n + 1} - a_n$. Then, we have
-
 \begin{align*}
 	b_n &= 10a_n - (n + 1) \\
 	 &= 10(11a_{n - 1} - n) - (n + 1) \\
@@ -71,7 +71,7 @@ Let $b_n = a_{n + 1} - a_n$. Then, we have
 	 &= 11b_{n - 1} - 1
 \end{align*}
 
-Therefore, if $b_1 < \frac{1}{10}$, then the sequence $b_1$, $b_2$, $\dots$ is decreasing, and in fact becomes arbitratily small, which means that the sequence $a_1$, $a_2$, $\dots$ becomes arbitratily small as well. Therefore, $b_1 \ge \frac{1}{10}$, so we have $a_2 - a_1 \ge \frac{1}{10}$, or equivalently $a_1 \ge \frac{21}{100}$. Since the sequence $a_1$, $a_2$, $\dots$ is increasing if $a_1 = \frac{21}{100}$, this is our answer.
+Therefore, if $b_1 < \frac{1}{10}$, then the sequence $b_1$, $b_2$, $\dots$ is decreasing, and in fact becomes arbitrarily small, which means that the sequence $a_1$, $a_2$, $\dots$ becomes arbitrarily small as well. Therefore, $b_1 \ge \frac{1}{10}$, so we have $a_2 - a_1 \ge \frac{1}{10}$, or equivalently $a_1 \ge \frac{21}{100}$. Since the sequence $a_1$, $a_2$, $\dots$ is increasing if $a_1 = \frac{21}{100}$, this is our answer.
 
 \medskip
 \item[4.] % China Southeast Math Olympiad 2014, Q2, C
@@ -81,7 +81,7 @@ The organisers decide that the competition is representative if they can find $4
 Find the smallest value $n$ such that the competition will always be representative.}
 
 %\item[4. ANS]
-Let $S = (a_1,a_2,...,a_n)$ be a directed graph where there is a edge from $a_i$ to $a_j$ iff $a_i$ beats $a_j$. Note that if $S$ is $non-representative$ then $a_1,...,a_{n-1}$ is also $non-representative$. A construction for a $non-representative$ graph $S$ for $n=7$ is as follow: $a_i$ beats $a_{i+1}$, $a_{i+2}$ and $a_{i+4}$, where $a_j = a_{j-7}$ if $j>7$. For $n=8$ let $A$ be the set of people $a_1$ beats or loses to in $S$, whichever is greater. By Pigeon Hole Principal there are at least $\lceil{\frac{7}{2}}\rceil$ people in $A$, WLOG let $A$ be the set of people $a_1$ beats and have it include $a_2$. Similarly, let $B$ be the set of people $a_2$ beats or loses to in $A$, whichever is greater. There are at least $\lceil{\frac{3}{2}}\rceil$ people in $B$, WLOG let $B$ be the set of people $a_2$ beats and have it include $a_3$ and $a_4$. Note that $a_1$ beats $a_2$, $a_3$ and $a_4$; $a_2$ beats $a_3$ and $a_4$; WLOG $a_3$ beats $a_4$, meaning $S$ is always $representative$ for $n=8$
+Let $S = (a_1,a_2,...,a_n)$ be a directed graph where there is a edge from $a_i$ to $a_j$ if and only if $a_i$ beats $a_j$. Note that if $S$ is $non-representative$ then $a_1,...,a_{n-1}$ is also $non-representative$. A construction for a $non-representative$ graph $S$ for $n=7$ is as follow: $a_i$ beats $a_{i+1}$, $a_{i+2}$ and $a_{i+4}$, where $a_j = a_{j-7}$ if $j>7$. For $n=8$ let $A$ be the set of people $a_1$ beats or loses to in $S$, whichever is greater. By Pigeon Hole Principal there are at least $\lceil{\frac{7}{2}}\rceil$ people in $A$, without loss of generality let $A$ be the set of people $a_1$ beats and have it include $a_2$. Similarly, let $B$ be the set of people $a_2$ beats or loses to in $A$, whichever is greater. There are at least $\lceil{\frac{3}{2}}\rceil$ people in $B$, without loss of generality let $B$ be the set of people $a_2$ beats and have it include $a_3$ and $a_4$. Note that $a_1$ beats $a_2$, $a_3$ and $a_4$; $a_2$ beats $a_3$ and $a_4$; without loss of generality $a_3$ beats $a_4$, meaning $S$ is always $representative$ for $n=8$
 
 
 \medskip
@@ -90,16 +90,25 @@ Let $S = (a_1,a_2,...,a_n)$ be a directed graph where there is a edge from $a_i$
 If the inscribed circles of these $4$ triangles all have the same radius, show that the $4$ triangles are congruent. }
 
 %\item[5. ANS]
-Let $A,B,C,D$ be the $4$ points in a clockwise order and let $I_A$ be the in-center of $\triangle ABD$, similarly define $I_B$,$I_C$ and $I_D$. Let $A_1$,$A_2$ and $A_3$ be the tangency points of the in-circle with center $I_A$ to sides $AB$,$BD$ and $DA$ respectively. Similarly define the other tangency points. 
-\\Note $A_1B = A_2B$, $A_3D = A_2D$, $B_1B = B_3B$ and $D_1D = D_3D$
-\\$\implies B_3B+A_1B_3+A_3D_1+D_1D = A_1B+A_3D = A_2B+A_2D = BD = C_2B+C_2D = C_3B+C_1D = B_1B+C_3B_1+C_1D_3+D_3D$
-\\$\implies A_1B_3 + A_3D_1 = C_3B_1+C_1D_3$
-\\Similarly but using diagonal $AC$ instead of $BD$ we get that $B_1C_3 + B_3A_1  = D_3C_1 + D_1A_3$.
-\\$\implies A_1B_3 = C_1D_3$ and $D_1A_3 = B_1C_3$. 
-\\Now note that $D_1A_3 = I_DI_A$ as $I_AA_3 = r = I_DD_1$ and $I_AA_3||I_DD_1$, similarly for $I_AI_B$,$I_BI_C$ and $I_CI_D$.
-\\Hence we have $I_DI_A=D_1A_3=B_1C_3=I_BI_C$, and similarly $I_AI_B=I_CI_D \implies I_AI_BI_CI_D$ is a parallelogram $\implies ABCD$ is a parallelogram. 
-\\Finally note $rBD = \frac{r(AB+BD+BA)}{2} + \frac{r(CD+DB+BC)}{2} = |ABD|+|CDB| = |ABCD| = |BCA|+|DAC| = \frac{r(BC+CA+AB)}{2} + \frac{r(DA+AC+CD)}{2} = rAC$
-\\$\implies BD=AC \implies ABCD$ is a rectangle, which satisfies the condition.
+Let $A,B,C,D$ be the $4$ points in a clockwise order and let $I_A$ be the in-centre of $\triangle ABD$, similarly define $I_B$,$I_C$ and $I_D$. Let $A_1$,$A_2$ and $A_3$ be the tangency points of the in-circle with centre $I_A$ to sides $AB$,$BD$ and $DA$ respectively. Similarly define the other tangency points. 
+
+Note that $A_1B = A_2B$, $A_3D = A_2D$, $B_1B = B_3B$ and $D_1D = D_3D$
+\begin{align*}
+	\implies B_3B+A_1B_3+A_3D_1+D_1D &= A_1B+A_3D = A_2B+A_2D = BD \\
+	= C_2B+C_2D = C_3B+C_1D &= B_1B+C_3B_1+C_1D_3+D_3D \\
+	\implies A_1B_3 + A_3D_1 &= C_3B_1+C_1D_3
+\end{align*}
+Similarly but using diagonal $AC$ instead of $BD$ we get that
+\[ B_1C_3 + B_3A_1 = D_3C_1 + D_1A_3 \implies A_1B_3 = C_1D_3\ \text{and}\ D_1A_3 = B_1C_3. \]
+Now note that $D_1A_3 = I_DI_A$ as $I_AA_3 = r = I_DD_1$ and $I_AA_3||I_DD_1$, similarly for $I_AI_B$,$I_BI_C$ and $I_CI_D$.
+Hence we have $I_DI_A=D_1A_3=B_1C_3=I_BI_C$, and similarly $I_AI_B=I_CI_D \implies I_AI_BI_CI_D$ is a parallelogram $\implies ABCD$ is a parallelogram. 
+Finally note that
+\begin{align*}
+	rBD &= \frac{r(AB+BD+BA)}{2} + \frac{r(CD+DB+BC)}{2} = |ABD|+|CDB| = |ABCD| \\
+	&= |BCA|+|DAC| = \frac{r(BC+CA+AB)}{2} + \frac{r(DA+AC+CD)}{2} = rAC \\
+	\implies BD &= AC;
+\end{align*}
+so $ABCD$ is a rectangle, which satisfies the condition.
 
 
 \medskip
@@ -171,10 +180,8 @@ so indeed, we have that if the formula holds for $j = m$, it must also be true f
 \end{quote}
 
 Coming back to the first induction, we now have that if Induction Hypothesis 1 is true for $i = k$, then indeed, we have that
-
-$$f(k + 1, j) = (-1)^{\binom{(k + 1) + j - 2}{(k + 1) - 1}} ~\forall j \in \mathbb{N}$$
-
-which is what was required to prove from Induction Step 1. Thus, by the Principle of Mathematical Induction, we also have that Induction Hypothesis 1 is true for all $i \in \mathbb{N}$.\\
+\[ f(k + 1, j) = (-1)^{\binom{(k + 1) + j - 2}{(k + 1) - 1}} \quad \forall j \in \mathbb{N}, \]
+which is what was required to prove from Induction Step 1. Thus, by the Principle of Mathematical Induction, we also have that Induction Hypothesis 1 is true for all $i \in \mathbb{N}$.
 
 We have thus reduces the problem from determining when $f(i, 2015) = -1$ to when $\binom{i + 2015 - 2}{i - 1} = \binom{i + 2013}{i - 1}$ is odd.
 
@@ -184,9 +191,11 @@ For this expression to be odd, we need the highest power of two dividing the num
 
 $$\sum_{r = 1}^{\infty} \lfloor{\frac{i + 2013}{2^r}}\rfloor = \sum_{r = 1}^{\infty}\lfloor \frac{i - 1}{2^r} \rfloor + \lfloor \frac{2014}{2^r} \rfloor.$$
 
-Since $\lfloor a + b \rfloor \ge \lfloor a \rfloor + \lfloor b \rfloor$ for all $a, b \in \mathbb{R}$, the above equality holds iff equality holds in each term. Notice that for $i \le 2015$, $\lfloor \frac{i + 2013}{2^{11}} \rfloor = \lfloor \frac{i - 1}{2^{11}} \rfloor + \lfloor \frac{2014}{2^{11}} \rfloor \iff i + 2013 < 2^{11} \iff i < 35 \iff i \le 34$. From here it is an exercise in arithmetic to confirm that $i = 34$ does indeed satisfy the equality of the infinite sums.
+Since $\left\lfloor a + b \right\rfloor \ge \left\lfloor a \right\rfloor + \left\lfloor b \right\rfloor$ for all $a, b \in \mathbb{R}$, the above equality holds if and only if equality holds in each term. Notice that for $i \le 2015$,
+\[ \left\lfloor \frac{i + 2013}{2^{11}} \right\rfloor = \left\lfloor \frac{i - 1}{2^{11}} \right\rfloor + \left\lfloor \frac{2014}{2^{11}} \right\rfloor \iff i + 2013 < 2^{11} \iff i < 35 \iff i \le 34. \]
+From here it is an exercise in arithmetic to confirm that $i = 34$ does indeed satisfy the equality of the infinite sums.
 
-$\implies i = 34$ is the largest value of $i$ such that $f(i, 2015) = -1$.
+Thus $i = 34$ is the largest value of $i$ such that $f(i, 2015) = -1$.
 
 \medskip
 \item[8.] % Moscow Olympiad 1996 59.9.5, C
@@ -199,7 +208,7 @@ Then Ali-Baba again selects 4 piles of 10, places mugs beside the piles, etc.
 At any moment Ali-Baba can quit and go away with any 3 mugs he chooses, the remaining coins being the robber's share.
 What is the greatest number of coins Ali-Baba can guarantee to collect?}
 
-\textit{(Solution by Kgaugelo Bopape)}
+\textit{(Solution by Kgaogelo Bopape)}
 First we show that Ali-Baba can take at least $72$ coins by applying the following
 procedure:
 	
@@ -229,7 +238,7 @@ Assume that Alibaba chooses piles with $A_1$, $A_2$, $A_3$ and $A_4$ coins and r
 
 Now assume that immediately after the coins were removed, $c_1$, $c_2$, $c_3$ and $c_4$ remained in the piles. Suppose $c_i = c_j$ for some $i$, $j$ ($i \ne j$), and $c_i$ coins remained from the pile which had $A_m$ coins and $c_j$ coins remained from the pile which had $A_n$ coins ($m \ne n$), and that $b_p$ coins were removed from the pile which had $A_m$ coins and $b_q$ coins were removed from the pile which had $A_n$ coins. Then the robber can just place the mug with $b_p$ coins beside the pile with $c_j$ remaining coins and the mug with $b_q$ coins beside the pile with $c_i$ remaining coins and place the other mugs next to the piles from which they came. Then the state of the piles remains the same.
 
-WLOG assume $b_4 > b_3 > b_2 > b_1 \ge 1$ and $c_4 > c_3 > c_2 > c_1 \ge 1$. Notice that $b_i \ge i$ and $c_i \ge i$ for all $i$ ($1 \le i \le 4$) so you can either choose $(b_i + c_{5-i} )$ for all $i$ or
+Without loss of generality assume $b_4 > b_3 > b_2 > b_1 \ge 1$ and $c_4 > c_3 > c_2 > c_1 \ge 1$. Notice that $b_i \ge i$ and $c_i \ge i$ for all $i$ ($1 \le i \le 4$) so you can either choose $(b_i + c_{5-i} )$ for all $i$ or
 $$(b_1 + c_4 )$$
 $$(b_2 + c_3 )$$
 $$(b_3 + c_2 )$$
