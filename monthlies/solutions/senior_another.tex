@@ -53,9 +53,9 @@ Prove that the line $l$ is tangent to the circumcircle of $\triangle DOC$.}
 
 %\item[2. ANS]
 Note that $AO$ is a line of symmetry that maps $B\rightarrow C$ and $D\rightarrow E$. Let $l$ and it's reflection $k$ intersect on $AO$ at $F$.
-Note $AC||EF, AB||DF$ and $AE=AD$ meaning $ADFE$ is a rhombus $\implies \angle AFD = \angle FAD = \angle OAC$.
+Note $AC \parallel EF, AB \parallel DF$ and $AE=AD$ meaning $ADFE$ is a rhombus $\implies \angle AFD = \angle FAD = \angle OAC$.
 Additionally as $O$ is the circumcentre, $OA = OC \implies \angle OCA = \angle OAC = \angle AFD \implies ODCF$ cyclic.
-And since $EF||AC\implies\angle EFD = \angle FDC\implies l$ tangent to the circumcircle of $\triangle DOC$
+And since $EF \parallel AC\implies\angle EFD = \angle FDC\implies l$ tangent to the circumcircle of $\triangle DOC$
 
 
 \medskip
@@ -100,7 +100,7 @@ Note that $A_1B = A_2B$, $A_3D = A_2D$, $B_1B = B_3B$ and $D_1D = D_3D$
 \end{align*}
 Similarly but using diagonal $AC$ instead of $BD$ we get that
 \[ B_1C_3 + B_3A_1 = D_3C_1 + D_1A_3 \implies A_1B_3 = C_1D_3\ \text{and}\ D_1A_3 = B_1C_3. \]
-Now note that $D_1A_3 = I_DI_A$ as $I_AA_3 = r = I_DD_1$ and $I_AA_3||I_DD_1$, similarly for $I_AI_B$,$I_BI_C$ and $I_CI_D$.
+Now note that $D_1A_3 = I_DI_A$ as $I_AA_3 = r = I_DD_1$ and $I_AA_3 \parallel I_DD_1$, similarly for $I_AI_B$,$I_BI_C$ and $I_CI_D$.
 Hence we have $I_DI_A=D_1A_3=B_1C_3=I_BI_C$, and similarly $I_AI_B=I_CI_D \implies I_AI_BI_CI_D$ is a parallelogram $\implies ABCD$ is a parallelogram. 
 Finally note that
 \begin{align*}
@@ -181,15 +181,15 @@ so indeed, we have that if the formula holds for $j = m$, it must also be true f
 
 Coming back to the first induction, we now have that if Induction Hypothesis 1 is true for $i = k$, then indeed, we have that
 \[ f(k + 1, j) = (-1)^{\binom{(k + 1) + j - 2}{(k + 1) - 1}} \quad \forall j \in \mathbb{N}, \]
-which is what was required to prove from Induction Step 1. Thus, by the Principle of Mathematical Induction, we also have that Induction Hypothesis 1 is true for all $i \in \mathbb{N}$.
+which is what was required to prove from Induction Step 1.
+Thus, by the Principle of Mathematical Induction, we also have that Induction Hypothesis 1 is true for all $i \in \mathbb{N}$.
 
-We have thus reduces the problem from determining when $f(i, 2015) = -1$ to when $\binom{i + 2015 - 2}{i - 1} = \binom{i + 2013}{i - 1}$ is odd.
+We have thus reduced the problem from determining when $f(i, 2015) = -1$ to when $\displaystyle \binom{i + 2015 - 2}{i - 1} = \binom{i + 2013}{i - 1}$ is odd.
 
-$$\binom{i + 2013}{i - 1} = \frac{(i + 2013)!}{(i - 1)!(2014)!}$$
+$$\binom{i + 2013}{i - 1} = \frac{(i + 2013)!}{(i - 1)!(2014)!}.$$
 
 For this expression to be odd, we need the highest power of two dividing the numerator to be the same as the highest power of two dividing the denominator. This statement is equivalent to
-
-$$\sum_{r = 1}^{\infty} \lfloor{\frac{i + 2013}{2^r}}\rfloor = \sum_{r = 1}^{\infty}\lfloor \frac{i - 1}{2^r} \rfloor + \lfloor \frac{2014}{2^r} \rfloor.$$
+$$\sum_{r = 1}^{\infty} \left\lfloor{\frac{i + 2013}{2^r}}\right\rfloor = \sum_{r = 1}^{\infty} \left\lfloor \frac{i - 1}{2^r} \right\rfloor + \left\lfloor \frac{2014}{2^r} \right\rfloor.$$
 
 Since $\left\lfloor a + b \right\rfloor \ge \left\lfloor a \right\rfloor + \left\lfloor b \right\rfloor$ for all $a, b \in \mathbb{R}$, the above equality holds if and only if equality holds in each term. Notice that for $i \le 2015$,
 \[ \left\lfloor \frac{i + 2013}{2^{11}} \right\rfloor = \left\lfloor \frac{i - 1}{2^{11}} \right\rfloor + \left\lfloor \frac{2014}{2^{11}} \right\rfloor \iff i + 2013 < 2^{11} \iff i < 35 \iff i \le 34. \]
