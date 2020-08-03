@@ -246,3 +246,4 @@ TSWLatexianTemp*
 
 # PDF files
 *.pdf
+**/__latexindent_temp.tex
