@@ -4,7 +4,7 @@
 \pgfplotsset{compat=1.15}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
-\usepackage{amsmath,amssymb}
+\usepackage{mathtools,amssymb}
 \usepackage{fullpage}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -36,46 +36,49 @@
 \item % Malwande
 {\itshape Let $ABC$ be a triangle with orthocentre $H$, such that $AB<BC$ and $\angle BAC < 90^\circ$. Let the circle $\Gamma$ centred at $B$ and passing through $A$ intersect $AC$ again at $D$. The circumcircle of $\triangle BCD$ intersects $\Gamma$ again at $E$. $ED$ and $BH$ intersect at $F$. Prove that $BD$ is tangent to the circumcircle of $\triangle DHF$.
 }
-\medskip
-\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
-\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
-\clip(-8,-5) rectangle (8,6);
-\draw [line width=0.5pt,color=wrwrwr] (-1.38,3.06)-- (-2.4,0);
-\draw [line width=0.5pt,color=wrwrwr] (2,0)-- (-1.38,3.06);
-\draw [line width=0.5pt,color=wrwrwr] (-2.4,0)-- (2,0);
-\draw [line width=0.5pt,color=wrwrwr] (-2.4,0) circle (3.2255232133717473cm);
-\draw [line width=0.5pt,color=wrwrwr] (-2.4,0)-- (0.5438098903213396,1.3183259572830477);
-\draw [line width=0.5pt,color=wrwrwr] (-1.38,-9.12) -- (-1.38,8.172);
-\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(-8.112-3.38*\x)/-3.06});
-\draw [line width=0.5pt,color=wrwrwr] (-0.2,-0.9666666666666669) circle (2.403007375029141cm);
-\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(--0.15523155666730615--4.378325957283048*\x)/1.9238098903213392});
-\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(--2.431982297479315--0.19165929061638076*\x)/1.9238098903213396});
-\begin{scriptsize}
-\draw [fill=wrwrwr] (-1.38,3.06) circle (2.5pt);
-\draw[color=wrwrwr] (-1.194,3.541) node {$A$};
-\draw [fill=wrwrwr] (-2.4,0) circle (2.5pt);
-\draw[color=wrwrwr] (-2.6,0.37) node {$B$};
-\draw [fill=wrwrwr] (2,0) circle (2.5pt);
-\draw[color=wrwrwr] (2.172,0.453) node {$C$};
-\draw [fill=wrwrwr] (0.5438098903213396,1.3183259572830477) circle (2pt);
-\draw[color=wrwrwr] (0.72,1.737) node {$D$};
-\draw [fill=wrwrwr] (-1.38,1.126666666666667) circle (2pt);
-\draw[color=wrwrwr] (-1.194,1.561) node {$H$};
-\draw [fill=wrwrwr] (-1.38,-3.06) circle (2pt);
-\draw[color=wrwrwr] (-1.194,-2.641) node {$E$};
-\draw [fill=wrwrwr] (2.1944160092360985,5.074877814123534) circle (2pt);
-\draw[color=wrwrwr] (2.5,5.2) node {$F$};
-\end{scriptsize}
-\end{tikzpicture}
-We will first show that $H$ lies on the circumcircle of $\triangle BCD$ 
-\\ Since $AB = BD$ and $BH \perp AD$, then $AH$ bisects $AD$, then $AH = HD \implies \angle HAD = \angle HDA$. Now $\angle HBC = 90^{\circ} - \angle ACB = \angle HAC$ and so $\angle HBC = \angle HDA$ and so $BHDC$ is cyclic. 
-\\ Next we show that $A$, $H$ and $E$ are collinear
-\\It is equivalent to to show that $\angle HED = \angle AED$. 
-\\ $\angle HED = \angle HBD$ since $BHDC$ is cyclic. 
-\\ Also, $\angle AED = \frac{\angle ABD}{2} = \angle HBD$ and so $A$, $H$ and $E$ are collinear. 
-\\ Since $\angle ABF = \angle AEF$, then $ABEF$ is cyclic and so $\angle HFD = \angle BAH = 90^{\circ} - \angle ABC = \angle HCB = \angle HDB \implies BD$ is tangent to the circumcircle of $ \triangle DHF$
 
+\begin{center}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+		\clip(-7,-5) rectangle (4,6);
+		\draw [line width=0.5pt,color=wrwrwr] (-1.38,3.06)-- (-2.4,0);
+		\draw [line width=0.5pt,color=wrwrwr] (2,0)-- (-1.38,3.06);
+		\draw [line width=0.5pt,color=wrwrwr] (-2.4,0)-- (2,0);
+		\draw [line width=0.5pt,color=wrwrwr] (-2.4,0) circle (3.2255232133717473cm);
+		\draw [line width=0.5pt,color=wrwrwr] (-2.4,0)-- (0.5438098903213396,1.3183259572830477);
+		\draw [line width=0.5pt,color=wrwrwr] (-1.38,-9.12) -- (-1.38,8.172);
+		\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(-8.112-3.38*\x)/-3.06});
+		\draw [line width=0.5pt,color=wrwrwr] (-0.2,-0.9666666666666669) circle (2.403007375029141cm);
+		\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(--0.15523155666730615--4.378325957283048*\x)/1.9238098903213392});
+		\draw [line width=0.5pt,color=wrwrwr,domain=-11.072:14.03] plot(\x,{(--2.431982297479315--0.19165929061638076*\x)/1.9238098903213396});
+		\begin{scriptsize}
+			\draw [fill=wrwrwr] (-1.38,3.06) circle (2.5pt);
+			\draw[color=wrwrwr] (-1.194,3.541) node {$A$};
+			\draw [fill=wrwrwr] (-2.4,0) circle (2.5pt);
+			\draw[color=wrwrwr] (-2.6,0.37) node {$B$};
+			\draw [fill=wrwrwr] (2,0) circle (2.5pt);
+			\draw[color=wrwrwr] (2.172,0.453) node {$C$};
+			\draw [fill=wrwrwr] (0.5438098903213396,1.3183259572830477) circle (2pt);
+			\draw[color=wrwrwr] (0.72,1.737) node {$D$};
+			\draw [fill=wrwrwr] (-1.38,1.126666666666667) circle (2pt);
+			\draw[color=wrwrwr] (-1.194,1.561) node {$H$};
+			\draw [fill=wrwrwr] (-1.38,-3.06) circle (2pt);
+			\draw[color=wrwrwr] (-1.194,-2.641) node {$E$};
+			\draw [fill=wrwrwr] (2.1944160092360985,5.074877814123534) circle (2pt);
+			\draw[color=wrwrwr] (2.5,5.2) node {$F$};
+		\end{scriptsize}
+	\end{tikzpicture}
+\end{center}
+
+We will first show that $H$ lies on the circumcircle of $\triangle BCD$.
+Since $AB = BD$ and $BH \perp AD$, then $AH$ bisects $AD$, then $AH = HD \implies \angle HAD = \angle HDA$. Now $\angle HBC = 90^{\circ} - \angle ACB = \angle HAC$ and so $\angle HBC = \angle HDA$ and so $BHDC$ is cyclic. 
+
+Next we show that $A$, $H$ and $E$ are collinear.
+It is equivalent to to show that $\angle HED = \angle AED$. 
+
+$\angle HED = \angle HBD$ since $BHDC$ is cyclic. 
+Also, $\angle AED = \frac{\angle ABD}{2} = \angle HBD$ and so $A$, $H$ and $E$ are collinear. 
+Since $\angle ABF = \angle AEF$, then $ABEF$ is cyclic and so $\angle HFD = \angle BAH = 90^{\circ} - \angle ABC = \angle HCB = \angle HDB$ and so $BD$ is tangent to the circumcircle of $\triangle DHF$
 
 
 \medskip
@@ -87,14 +90,15 @@ Let $A,B,C,D$ be vectors from the origin to the $4$ respective points.
 And let $p_U(v)$ denote the projection of $v$ onto $U$ for a plane $U$ that goes through the origin. It is well known that $p_U(v) + p_U(w) = p_U(v + w)$
 
 We want to find a plane, $U$, such that the projections of $A$, $B$, $C$ and $D$ are a parallelogram. This is equivalent to
-$p_U(A) - p_U(B) = p_U(D) - p_U(C)$
+$p_U(A) - p_U(B) = p_U(D) - p_U(C)$.
 
 But by additivity of $p_U$ the above is equivalent to
-$p_U(A - B + C - D) = 0$
+$p_U(A - B + C - D) = 0$.
 
 Which means all we need is a plane $U$ through the origin that is perpendicular to $A - B + C - D$, which clearly exists.
 
 In the case where $A - B + C - D = 0$, any plane $U$ would result in a parallelogram.
+
 
 \medskip
 \item % IMO Long List 1992 Q75, N
@@ -103,13 +107,16 @@ $$n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor$$
 where $m$ is also a positive integer.}
 
 All positive integers except those that are perfect squares can be written in this form. 
-\\ Let $k^{2} \leq m < (k+1)^{2}$ and let $m = k^{2} + x$ where $x \in \{0,1,...,2k\}$
-\\ Now consider when $x=\{0,1,2,...,k\}$, then $m \leq k^{2} + k \implies m < k^{2} + k + \frac{1}{4} = (k+\frac{1}{2})^{2}$ and so $\sqrt{m} < k + \frac{1}{2}$
-Then $n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor = m + \left\lfloor  \sqrt{m} + \frac{1}{2} \right\rfloor = m + k$. Taking all possible values for $m$ gives that the numbers $n$ that can be formed are $\{k^{2}+k, k^{2}+k+1,..., k^{2}+2k\}$ $\forall k \in \mathbb{N}$
-\\ Then consider when $x=\{k+1,k+2,,...,2k\}$, then $m > k^{2} + k \implies m > k^{2} + k + \frac{1}{4} = (k+\frac{1}{2})^{2}$ and so $\sqrt{m} > k + \frac{1}{2}$
-Then $n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor = m + \left\lfloor  \sqrt{m} + \frac{1}{2} \right\rfloor = m + k + 1$. Taking possible values for $m$ gives that the numbers $n$ that can be formed are $\{k^{2}+2k+2, k^{2}+2k+3,..., k^{2}+3k+1\}$ $\forall k \in \mathbb{N}$ Letting $k \to k-1$ here generates the set $\{k^{2}, k^{2}+1,...,k^{2}+k\}$. 
-\\ In total we can produce numbers only in the form $\{k^{2}+1, k^{2}+2,..., k^{2}+2k\}$ $\forall k \in \mathbb{N}$ which is clearly all the positive integers except the perfect squares. 
 
+Let $k^{2} \leq m < (k+1)^{2}$ and let $m = k^{2} + x$ where $x \in \{0,1,...,2k\}$
+
+Now consider when $x=\{0,1,2,...,k\}$, then $m \leq k^{2} + k \implies m < k^{2} + k + \frac{1}{4} = (k+\frac{1}{2})^{2}$ and so $\sqrt{m} < k + \frac{1}{2}$.
+Then $n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor = m + \left\lfloor  \sqrt{m} + \frac{1}{2} \right\rfloor = m + k$. Taking all possible values for $m$ gives that the numbers $n$ that can be formed are $\{k^{2}+k, k^{2}+k+1,..., k^{2}+2k\}$ $\forall k \in \mathbb{N}$
+
+Then consider when $x=\{k+1,k+2,,...,2k\}$, then $m > k^{2} + k \implies m > k^{2} + k + \frac{1}{4} = (k+\frac{1}{2})^{2}$ and so $\sqrt{m} > k + \frac{1}{2}$.
+Then $n = \left\lfloor m + \sqrt{m} + \frac{1}{2} \right\rfloor = m + \left\lfloor  \sqrt{m} + \frac{1}{2} \right\rfloor = m + k + 1$. Taking possible values for $m$ gives that the numbers $n$ that can be formed are $\{k^{2}+2k+2, k^{2}+2k+3,..., k^{2}+3k+1\}$ $\forall k \in \mathbb{N}$ Letting $k \to k-1$ here generates the set $\{k^{2}, k^{2}+1,...,k^{2}+k\}$. 
+
+In total we can produce numbers only in the form $\{k^{2}+1, k^{2}+2,..., k^{2}+2k\}$ $\forall k \in \mathbb{N}$ which is clearly all the positive integers except the perfect squares.
 
 
 \medskip
@@ -125,65 +132,61 @@ Note that a line can pass through at most $2$ of these segments, meaning that th
 {\itshape Let the midpoints of the sides $BC$, $CA$, $AB$ of an equilateral triangle $ABC$ be $D$, $E$, and $F$ respectively. Let $j$, $k$, and $\ell$ be lines passing through $D$, $E$, and $F$ respectively such that $j \parallel k \parallel \ell$. Define points $P$, $Q$, and $R$ by $P = j\cap EF$, $Q = k \cap FD$, and $R = \ell \cap DE$. Prove that the points $X$, $Y$, and $Z$ defined by $X = BC \cap QR$, $Y = CA \cap RP$, and $Z = AB \cap PQ$ are  collinear.}
 
 %Andi
-\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
-\definecolor{dbwrru}{rgb}{0.8588235294117647,0.3803921568627451,0.0784313725490196}
-\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
 \definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
-\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
-\clip(-9.283559987000446,-6.57625282241214) rectangle (19.381304302431502,7.540833931147832);
- (-1.31,5.11) -- (-5.455197477560457,-1.7617679365822296) -- (2.568526863211355,-1.9157302875616482) -- cycle;
-\draw [line width=0.4pt,color=wrwrwr] (-1.31,5.11)-- (-5.455197477560457,-1.7617679365822296);
-\draw [line width=0.4pt,color=wrwrwr] (-5.455197477560457,-1.7617679365822296)-- (2.568526863211355,-1.9157302875616482);
-\draw [line width=0.4pt,color=wrwrwr] (2.568526863211355,-1.9157302875616482)-- (-1.31,5.11);
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-30.183975107256657-6.87176793658223*\x)/-4.1451974775604565});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-14.975835304248369-0.15396235097941857*\x)/8.023724340771812});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-10.615565594304266--7.0257302875616485*\x)/-3.878526863211355});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--1.148143552176006--3.435883968291115*\x)/2.0725987387802283});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-6.45592634932814--0.0769811754897094*\x)/-4.011862170385906});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-8.63606120430019-3.5128651437808243*\x)/1.9392634316056778});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--14.58742692855705--3.5740494610379048*\x)/-5.127874754608706});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-10.438926137493052--3.5740494610379048*\x)/-5.127874754608706});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--3.504917863959271--3.5740494610379048*\x)/-5.127874754608706});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--29.94074793065018--4.358649068622216*\x)/0.7486596288139937});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-5.049541293151948-6.4111737943942355*\x)/5.297031407263448});
-\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--2.9964813654064137--2.052524725772019*\x)/-6.045691036077442});
-\draw [line width=0.4pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-22.357699881128205--4.499323905961608*\x)/10.051477896670233});
-\begin{scriptsize}
-\draw [fill=black] (-1.31,5.11) circle (0.5pt);
-\draw[color=black] (-1.1801926753524612,5.331549732991836) node {$A$};
-\draw [fill=black] (-5.455197477560457,-1.7617679365822296) circle (0.5pt);
-\draw[color=black] (-5.327585393912453,-1.5435512735441501) node {$B$};
-\draw [fill=black] (2.568526863211355,-1.9157302875616482) circle (0.5pt);
-\draw[color=black] (2.696024365455531,-1.70306637810415) node {$C$};
-\draw [fill=black] (-1.443335307174551,-1.8387491120719388) circle (0.5pt);
-\draw[color=black] (-1.307804759000461,-1.62330882582415) node {$D$};
-\draw [fill=black] (0.6292634316056775,1.597134856219176) circle (0.5pt);
-\draw[color=black] (0.749940089823535,1.8062659222158433) node {$E$};
-\draw [fill=black] (-3.3825987387802288,1.6741160317088855) circle (0.5pt);
-\draw[color=black] (-3.2538890346324574,1.886023474495843) node {$F$};
-\draw [fill=black] (-6.5712100617832565,1.735300348965966) circle (0.5pt);
-\draw[color=black] (-6.444191125832451,1.9498295163198431) node {$P$};
-\draw [fill=black] (-0.5255190257058148,-0.31722437680605303) circle (0.5pt);
-\draw[color=black] (-0.3985686630084627,-0.10791533250415289) node {$R$};
-\draw [fill=black] (-5.822550432969263,6.093949417588182) circle (0.5pt);
-\draw[color=black] (-5.6944701344004525,6.304591870807834) node {$Q$};
-\draw [fill=black] (-7.855296739267298,-5.740571175871619) circle (0.5pt);
-\draw[color=black] (-7.720311962312448,-5.531428887544143) node {$X$};
-\draw [fill=black] (0.7666294508162076,-1.8811547774800792) circle (0.5pt);
-\draw[color=black] (0.8935036839275348,-1.6711633571921498) node {$Y$};
-\draw [fill=black] (2.1961811574029353,-1.2412472699100106) circle (0.5pt);
-\draw[color=black] (2.329139624967532,-1.033102938952151) node {$Z$};
-\end{scriptsize}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.9cm,y=0.9cm]
+	\clip(-9.0,-6.5) rectangle (7.5,7.5);
+	(-1.31,5.11) -- (-5.455197477560457,-1.7617679365822296) -- (2.568526863211355,-1.9157302875616482) -- cycle;
+	\draw [line width=0.4pt,color=wrwrwr] (-1.31,5.11)-- (-5.455197477560457,-1.7617679365822296);
+	\draw [line width=0.4pt,color=wrwrwr] (-5.455197477560457,-1.7617679365822296)-- (2.568526863211355,-1.9157302875616482);
+	\draw [line width=0.4pt,color=wrwrwr] (2.568526863211355,-1.9157302875616482)-- (-1.31,5.11);
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-30.183975107256657-6.87176793658223*\x)/-4.1451974775604565});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-14.975835304248369-0.15396235097941857*\x)/8.023724340771812});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-10.615565594304266--7.0257302875616485*\x)/-3.878526863211355});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--1.148143552176006--3.435883968291115*\x)/2.0725987387802283});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-6.45592634932814--0.0769811754897094*\x)/-4.011862170385906});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-8.63606120430019-3.5128651437808243*\x)/1.9392634316056778});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--14.58742692855705--3.5740494610379048*\x)/-5.127874754608706});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-10.438926137493052--3.5740494610379048*\x)/-5.127874754608706});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--3.504917863959271--3.5740494610379048*\x)/-5.127874754608706});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--29.94074793065018--4.358649068622216*\x)/0.7486596288139937});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-5.049541293151948-6.4111737943942355*\x)/5.297031407263448});
+	\draw [line width=0.4pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(--2.9964813654064137--2.052524725772019*\x)/-6.045691036077442});
+	\draw [line width=0.4pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-9.283559987000446:19.381304302431502] plot(\x,{(-22.357699881128205--4.499323905961608*\x)/10.051477896670233});
+	\begin{scriptsize}
+		\draw [fill=black] (-1.31,5.11) circle (0.5pt);
+		\draw[color=black] (-1.1801926753524612,5.331549732991836) node {$A$};
+		\draw [fill=black] (-5.455197477560457,-1.7617679365822296) circle (0.5pt);
+		\draw[color=black] (-5.327585393912453,-1.5435512735441501) node {$B$};
+		\draw [fill=black] (2.568526863211355,-1.9157302875616482) circle (0.5pt);
+		\draw[color=black] (2.696024365455531,-1.70306637810415) node {$C$};
+		\draw [fill=black] (-1.443335307174551,-1.8387491120719388) circle (0.5pt);
+		\draw[color=black] (-1.307804759000461,-1.62330882582415) node {$D$};
+		\draw [fill=black] (0.6292634316056775,1.597134856219176) circle (0.5pt);
+		\draw[color=black] (0.749940089823535,1.8062659222158433) node {$E$};
+		\draw [fill=black] (-3.3825987387802288,1.6741160317088855) circle (0.5pt);
+		\draw[color=black] (-3.2538890346324574,1.886023474495843) node {$F$};
+		\draw [fill=black] (-6.5712100617832565,1.735300348965966) circle (0.5pt);
+		\draw[color=black] (-6.444191125832451,1.9498295163198431) node {$P$};
+		\draw [fill=black] (-0.5255190257058148,-0.31722437680605303) circle (0.5pt);
+		\draw[color=black] (-0.3985686630084627,-0.10791533250415289) node {$R$};
+		\draw [fill=black] (-5.822550432969263,6.093949417588182) circle (0.5pt);
+		\draw[color=black] (-5.6944701344004525,6.304591870807834) node {$Q$};
+		\draw [fill=black] (-7.855296739267298,-5.740571175871619) circle (0.5pt);
+		\draw[color=black] (-7.720311962312448,-5.531428887544143) node {$X$};
+		\draw [fill=black] (0.7666294508162076,-1.8811547774800792) circle (0.5pt);
+		\draw[color=black] (0.8935036839275348,-1.6711633571921498) node {$Y$};
+		\draw [fill=black] (2.1961811574029353,-1.2412472699100106) circle (0.5pt);
+		\draw[color=black] (2.329139624967532,-1.033102938952151) node {$Z$};
+	\end{scriptsize}
 \end{tikzpicture}
 
 We first prove the following lemma:
 
 Given an equilateral triangle $DEF$ with points $P$ on $EF$, $Q$ on $DF$, and $R$ on $DE$ such that $PD \parallel QE \parallel FR$, then
 
-$$\frac{QD}{RD} \cdot \frac{RE}{PE} \cdot \frac{PF}{QF} = 1$$
+$$\frac{QD}{RD} \cdot \frac{RE}{PE} \cdot \frac{PF}{QF} = 1.$$
 
-WLOG, let $Q$ lie between $D$ and $F$. If this isn't the case, by symmetry the following still would work.
+Without loss of generality, let $Q$ lie between $D$ and $F$. If this isn't the case, by symmetry the following still would work.
 
 Since $PD \parallel QE \parallel FR$, we get $\angle PDE = \angle QDE = \angle FRD = \angle EFR = \alpha$.
 
@@ -193,19 +196,16 @@ By sine law, we have:
 \frac{RD}{\sin{60^\circ + \alpha}} &= \frac{DF}{\sin{\alpha}} & \frac{PE}{\sin{\alpha}} &= \frac{DE}{\sin{60^\circ - \alpha}} & \frac{QF}{\sin{60^\circ - \alpha}} &= \frac{EF}{\sin{60^\circ + \alpha}}
 \end{align*}
 
-$$\therefore \frac{QD}{RD} \cdot \frac{RE}{PE} \cdot \frac{PF}{QF} = 1$$
+$$\therefore \frac{QD}{RD} \cdot \frac{RE}{PE} \cdot \frac{PF}{QF} = 1.$$
 
 Now we return to the original problem. By sine law, we have:
 \begin{align*}
-\frac{QX}{\sin{\angle QDX}} &= \frac{QD}{\sin{\angle QXD}} & \frac{RY}{\sin{\angle REY}} &= \frac{RE}{\sin{\angle RYE}} & \frac{PZ}{\sin{\angle PFZ}} &= \frac{PF}{\sin{\angle PZF}}\\
-\frac{RX}{\sin{\angle RDX}} &= \frac{RD}{\sin{\angle QXD}} & \frac{PY}{\sin{\angle PEY}} &= \frac{PE}{\sin{\angle RYE}} & \frac{QZ}{\sin{\angle QFZ}} &= \frac{QF}{\sin{\angle PZF}}
+	\frac{QX}{\sin{\angle QDX}} &= \frac{QD}{\sin{\angle QXD}} & \frac{RY}{\sin{\angle REY}} &= \frac{RE}{\sin{\angle RYE}} & \frac{PZ}{\sin{\angle PFZ}} &= \frac{PF}{\sin{\angle PZF}}\\
+	\frac{RX}{\sin{\angle RDX}} &= \frac{RD}{\sin{\angle QXD}} & \frac{PY}{\sin{\angle PEY}} &= \frac{PE}{\sin{\angle RYE}} & \frac{QZ}{\sin{\angle QFZ}} &= \frac{QF}{\sin{\angle PZF}}
 \end{align*}
 
 Since $\angle PZF, \angle QDX, \angle REY, \angle QFZ, \angle RDX, \angle PEY \in \{60^\circ, 120^\circ\}$ and $\sin{60^\circ} = \sin{120^\circ}$, we have
-\begin{align*}
-\frac{BX}{CX} \cdot \frac{CY}{AY} \cdot \frac{AZ}{BZ} &= \frac{QX}{RX} \cdot \frac{RY}{PY} \cdot \frac{PZ}{QZ}\\
-&= 1
-\end{align*}
+\[ \frac{BX}{CX} \cdot \frac{CY}{AY} \cdot \frac{AZ}{BZ} = \frac{QX}{RX} \cdot \frac{RY}{PY} \cdot \frac{PZ}{QZ} = 1. \]
 $\therefore$ By Menelaus' theorem, $X$, $Y$, and $Z$ are collinear.
 
 
@@ -217,52 +217,46 @@ $$\sum_{i = 1}^{m} (x + i)^n = \sum_{i = 1}^{m} (y + i)^{2n}$$
 where $m, n \in \mathbb{N} \setminus \{1\}$ are given constants.}
 
 By the Power-Mean Inequality, we have:
-$$(\frac{(x + i)^n + (x + m + 1 - i)^n}{2})^{\frac{1}{n}} > x + \frac{m + 1}{2}$$
-$$\implies \frac{(x + i)^n + (x + m + 1 - i)^n}{2} > (x + \frac{m + 1}{2})^n$$
-$$\implies \sum_{i = 1}^{n} (x + i)^n > m(x + \frac{m + 1}{2})^n$$
+\begin{align*}
+	\left(\frac{(x + i)^n + (x + m + 1 - i)^n}{2}\right)^{\frac{1}{n}} &> x + \frac{m + 1}{2} \\
+	\implies \frac{(x + i)^n + (x + m + 1 - i)^n}{2} &> \left(x + \frac{m + 1}{2}\right)^n \\
+	\implies \sum_{i = 1}^{n} (x + i)^n &> m\left(x + \frac{m + 1}{2}\right)^n.
+\end{align*}
 
 Expanding the LHS gives:
-$$\sum_{i = 1}^{m} (x + i)^n = mx^n + \frac{mn(m + 1)}{2}x^{n - 1} + O_1(x^{n - 2})$$
+$$\sum_{i = 1}^{m} (x + i)^n = mx^n + \frac{mn(m + 1)}{2}x^{n - 1} + O_1(x^{n - 2}).$$
 
 Similarly:
-
-$$m(x + \frac{m + 2}{2})^n = mx^n + \frac{mn(m + 2)}{2}x^{n - 1} + O_2(x^{n - 2})$$
+$$m\left(x + \frac{m + 2}{2}\right)^n = mx^n + \frac{mn(m + 2)}{2}x^{n - 1} + O_2(x^{n - 2}).$$
 
 Since the coefficients of the second term will dominate the expression after subtracting the two, we have:
+$$m\left(x + \frac{m + 2}{2}\right)^n > \sum_{i = 1}^{m} (x + i)^n > m\left(x + \frac{m + 1}{2}\right)^n \quad \forall x > T$$
 
-$$m(x + \frac{m + 2}{2})^n > \sum_{i = 1}^{m} (x + i)^n > m(x + \frac{m + 1}{2})^n ~\forall x > T$$
-
-where $T$ is some sufficiently large real number. Following a similar process and replacing $n$ by $2n$ and $x$ by $y$, we get:
-
-$$m(y + \frac{m + 2}{2})^{2n} > \sum_{i = 1}^{m} (y + i)^{2n} > m(y + \frac{m + 1}{2})^{2n} ~\forall y > K$$
-
-where $K$ is some sufficiently large real number. Adding $1$ to $y$ yields:
-
-$$m(y + \frac{m + 2}{2} + 1)^{2n} > \sum_{i = 1}^{m} (y + i + 1)^{2n} > m(y + \frac{m + 1}{2} + 1)^{2n} ~\forall y > K$$
-
+where $T$ is some sufficiently large real number.
+Following a similar process and replacing $n$ by $2n$ and $x$ by $y$, we get:
+$$m\left(y + \frac{m + 2}{2}\right)^{2n} > \sum_{i = 1}^{m} (y + i)^{2n} > m(y + \frac{m + 1}{2})^{2n} \quad \forall y > K$$
+where $K$ is some sufficiently large real number.
+Adding $1$ to $y$ yields:
+$$m\left(y + \frac{m + 2}{2} + 1\right)^{2n} > \sum_{i = 1}^{m} (y + i + 1)^{2n} > m\left(y + \frac{m + 1}{2} + 1\right)^{2n} \quad \forall y > K.$$
 Since $m$ is fixed, we can choose $y > K$ such that: 
-$$y^2 + (m + 2)y + (\frac{m + 2}{2})^2 - \frac{m + 1}{2} > T$$
+$$y^2 + (m + 2)y + \left(\frac{m + 2}{2}\right)^2 - \frac{m + 1}{2} > T.$$
 
 \medskip
 \item % Spain, Round 2, 1992
 {\itshape In the land of Graphopia there are $n$ towns. Between some pairs of towns there are direct roads. The residents of these towns want to have mathematics tournaments. They've decided that in order to have a mathematics tournament they need to have $a$ participating towns. Further they decide that in order to have a tournament the connections between the towns involved must be symmetrical. That is either every pair of towns in a tournament are directly linked by a road or no pair is. 
 
-As mathematics competitions are rightly adored by every member of Graphopia every grouping of $a$ towns that can hold a tournament holds one once a year (some towns may be in multiple groupings). However in some years new roads are built and old ones lost to the elements. If a group of $a$ towns find themselves able to put on a tournament they immediately do. If a tournament finds itself unallowable due to road connections, that tournament is regretfully discontinued. Prove that it is possible that one year poor Graphopia finds itself having less than $\binom{n}{a} $$2^{1-\binom{a}{2}}$ tournaments.
+As mathematics competitions are rightly adored by every member of Graphopia every grouping of $a$ towns that can hold a tournament holds one once a year (some towns may be in multiple groupings). However in some years new roads are built and old ones lost to the elements. If a group of $a$ towns find themselves able to put on a tournament they immediately do. If a tournament finds itself unallowable due to road connections, that tournament is regretfully discontinued. Prove that it is possible that one year poor Graphopia finds itself having less than $\displaystyle \binom{n}{a} $$2^{1-\binom{a}{2}}$ tournaments.
 }
 
 
 Let the towns be nodes of a connected graph. If there is a road between two towns, let the edge be coloured red, and blue if not.
-Consider the sample-space, $\Omega$, of all possible colourings of the graph and note that each edge has equal frequency and therefor equal probability of being either red or blue for a randomly selected colouring.
+Consider the sample-space, $\Omega$, of all possible colourings of the graph and note that each edge has equal frequency and therefore equal probability of being either red or blue for a randomly selected colouring.
 
-Therefor a collection of $a$ towns has probability $2^{1-{{a}\choose{2}}}$ of being mono-coloured.
+Therefore a collection of $a$ towns has probability $2^{1-{{a}\choose{2}}}$ of being mono-coloured.
 
 Let the number of competitions be denoted by ${X}$.
-
-Note that the number of collections of $a$ towns is ${n}\choose{a}$
-
-Now, by Linearity of Expectation: 
-
-$\mathbb{E}({X}) = {{n}\choose{a}}\times2^{1-{{a}\choose{2}}}$
+Note that the number of collections of $a$ towns is $\displaystyle \binom{n}{a}$.
+Now, by Linearity of Expectation: $\displaystyle \mathbb{E}({X}) = {{n}\choose{a}} \times 2^{1-{{a}\choose{2}}}$.
 
 Ignoring the trivial case of $a=2$, since $X$ is discrete and there exists a colouring where $X>\mathbb{E}({X})$, namely the graph where all edges are blue, there must exist a colouring where $X$ is less than $\mathbb{E}({X})$.
 
@@ -278,39 +272,42 @@ where $n \in \mathbb{N}$. Where does equality occur?}
 Assume without loss of generality that $a \geq b \geq c$.
 \\ We will first show that 
 \begin{align} 
-\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \geq \frac{b^{n+1}}{a^{n}+b^{n+1}+c^{n}} \geq \frac{c^{n+1}}{a^{n}+b^{n}+c^{n+1}}
-\end{align}
-and 
-\begin{align}
+\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \geq \frac{b^{n+1}}{a^{n}+b^{n+1}+c^{n}} \geq \frac{c^{n+1}}{a^{n}+b^{n}+c^{n+1}} \\
+\shortintertext{and}
 a^{n}+b^{n}+c^{n+1} \geq a^{n}+b^{n+1}+c^{n} \geq a^{n+1}+b^{n}+c^{n}
 \end{align}
 For the first inequality, we show the left side holds since the other part is done similarly.
-\\ The left side is equivalent to
+
+The left side is equivalent to
 \begin{align*}
  a^{n+1}(a^{n}+c^{n}) \geq b^{n+1}(b^{n}+c^{n})
 \end{align*}
 which is true since $a \geq b \iff a^{n} \geq b^{n}$ and so the (1) holds. 
-\\ To show that (2) is true, we again only consider the left side which is equivalent to 
+
+To show that (2) is true, we again only consider the left side which is equivalent to 
 \begin{align*}
 b^{n}+c^{n+1} \geq b^{n+1}+c^{n}
-\iff (\frac{b}{c})^{n} \geq \frac{1-c}{1-b}
+\iff \left(\frac{b}{c}\right)^{n} \geq \frac{1-c}{1-b}.
 \end{align*}
+
 Now
 \begin{align*}
-\\a(b-c)&\geq 0 
-\\ \iff (b-c)(1-(b+c))&\geq 0
-\\ \iff b(1-b)&\geq c(1-c) 
-\\ \iff \frac{b}{c} &\geq \frac{1-c}{1-b}
-\\ \iff (\frac{b}{c})^{n} &\geq \frac{1-c}{1-b}
+	a(b-c) &\geq 0 \\
+	\iff (b-c)(1-(b+c)) &\geq 0 \\
+	\iff b(1-b) &\geq c(1-c) \\
+	\iff \frac{b}{c} &\geq \frac{1-c}{1-b} \\
+	\iff \left(\frac{b}{c}\right)^{n} &\geq \frac{1-c}{1-b}
 \end{align*}
 and so (2) holds.
-\\Now applying Chebyshev's inequality gives:
+
+Now applying Chebyshev's inequality gives:
 \begin{align*} 
-\sum_{cyc}\frac{a^{n+2}}{a^{n+1}+b^{n}+c^{n}} &\geq \frac{a+b+c}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \\ &=\frac{1}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}}\frac{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}\\
-&\geq \frac{1}{3}(3\sum_{cyc}a^{n+1})\frac{1}{\sum_{cyc}a^{n+1}+2\sum_{cyc}a^{n}}\\
-&\geq \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}\frac{a^{n}\times a}{a+b+c}} \\
-&= \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}a^{n+1}}
-\\&=\frac{1}{7}
+	\sum_{cyc}\frac{a^{n+2}}{a^{n+1}+b^{n}+c^{n}} &\geq \frac{a+b+c}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}} \\
+	&=\frac{1}{3}\sum_{cyc}\frac{a^{n+1}}{a^{n+1}+b^{n}+c^{n}}\frac{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})}{\sum_{cyc}(a^{n+1}+b^{n}+c^{n})} \\
+	&\geq \frac{1}{3}(3\sum_{cyc}a^{n+1})\frac{1}{\sum_{cyc}a^{n+1}+2\sum_{cyc}a^{n}} \\
+	&\geq \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}\frac{a^{n}\times a}{a+b+c}} \\
+	&= \sum_{cyc}a^{n+1}\frac{1}{\sum_{cyc}a^{n+1}+6\sum_{cyc}a^{n+1}} \\
+	&=\frac{1}{7}.
 \end{align*}
 Equality holds when $a=b=c=\frac{1}{3}$.
 
