@@ -86,7 +86,47 @@ Thus, the sequence converges to $3$ whenever the initial $p$ is larger than $2$,
 \end{center}
 holds for every $x\in\mathbb{R}$
 }
+Rearranging the identity, we get
+$$P(x^2) + 2P(x) = {P(x)}^2 + 2 \iff P(x^2) - 1 = {P(x)}^2 - 2P(x) + 1 = (P(x) - 1)^2$$
 
+Suppose $A_i(x)$ is a polynomial satisyfing $A_i(x^2) - 1 = (A_i(x) - 1)^2$. Notice that the left hand side of the equation is a polynomial consisting only of terms with even degree. In order for the identity to hold, the right hand side must also consist only of terms with even degree. Notice that if $A_i(x) - 1$ terms with even and odd degree, there must be least such terms. When the smallest odd degree term gets multiplied by the smallest even degree term, the result is an odd term, so the original identity cannot hold. Thus, $A_i(x) - 1$ consists of only even degree terms or only odd degree terms. Let us consider each case.
+\begin{itemize}
+    \item Odd: 
+    \begin{align*}
+        & &A_i(x) - 1 &= x B_{i}(x^2) \\
+        &\iff &A_i(x) &= xB_{i}(x^2) + 1 \\
+        &\iff &x^2B_{i}(x^4) + 1 - 1 &= (xB_{i}(x^2) + 1 - 1)^2 \\
+        &\iff &x^2B_{i}(x^4) &= x^2 {B_{i}(x^2)}^2 \\
+        &\iff &B_{i}(x^4) &= {B_{i}(x^2)}^2 \\
+        &\iff &B_{i}(k^2) &= {B_{i}(k)}^2
+    \end{align*}
+    \item Even:
+    \begin{align*}
+        & &A_i(x) - 1 &= B_{i}(x^2) \\
+        &\iff &A_i(x) &= B_{i}(x^2) + 1 \\
+        &\iff &B_{i}(x^4) + 1 - 1 &= (B_{i}(x^2) + 1 - 1)^2 \\
+        &\iff &B_{i}(x^4) &= {B_{i}(x^2)}^2 \\
+        &\iff &B_{i}(k^2) &= {B_{i}(k)}^2 \\
+    \end{align*}
+\end{itemize}
+
+Let $B_{i}(x) = A_{i + 1}(x) - 1$, then we have 
+$$A_{i + 1}(x^2) - 1 = (A_{i + 1}(x) - 1)^2.$$
+
+Thus we have yet another polynomial satisfying the same property as $A_i$. Notice, however that $\deg(A_{i + 1}) = \lfloor \frac{\deg A_i}{2} \rfloor$. Thus, this process must eventually culminate in a constant polynomial satisfying the same properties as each $A_j$. Notice that $c - 1 = (c - 1)^2$ if and only if $c \in \{1, 2\}$.
+
+From the above argument, we have one of: 
+\begin{align*}
+    A_i(x) = x(A_{i + 1}(x^2) - 1) + 1 =& xA_{i + 1}(x^2) - x + 1 \\
+    A_i(x) = (A_{i + 1}(x^2) - 1) + 1 =& A_{i + 1}(x^2)
+\end{align*}
+
+Thus, since we know that $P$ satisfies the same conditions as $A_i$, we can find all possible $P$ by starting with the constant polynomials $1$ and $2$ and building up with the two above-mentioned processes. From here, one can prove inductively that the valid polynomials are:
+\begin{align*}
+P(x) &= 1\\
+P(x) &= x^n + 1
+\end{align*}
+where $n \in \mathbb{N}_0$. One can check that both of these classes of solutions satisfy the original equation.
 
 \medskip
 \item % Ralph
