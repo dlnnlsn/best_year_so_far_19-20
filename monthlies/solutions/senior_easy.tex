@@ -111,6 +111,21 @@ And find when equality occurs.}
 Find all $n$ for where there is guaranteed to be some pair $(i,j)$ such that $|x_iy_{j}-y_ix_{j}| = 1$ and $i-j\not\equiv_n 1$
 }
 
+Consider the pairs $(x_i,y_i)$ as the coordinates of lattice points $P_i$. Writing the area with the determinant formula and using Pick's theorem we get that $\triangle{OP_iP_{i+1}}$ doesn't have any lattice points inside or on the border, except for its vertices.
+The conclusion is equivalent to the fact that there exists one triangle $\triangle{OP_iP_j}$ so that it doesn't have any lattice points inside or on the border, except for its vertices (i.e. that has area $\dfrac{1}{2}$, or otherwise said, less than $1$), where $1<|i-j|<n$.
+
+Take $O$ the origin of the plane, i.e. $O(0,0)$. WLOG, assume that $OP_2$ is one of the segments with maximal length. Let $P_1\in d_1\parallel OP_2,\ P_3\in d_3\parallel OP_2$. Let $C(O,OP_2)\cap \{ d_1,d_3\}=\{X,Y,Z,T\},\ X,Z\in d_1,\ Y,T\in d_3$. Obviously, $XYZT$ is a rectangle.
+
+As $S_{\triangle{OP_2P_3}}=\frac{1}{2}\Rightarrow d(OP_2,d_3)=\frac{1}{OP_3}$. Analogously, $ d(OP_2,d_1)=\frac{1}{OP_3}$. Hence, $XY=\frac{2}{OP_3}$. Now, $XZ<2OP_3$, so $S_{XYZT}=XY\cdot XZ<4$.
+
+Consider now two cases:
+
+Case 1. If $P_1,O,P_3$ are not collinear, consider $P_1^\prime \in d_3, P_3^\prime \in d_1$ such that $P_1P_3P_1^\prime P_3^\prime$ is a parallelogram.
+
+$S_{\triangle{P_1OP_3}}=\dfrac{1}{4}S_{P_1P_3P_1^\prime P_3^\prime}<\dfrac{1}{4}S_{XYZT}=1$, so the triangle $P_1OP_3$ has area $\frac{1}{2}$, thereby satisfying the properties.
+
+Case 2. If $P_1,O,P_3$ are collinear, $O$ is the midpoint of $P_1P_3$ (because $d(OP_2,d_1)=d(OP_2,d_3)$).
+Now looking at $P_4$, $P_4O$ is median in triangle $\triangle{P_1P_3P_4}$, so $S_{\triangle{P_1OP_4}}=S_{\triangle{P_3OP_4}}=\frac{1}{2}$, hence we found a triangle that satisfies the property.
 
 \medskip
 \item % Liam
