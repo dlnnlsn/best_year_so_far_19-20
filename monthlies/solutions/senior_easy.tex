@@ -62,6 +62,15 @@ Thus, if the ratio of two areas is rational, the ratio of angles between two con
 For which values of $p$ does the series converge?
 }
 
+Note that for every positive integer $k$, there is a prime larger than it. Thus, the condition that $a_n$ is prime will be met eventually. Bertrand's Postulate says that for all integers $a > 5$, there exists a prime $p$ such that $2a - 2 > p > a$. This can be rephrased as: for all primes $q \ge 11$, there exists a prime $p$ such that $q > p > \frac{q + 1}{2}$. We shall show that if $a_n = q$, $a_{n + 1} \le \frac{q + 1}{2} + 1$.
+$$a_{n + 1} \le \frac{q + 1}{2} + 1$$
+$$\iff 2\lfloor \frac{q + 1}{4}\rfloor + 1 \le \frac{q + 1}{2} + 1$$
+$$\iff \lfloor \frac{q + 1}{4} \rfloor \le \frac{q + 1}{4}$$
+which is true. Thus, whenever the sequence encounters a prime, it will never come back to that prime again since a smaller prime will be encountered. Thus, the sequence will converge to be below $11$ regardless of the starting value. Thus, we just need to check the behaviour of small prime values.
+$$11 \rightarrow 7 \rightarrow 5 \rightarrow 3 \rightarrow 3$$
+$$2 \rightarrow 1 \rightarrow 2$$
+
+Thus, the sequence converges to $3$ whenever the initial $p$ is larger than $2$, and oscillates between $1$ and $2$ otherwise.
 
 \medskip
 \item % Emile
