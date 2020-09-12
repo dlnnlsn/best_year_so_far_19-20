@@ -9,6 +9,7 @@
 \usepackage{enumerate}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{siunitx}
 \graphicspath{{../logos/}}
 
 
@@ -41,6 +42,11 @@ He devises a way to cut a circular pizza such that all cuts go through the cente
 Prove that all \textit{rational} pizzas have rational internal angles at the center of the pizza when measured in degrees, as this will make Pythagoras very happy.
 }
 
+Suppose the pizza has a radius of $r$. If two adjacent areas have angles $\alpha$ and $\beta$ respectively, then we have that their areas are $\frac{\alpha}{360 \si{\degree}} \times \pi r^2$ and $\frac{\beta}{360 \si{\degree}} \times \pi r^2$ respectively. Thus, the ratio of areas is
+
+$$\frac{\frac{\alpha}{360 \si{\degree}} \times \pi r^2}{\frac{\beta}{360 \si{\degree}} \times \pi r^2} = \frac{\alpha}{\beta} $$
+
+Thus, if the ratio of two areas is rational, the ratio of angles between two consecutive areas must also be rational. If there are $n$ regions with angles $\theta_1$, $\theta_2$, $\cdots$, $\theta_n$. We know that each ratio $\frac{\theta_{i + 1}}{\theta_i}$ is rational. Thus, we must also have that each ratio $\frac{\theta_i}{\theta_1}$ must be rational. Thus, the sum of all the angles is a rational multiple of $\theta_1$. Since the sum of the angles is $360 \si{\degree}$ which is rational, we must have that $\theta_1$ must also be rational and from here we have that all angles must be rational.
 
 \medskip
 \item % Emile
