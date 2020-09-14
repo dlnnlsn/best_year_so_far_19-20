@@ -191,6 +191,50 @@ Find the value of
 $$\lim_{n \to \infty} a_n.$$
 }
 
+Consider the sequence $b_n = a_n - 1$. We can now simplify the two expressions for terms of $b_n$.
+
+\begin{itemize}
+	\item When $p_n \equiv _4 1$:
+	\begin{align*}
+		b_n &= a_n - 1 \\ 
+		&= \frac{1}{p_n} + a_{n - 1} - \frac{a_{n - 1}}{p_n} - 1 \\
+        &= (1 - \frac{1}{p_n})(a_{n - 1} - 1) \\
+        &= \frac{p_n - 1}{p_n} b_{n - 1}
+	\end{align*}	
+	 
+	\item Otherwise:
+	\begin{align*}
+		b_n &= a_n - 1 \\ 
+		&= \frac{p_n a_{n - 1} + 1}{p_n + 1} - 1 \\
+        &= \frac{p_n(a_{n - 1} - 1)}{p_n + 1} \\
+        &= \frac{p_n}{p_n + 1} b_{n - 1}
+	\end{align*}	
+\end{itemize}
+
+Thus, we have that
+\begin{align*}
+\lim_{n \rightarrow \infty} a_n &= \lim_{n \rightarrow \infty} 1 + b_n \\
+&= 1 + \lim_{n \rightarrow \infty} \frac{-1}{2} (\prod_{p \equiv 1 (mod 4)} \frac{p - 1}{p}) (\prod_{p \equiv 3 (mod 4)} \frac{p}{p + 1})
+\end{align*}
+
+Now, consider the Riemann Zeta function:
+\begin{align*}
+    \zeta (s) &= \sum_{n = 1}^{\infty} \frac{1}{n^s} \\
+    &= \prod_{p \; prime} \frac{1}{1 - p^{-s}}
+\end{align*}
+
+Manipulating the expression in the limit, we have:
+
+\begin{align*}
+    (\prod_{p \equiv 1 (mod 4)} \frac{p - 1}{p}) (\prod_{p \equiv 3 (mod 4)} \frac{p}{p + 1}) &= \frac{\prod_{p \equiv 1 (mod 4)} 1 - \frac{1}{p}}{\prod_{p \equiv 3 (mod 4)} 1 + \frac{1}{p}}\\
+    &= \frac{\prod_{p \equiv 1 (mod 4)} 1 - \frac{1}{p}}{\prod_{p \equiv 3 (mod 4)} 1 + \frac{1}{p}} \cdot \frac{\prod_{p \equiv 3 (mod 4)} 1 - \frac{1}{p}}{\prod_{p \equiv 3 (mod 4)} 1 - \frac{1}{p}}\\
+    &= \frac{\prod_{p} 1 - \frac{1}{p}}{\prod_{p \equiv 3 (mod 4)} 1 - \frac{1}{p^2}}\\
+    &= \frac{\zeta(1)^{-1}}{\prod_{p \equiv 3 (mod 4)} 1 - \frac{1}{p^2}} \\
+    &= \frac{\zeta(1)^{-1}}{z}, \; z \in \mathbb{R}^{+}\\
+    &= 0
+\end{align*}
+    Therefore, we have
+$$\lim_{n \rightarrow \infty} a_n = 1 + \frac{-1}{2} \cdot 0 = 1.$$
 \end{enumerate}
 
 \end{document}
