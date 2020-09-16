@@ -153,6 +153,35 @@ Given $a$,$b$,$c\in\mathbb{R}$ with $a$,$b$,$c\leq 1$ and $a+b+c = 1$, prove tha
 \end{center}
 And find when equality occurs.}
 
+\medskip
+ANS.
+\\Note $a^2 + 2b + 1 = (1-a)^2 + 2a + 2b = (b+c)^2 + 2(a+b)$
+\\Let $x = \frac{a+b}{2}, y = \frac{b+c}{2}, z = \frac{c+a}{2}$\\
+\\
+Therefor the inequality becomes:
+\\$\sum_{cyc} \sqrt{4y^2+4x}\geq 4\iff\sum_{cyc} \sqrt{y^2+x}\geq 2 $\\
+\\
+Let $t$ the min of ${r,s,t}$ then:
+\\$\sqrt{r}+\sqrt{s}\geq \sqrt{t}+\sqrt{r+s-t}$\\
+\\
+By the above inequality:
+\\$\sqrt{x+y^{2}}+\sqrt{y+z^{2}}\geq \sqrt{z+y^{2}}+1-z$\\
+\\It suffices to prove that:
+\\$\sqrt{z+x^{2}}+\sqrt{z+y^{2}}\geq 1+z$\\
+\\
+By squaring and simplifying we have:
+\\$\iff\sqrt{z+x^{2}}\sqrt{z+y^{2}}\geq z+xy$\\
+\\
+By squaring and simplifying again we have:
+\\$\iff z(x^2+y^2) \geq z(2xy)$\\
+Equality occurs when $z = 0$ or when $x = y$\\\\
+If $z = 0$ we have that:
+\\$\sqrt{x}+\sqrt{y} = \sqrt{x+y}$
+\\$\Rightarrow y = 0\\\Rightarrow {x,y,z} = {1,0,0}\\\Rightarrow {a,b,c} = {1,1,-1}$\\\\
+If $x=y$ we have that:
+\\$\sqrt{x}+\sqrt{x} = \sqrt{z} + \sqrt{2x-z}$
+\\$\Rightarrow z = x\\\Rightarrow {x,y,z} = {\frac{1}{3},\frac{1}{3},\frac{1}{3}}\\\Rightarrow {a,b,c} = {\frac{1}{3},\frac{1}{3},\frac{1}{3}}$\\\\
+
 
 \medskip
 \item % Korea 2001
