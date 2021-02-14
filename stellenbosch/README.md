@@ -19,11 +19,11 @@ For convenience, links to compiled versions of each test and each set of solutio
 
 | Test | Problems | Solutions |
 | ---- | -------- | --------- |
-| Monday | [Test 1 Problems](./tests/intermediate/pdfs/int_test_1.pdf) | [Test 1 Solutions](./solutions/intermediate/pdfs/int_sol_1.pdf) |
-| Tuesday | [Test 2 Problems](./tests/intermediate/pdfs/int_test_2.pdf) | [Test 2 Solutions](./solutions/intermediate/pdfs/int_sol_2.pdf) |
-| Wednesday | [Test 3 Problems](./tests/intermediate/pdfs/int_test_3.pdf) | [Test 3 Solutions](./solutions/intermediate/pdfs/int_sol_3.pdf) |
-| Thursday | [Test 4 Problems](./tests/intermediate/pdfs/int_test_4.pdf) | [Test 4 Solutions](./solutions/intermediate/pdfs/int_sol_4.pdf) |
-| Friday | [Test 5 Problems](./tests/intermediate/pdfs/int_test_5.pdf) | [Test 5 Solutions](./solutions/intermediate/pdfs/int_sol_5.pdf) |
+| Monday | [Test 1 Problems](./tests/intermediate/pdfs/int_test1.pdf) | [Test 1 Solutions](./solutions/intermediate/pdfs/int_sol_1.pdf) |
+| Tuesday | [Test 2 Problems](./tests/intermediate/pdfs/int_test2.pdf) | [Test 2 Solutions](./solutions/intermediate/pdfs/int_sol_2.pdf) |
+| Wednesday | [Test 3 Problems](./tests/intermediate/pdfs/int_test3.pdf) | [Test 3 Solutions](./solutions/intermediate/pdfs/int_sol_3.pdf) |
+| Thursday | [Test 4 Problems](./tests/intermediate/pdfs/int_test4.pdf) | [Test 4 Solutions](./solutions/intermediate/pdfs/int_sol_4.pdf) |
+| Friday | [Test 5 Problems](./tests/intermediate/pdfs/int_test5.pdf) | [Test 5 Solutions](./solutions/intermediate/pdfs/int_sol_5.pdf) |
 
 ## Advanced Problems ans Solutions
 
