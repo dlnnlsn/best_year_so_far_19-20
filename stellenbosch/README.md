@@ -8,29 +8,31 @@ After the test each morning, and in the afternoons, students attend a series of 
 
 For convenience, links to compiled versions of each test and each set of solutions are included below.
 
-## Beginner Tests and Solutions
+# Problems and Solutions
 
-| Test | Problems | Solutions |
-| ---- | -------- | --------- |
-| Monday | [Test 1 Problems](./tests/beginners/pdfs/beg_test_1.pdf) | Not Available |
-| Friday | [Test 2 Problems](./tests/beginners/pdfs/beg_test_2.pdf) | [Test 2 Solutions](./solutions/beginners/pdfs/beg_test_2_sol.pdf) |
+* ## Beginner Tests and Solutions
 
-## Intermediate Tests and Solutions
+  | Test | Problems | Solutions |
+  | ---- | -------- | --------- |
+  | Monday | [Test 1 Problems](./tests/beginners/pdfs/beg_test_1.pdf) | Not Available |
+  | Friday | [Test 2 Problems](./tests/beginners/pdfs/beg_test_2.pdf) | [Test 2 Solutions](./solutions/beginners/pdfs/beg_test_2_sol.pdf) |
 
-| Test | Problems | Solutions |
-| ---- | -------- | --------- |
-| Monday | [Test 1 Problems](./tests/intermediate/pdfs/int_test1.pdf) | [Test 1 Solutions](./solutions/intermediate/pdfs/int_sol_1.pdf) |
-| Tuesday | [Test 2 Problems](./tests/intermediate/pdfs/int_test2.pdf) | [Test 2 Solutions](./solutions/intermediate/pdfs/int_sol_2.pdf) |
-| Wednesday | [Test 3 Problems](./tests/intermediate/pdfs/int_test3.pdf) | [Test 3 Solutions](./solutions/intermediate/pdfs/int_sol_3.pdf) |
-| Thursday | [Test 4 Problems](./tests/intermediate/pdfs/int_test4.pdf) | [Test 4 Solutions](./solutions/intermediate/pdfs/int_sol_4.pdf) |
-| Friday | [Test 5 Problems](./tests/intermediate/pdfs/int_test5.pdf) | [Test 5 Solutions](./solutions/intermediate/pdfs/int_sol_5.pdf) |
+* ## Intermediate Tests and Solutions
 
-## Advanced Problems ans Solutions
+  | Test | Problems | Solutions |
+  | ---- | -------- | --------- |
+  | Monday | [Test 1 Problems](./tests/intermediate/pdfs/int_test1.pdf) | [Test 1 Solutions](./solutions/intermediate/pdfs/int_sol_1.pdf) |
+  | Tuesday | [Test 2 Problems](./tests/intermediate/pdfs/int_test2.pdf) | [Test 2 Solutions](./solutions/intermediate/pdfs/int_sol_2.pdf) |
+  | Wednesday | [Test 3 Problems](./tests/intermediate/pdfs/int_test3.pdf) | [Test 3 Solutions](./solutions/intermediate/pdfs/int_sol_3.pdf) |
+  | Thursday | [Test 4 Problems](./tests/intermediate/pdfs/int_test4.pdf) | [Test 4 Solutions](./solutions/intermediate/pdfs/int_sol_4.pdf) |
+  | Friday | [Test 5 Problems](./tests/intermediate/pdfs/int_test5.pdf) | [Test 5 Solutions](./solutions/intermediate/pdfs/int_sol_5.pdf) |
 
-| Test | Problems | Solutions |
-| ---- | -------- | --------- |
-| Monday | [Test 1 Problems](./tests/advanced/pdfs/adv_test1.pdf) | [Test 1 Solutions](./solutions/advanced/pdfs/adv_sol1.pdf) |
-| Tuesday | [Test 2 Problems](./tests/advanced/pdfs/adv_test2.pdf) | [Test 2 Solutions](./solutions/advanced/pdfs/adv_sol2.pdf) |
-| Wednesday | [Test 3 Problems](./tests/advanced/pdfs/adv_test3.pdf) | [Test 3 Solutions](./solutions/advanced/pdfs/adv_sol3.pdf) |
-| Thursday | [Test 4 Problems](./tests/advanced/pdfs/adv_test4.pdf) | [Test 4 Solutions](./solutions/advanced/pdfs/adv_sol4.pdf) |
-| Friday | [Test 5 Problems](./tests/advanced/pdfs/adv_test5.pdf) | [Test 5 Solutions](./solutions/advanced/pdfs/adv_sol5.pdf) |
+* ## Advanced Problems ans Solutions
+
+  | Test | Problems | Solutions |
+  | ---- | -------- | --------- |
+  | Monday | [Test 1 Problems](./tests/advanced/pdfs/adv_test1.pdf) | [Test 1 Solutions](./solutions/advanced/pdfs/adv_sol1.pdf) |
+  | Tuesday | [Test 2 Problems](./tests/advanced/pdfs/adv_test2.pdf) | [Test 2 Solutions](./solutions/advanced/pdfs/adv_sol2.pdf) |
+  | Wednesday | [Test 3 Problems](./tests/advanced/pdfs/adv_test3.pdf) | [Test 3 Solutions](./solutions/advanced/pdfs/adv_sol3.pdf) |
+  | Thursday | [Test 4 Problems](./tests/advanced/pdfs/adv_test4.pdf) | [Test 4 Solutions](./solutions/advanced/pdfs/adv_sol4.pdf) |
+  | Friday | [Test 5 Problems](./tests/advanced/pdfs/adv_test5.pdf) | [Test 5 Solutions](./solutions/advanced/pdfs/adv_sol5.pdf) |
