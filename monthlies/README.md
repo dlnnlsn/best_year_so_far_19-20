@@ -8,7 +8,7 @@ Following the [Stellenbosch Camp](../stellenbosch), students are sent a set of a
 
   | Month | Problems | Solutions |
   | ----- | -------- | --------- |
-  | January | [January Problem Set](./problems/pdf/beginner_january.pdf) | [January Problem Set Solutions](./solutions/pdfs/Beginner_January.pdf) |
+  | January | [January Problem Set](./problems/pdfs/beginner_january.pdf) | [January Problem Set Solutions](./solutions/pdfs/Beginner_January.pdf) |
 
 * ## Intermediate Problem Sets
 
