@@ -1,6 +1,6 @@
 # April Camp
 
-Based on the results of the [Stellenbosch Camp](../stellenbosch) and the [Monthly Assignments](../monthlies), a group of students are invited to another training camp at the end of March or the beginning of April. The results of this camp together with the results of the Stellenbosch Camp and the Monthly Assignments are used to select a team for the International Mathematics Oympiad. If this camp takes place before the Pan-African Mathematics Olympiad, then the results are also considered when choosing a team for the Pan-African Mathematics Olympiad.
+Based on the results of the [Stellenbosch Camp](../stellenbosch) and the [Monthly Assignments](../monthlies), a group of students are invited to another training camp at the end of March or the beginning of April. The results of this camp together with the results of the Stellenbosch Camp and the Monthly Assignments are used to select a team for the International Mathematics Olympiad. If this camp takes place before the Pan-African Mathematics Olympiad, then the results are also considered when choosing a team for the Pan-African Mathematics Olympiad.
 
 ## Test Problems
 
