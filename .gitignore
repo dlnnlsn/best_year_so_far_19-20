@@ -246,3 +246,5 @@ TSWLatexianTemp*
 
 # PDF files
 *.pdf
+**/*.gsheet
+**/*.gdoc
